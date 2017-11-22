@@ -149,6 +149,8 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
         List<Integer> hitRecord = new ArrayList<>();
         File file =  new File("Image.png");
         BufferedImage out = new BufferedImage(800,800,BufferedImage.TYPE_INT_RGB);
+        //lights
+        ArrayList<Light> lights = new ArrayList<Light>();
         //ray
         Vector4f s = new Vector4f(0,0,0,1);//view co-ordinate system
         Vector4f v;
@@ -162,7 +164,7 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
                 //v = v.mul(mult); // view-to-world
 
                 util.Ray r1 = new util.Ray(s,v);//world coordinate System
-                int color = root.rayCast(r1, modelview);
+                int color = root.rayCast(r1, modelview, lights);
                 color = color*100;
                 out.setRGB(x,y,color);
             }

@@ -173,6 +173,6 @@ public interface INode
      * @param r1
      * @param modelview
      */
-     int rayCast(Ray r1, Stack<Matrix4f> modelview);
+     int rayCast(Ray r1, Stack<Matrix4f> modelview, ArrayList<Light> lights);
 }
 

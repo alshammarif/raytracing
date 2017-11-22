@@ -2,6 +2,7 @@ package sgraph;
 
 import com.jogamp.opengl.GL3;
 import org.joml.Matrix4f;
+import org.joml.Vector3f;
 import org.joml.Vector4f;
 import util.*;
 
@@ -231,8 +232,9 @@ public class LeafNode extends AbstractNode
         return blank;
     }
 
-    public int rayCast(Ray r1,Stack<Matrix4f> modelview) //object -> view
+    public int rayCast(Ray r1,Stack<Matrix4f> modelview, ArrayList<Light> ls) //object -> view
     {
+
         Matrix4f inv = (modelview.peek().invert());
         inv.transform(r1.s);
         inv.transform(r1.v);
@@ -305,6 +307,22 @@ public class LeafNode extends AbstractNode
 //            p2.x = r1.s.x + (r1.v.x * tmax);
 //            p2.y = r1.s.y + (r1.v.y * tmax);
 //            p2.z = r1.s.z + (r1.v.z * tmax);
+
+            for(int i=0; i<ls.size(); i++) {
+                Light l = ls.get(i);
+                Vector4f lv = new Vector4f();
+                Vector4f amb = new Vector4f();
+                Vector4f col = new Vector4f();
+                if (l.getPosition().w != 0) {
+                    lv = l.getPosition().normalize();
+                } else {
+                    lv = l.getPosition().negate().normalize();
+                }
+                amb = new Vector4f(l.getAmbient().x * material.getAmbient().x, l.getAmbient().y*material.getAmbient().y, l.getAmbient().z*material.getAmbient().z, 1);
+
+            }
+
+
             return 1;
         }
         else

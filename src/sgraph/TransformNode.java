@@ -340,13 +340,22 @@ public class TransformNode extends AbstractNode
         return  blank;
     }
 
-    public int rayCast(Ray r1, Stack<Matrix4f> modelview)
+    public int rayCast(Ray r1, Stack<Matrix4f> modelview, ArrayList<Light> ls)
     {
+
         int color=0;
         modelview.push(new Matrix4f(modelview.peek()));
         modelview.peek().mul(transform);
+
+        for(int i = 0; i < this.lights.size(); i++) {
+             Light l = lights.get(i);
+             Vector4f pos = l.getPosition().mul(modelview.peek().mul(transform));
+             l.setPosition(pos);
+             ls.add(l);
+        }
+
         if(child!=null)
-            color = child.rayCast(r1,modelview);
+            color = child.rayCast(r1,modelview, ls);
         modelview.pop();
         return color;
     }
