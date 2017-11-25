@@ -162,10 +162,8 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
                 Matrix4f mult = modelview.peek();
                 //s = s.mul(mult); // view-to-world
                 //v = v.mul(mult); // view-to-world
-
                 util.Ray r1 = new util.Ray(s,v);//world coordinate System
                 int color = root.rayCast(r1, modelview, lights);
-                color = color*100;
                 out.setRGB(x,y,color);
             }
         }
