@@ -1,8 +1,9 @@
 <scene>
 	<instance name="Box" path="models/box-outside"></instance>
 	<instance name="Sphere" path="models/sphere"></instance>
-	<image name="earth"  path="textures/earthmap.png" />
+	<image name="earth"  path="textures/earthmap.jpg" />
 	<image name="checker"  path="textures/checkerboard.png" />
+	<image name="checker-box"  path="textures/die.png" />
 	<image path="textures/whitebox.png" name="whitebox"/>
 	<image path="textures/white.png" name="white"/>
 	<light>
@@ -13,9 +14,10 @@
 	</light>
 	<transform>
 			<set>
+				<rotate>90 0 0 1</rotate>
 				<scale>2 2 2</scale>
 			</set>
-		<object instanceof="Sphere" texture="checker">
+		<object instanceof="Box" texture="checker-box">
 				<material>
 					<ambient>1 0 1</ambient>
                     <diffuse>0.9 0.9 0.9</diffuse>

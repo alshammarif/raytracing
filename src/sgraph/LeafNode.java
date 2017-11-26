@@ -461,11 +461,14 @@ public class LeafNode extends AbstractNode
             }
 
             c.addColor(spec.x(),spec.y(),spec.z());
-
+            Vector4f texVector;
             TextureImage tex = textures.get(textureName);
             if(tex == null)
                 System.out.println("No texture found");
-            Vector4f texVector = getSphereTexture(p1,tex);
+            if(objInstanceName.equals("Sphere"))
+                texVector  = getSphereTexture(p1,tex);
+            else
+                texVector = getBoxTexture(p1,tex);
 
             Vector4f texColor = tex.getColor(texVector.x,texVector.y);
             System.out.println("TexColor= "+texColor.x()+" "+texColor.y()+" "+texColor.z());
@@ -495,28 +498,42 @@ public class LeafNode extends AbstractNode
         return new Vector4f(p1.x,p1.y,p1.z,0).normalize();
     }
 
-//    private void getBoxTexture(Vector4f p1, TextureImage tex)
-//    {
-//        if(p1.x == 0.5)
-//        {
-//            float t = (float)(0.25*(p1.y+0.5)+0.25);
-//            float s = (float)(0.25*(p1.z+0.5)+0.5);
-//        }
-//        else if(p1.x == -0.5)
-//        {
-//            float t = (float)(0.25*(p1.y+0.5)+0.25);
-//            float s = (float)(0.25*(p1.z+0.5)+0.5);
-//        }
-//        else if(p1.z == 0.5)
-//            return new Vector3f(0,0,1);
-//        else if(p1.z == -0.5)
-//            return new Vector3f(0,0,-1);
-//        else if(p1.y == 0.5)
-//            return new Vector3f(0,1,0);
-//        else
-//            return new Vector3f(0,-1,0);
-//
-//    }
+    private Vector4f getBoxTexture(Vector4f p1, TextureImage tex)
+    {
+        float s=-1,t=-1;
+        if(p1.x == 0.5)
+        {
+             t = (float)(0.25*(p1.y+0.5)+0.50);
+             s = (float)(0.25*(p1.z+0.5)+0.25);
+        }
+        else if(p1.x == -0.5)
+        {
+             t = (float)(0.25*(p1.y+0.5)+0.25);
+             s = (float)(0.25*(p1.z+0.5)+0);
+        }
+        if(p1.z == 0.5)
+        {
+             t = (float)(0.25*(p1.y+0.5)+0.25);
+             s = (float)(0.25*(p1.x+0.5)+0.75);
+        }
+        if(p1.z == -0.5)
+        {
+             t = (float)(0.25*(p1.y+0.5)+0.5);
+             s = (float)(0.25*(p1.x+0.5)+0.5);
+        }
+        if(p1.y == 0.5)
+        {
+             t = (float)(0.25*(p1.z+0.5)+0.75);
+             s = (float)(0.25*(p1.x+0.5)+0.5);
+        }
+        if(p1.y == -0.5)
+        {
+             t = (float)(0.25*(p1.z+0.5)+0);
+             s = (float)(0.25*(p1.x+0.5)+0.25);
+        }
+        return new Vector4f(s,t,0,1);
+        
+    }
     private Vector4f getSphereTexture(Vector4f p1, TextureImage tex)
     {
         float phi = (float)Math.asin(p1.y);
