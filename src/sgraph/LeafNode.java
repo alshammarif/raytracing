@@ -334,10 +334,6 @@ public class LeafNode extends AbstractNode
             float tmax, tmin;
             float A,B,C;
 
-
-
-
-
             A = ((float)(Math.pow((double)(r1.v.x), 2)) + (float)(Math.pow((double)(r1.v.y), 2))  + (float)(Math.pow((double)(r1.v.z), 2)) );
             B = ((2*(r1.v.x*r1.s.x))+ (2*(r1.v.y*r1.s.y))+(2*(r1.v.z*r1.s.z)));
             C = (((float)(Math.pow((double)(r1.s.x), 2)) + (float)(Math.pow((double)(r1.s.y), 2)) + (float)(Math.pow((double)(r1.s.z), 2))) - 1);
@@ -412,23 +408,27 @@ public class LeafNode extends AbstractNode
         Vector4f texcolor;
         //texture coords
         float s,t;
-        float phi, theta;
+        double phi, theta;
         Color c= new Color();
+
         if(objInstanceName.equals("Box"))
             norm = getNormalBox(p1);
         else
             norm = getNormalSphere(p1);
         float nDotl, rDotv;
 
+        //texture color:
         if(objInstanceName.equals("Box")) {
             s = 0;
             t = 0;
             texcolor = tex.getColor(s,t);
         } else {
-            phi = (float)Math.asin(p1.y);
-            theta = (float)Math.atan2(p1.z, p1.x);
-            s = (float) ((theta + Math.PI)/(2*Math.PI));
+            phi = Math.asin(p1.y);
+            theta = Math.atan2(-p1.z,p1.x);
+            //theta = Math.atan((-p1.z)/p1.x);
+            s = (float)((theta + Math.PI)/(2*Math.PI));
             t = (float) ((phi + (Math.PI/2)/Math.PI));
+            System.out.println("s: "+ s + " t: "+ t);
             texcolor = tex.getColor(s,t);
         }
 
@@ -478,11 +478,14 @@ public class LeafNode extends AbstractNode
                 //c.addColor(100,100,100);
                 c.addColor(spec.x,spec.y,spec.z);
             }
-            else
-               c.addColor(10,0,0);
-            //c.addColor(spec.x,spec.y,spec.z);
+            else {
+                c.addColor(10, 0, 0);
+                //c.addColor(spec.x,spec.y,spec.z);
+            }
+            c.addTextureColor(texcolor.x, texcolor.y, texcolor.z);
         }
-        c.addTextureColor(texcolor.x, texcolor.y, texcolor.z);
+
+
         return c;
     }
 

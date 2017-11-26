@@ -30,13 +30,9 @@ public class Color {
     }
 
     public void addTextureColor(float tr,  float tg, float tb) {
-        float tempr = this.r;
-        float tempg = this.g;
-        float tempb = this.b;
-
-        this.r = tempr * tr;
-        this.g = tempg * tg;
-        this.b = tempb * tb;
+        this.r *= tr;
+        this.g *= tg;
+        this.b *= tb;
     }
 
 }
