@@ -3,7 +3,10 @@ package sgraph;
 import com.jogamp.opengl.GLAutoDrawable;
 import org.joml.Matrix4f;
 import org.joml.Vector4f;
-import util.*;
+import util.IVertexData;
+import util.Light;
+import util.PolygonMesh;
+import util.Ray;
 
 import java.util.*;
 
@@ -291,7 +294,7 @@ public class GroupNode extends AbstractNode {
         return blank;
     }
 
-    public int rayCast(Ray r1, Stack<Matrix4f> modelview, Map<String, TextureImage> tex, ArrayList<Light> ls)
+    public int rayCast(Ray r1, Stack<Matrix4f> modelview, ArrayList<Light> ls)
     {
        for(int i=0;i<lights.size();i++)
        {
@@ -300,7 +303,7 @@ public class GroupNode extends AbstractNode {
        }
        int color=0;
         for(int i=0;i<children.size();i++) {
-            color = children.get(i).rayCast(r1, modelview, tex, ls);
+            color = children.get(i).rayCast(r1, modelview, ls);
             if(color > 0)
                 return color;
         }

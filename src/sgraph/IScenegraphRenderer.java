@@ -83,6 +83,7 @@ public interface IScenegraphRenderer
 
     void setShaderLights(ArrayList<util.Light> lights);
 
-    void setTextures(Map<String,String> tex);
-    Map<String, TextureImage> getTextures();
+    public void setTextures(Map<String,String> tex);
+
+    public Map<String, TextureImage> getTextures();
 }
