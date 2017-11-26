@@ -41,8 +41,6 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
 
     protected Map<String,String> textures;
 
-    protected Map<String, TextureImage> rendertextures;
-
     /**
      * The associated renderer for this scene graph. This must be set before attempting to
      * render the scene graph
@@ -56,7 +54,6 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
         meshes = new HashMap<String,util.PolygonMesh<VertexType>>();
         nodes = new HashMap<String,INode>();
         textures = new HashMap<String,String>();
-        rendertextures = new HashMap<String, TextureImage>();
         lights = new ArrayList<Light>();
     }
 
@@ -149,6 +146,7 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
     @Override
     public List<Integer> raytrace(int width, int height, Stack<Matrix4f> modelview) throws Exception
     {
+
         List<Integer> hitRecord = new ArrayList<>();
         File file =  new File("Image.png");
         BufferedImage out = new BufferedImage(800,800,BufferedImage.TYPE_INT_RGB);
@@ -164,9 +162,9 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
                 v = new Vector4f(x-width/2,y-height/2,(float)(-0.5*height/Math.tan(Math.toRadians(30))),0);
                 Matrix4f mult = modelview.peek();
                 //s = s.mul(mult); // view-to-world
-                v = v.mul(new Matrix4f().lookAt(new Vector3f(0,0,10), new Vector3f(0,0,0), new Vector3f(0,1,0))); // view-to-world
+                //v = v.mul(mult); // view-to-world
                 util.Ray r1 = new util.Ray(s,v);//world coordinate System
-                int color = root.rayCast(r1, modelview, rendertextures, lights);
+                int color = root.rayCast(r1, modelview, lights);
                 out.setRGB(x,y,color);
             }
         }
@@ -211,9 +209,7 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
 
     public void setTextures()
     {
-
         renderer.setTextures(textures);
-        rendertextures = renderer.getTextures();
     }
 
     public IScenegraph exploded(INode root)
