@@ -148,6 +148,10 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
         textures.put(name,image);
     }
 
+    public Map<String, TextureImage> getTextures() {
+        return textures;
+    }
+
     /**
      * Begin rendering of the scene graph from the root
      * @param root

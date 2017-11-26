@@ -3,6 +3,7 @@ package sgraph;
 import org.joml.Matrix4f;
 import util.IVertexData;
 import util.Light;
+import util.TextureImage;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -82,5 +83,6 @@ public interface IScenegraphRenderer
 
     void setShaderLights(ArrayList<util.Light> lights);
 
-    public void setTextures(Map<String,String> tex);
+    void setTextures(Map<String,String> tex);
+    Map<String, TextureImage> getTextures();
 }

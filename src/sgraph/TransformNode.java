@@ -3,10 +3,7 @@ package sgraph;
 import com.jogamp.opengl.GLAutoDrawable;
 import org.joml.Matrix4f;
 import org.joml.Vector4f;
-import util.IVertexData;
-import util.Light;
-import util.PolygonMesh;
-import util.Ray;
+import util.*;
 
 import java.util.*;
 
@@ -207,7 +204,7 @@ public class TransformNode extends AbstractNode
         ArrayList<Light> ll = new ArrayList<Light>();
         for(int i = 0; i < lights.size(); i++) {
             Light l = lights.get(i);
-            l.setPosition(l.getPosition().mul(modelView.peek()).mul(transform));
+            l.setPosition(l.getPosition().mul(transform));
             ll.add(l);
         }
         ArrayList<Light> cll = new ArrayList<Light>();
@@ -340,22 +337,23 @@ public class TransformNode extends AbstractNode
         return  blank;
     }
 
-    public int rayCast(Ray r1, Stack<Matrix4f> modelview, ArrayList<Light> ls)
+    public int rayCast(Ray r1, Stack<Matrix4f> modelview, Map<String, TextureImage> tex, ArrayList<Light> ls)
     {
+
         int color=0;
         for(int i=0;i<lights.size();i++)
         {
             if(!ls.contains(lights.get(i)))
                 ls.add(lights.get(i));
         }
-        for(int i=0;i<ls.size();i++)
-        {
-            ls.get(i).setPosition(ls.get(i).getPosition());
-        }
+//        for(int i=0;i<ls.size();i++)
+//        {
+//            ls.get(i).setPosition(ls.get(i).getPosition().mul());
+//        }
         modelview.push(new Matrix4f(modelview.peek()));
         modelview.peek().mul(transform);
         if(child!=null)
-            color = child.rayCast(r1,modelview, ls);
+            color = child.rayCast(r1,modelview, tex, ls);
         modelview.pop();
         return color;
     }

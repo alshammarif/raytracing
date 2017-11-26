@@ -14,12 +14,12 @@
 			<set>
 				<scale>5 5 5</scale>
 			</set>
-		<object instanceof="Sphere" texture="white">
+		<object instanceof="Sphere" texture="earth">
 				<material>
 					<ambient>1 0 1</ambient>
                     <diffuse>0.9 0.9 0.9</diffuse>
                     <specular>1 1 0</specular>
-					<shininess>10</shininess>
+					<shininess>100</shininess>
 				</material>
 		</object>
 	</transform>

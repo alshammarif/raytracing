@@ -29,4 +29,14 @@ public class Color {
         return (int)(r*255)<<16 | (int)(g*255)<<8 | (int)b*255;
     }
 
+    public void addTextureColor(float tr,  float tg, float tb) {
+        float tempr = this.r;
+        float tempg = this.g;
+        float tempb = this.b;
+
+        this.r = tempr * tr;
+        this.g = tempg * tg;
+        this.b = tempb * tb;
+    }
+
 }
