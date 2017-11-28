@@ -8,14 +8,22 @@
   <component name="ChangeListManager">
     <list default="true" id="ba3d3202-2c53-42d8-bf08-84f95de96922" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Image.png" afterPath="$PROJECT_DIR$/Image.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/JOGLFrame.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/JOGLFrame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/View.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/View.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/GL3ScenegraphRenderer.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/GL3ScenegraphRenderer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/GroupNode.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/GroupNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/IScenegraph.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/IScenegraph.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/LeafNode.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/LeafNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/Scenegraph.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/Scenegraph.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/TransformNode.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/TransformNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/textures/checkerboard-busy-box.png" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/textures/checkerboard-busy-box.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/util/Color.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/util/Color.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/textures/checkerboard-busy-box.png" afterPath="$PROJECT_DIR$/src/textures/checkerboard-busy-box.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/scenegraphmodels/sphere-test.xml" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/scenegraphmodels/sphere-test.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/shaders/gouraud-multiple.frag" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/shaders/gouraud-multiple.frag" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/shaders/gouraud-multiple.vert" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/shaders/gouraud-multiple.vert" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml" afterPath="$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sgraph/LeafNode.java" afterPath="$PROJECT_DIR$/src/sgraph/LeafNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/Color.java" afterPath="$PROJECT_DIR$/src/util/Color.java" />
     </list>
     <ignored path="Scenegraphs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,10 +49,22 @@
       <file leaf-file-name="TransformNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sgraph/TransformNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="354" column="32" lean-forward="false" selection-start-line="354" selection-start-column="32" selection-end-line="354" selection-end-column="32" />
+            <state relative-caret-position="312">
+              <caret line="342" column="78" lean-forward="true" selection-start-line="342" selection-start-column="78" selection-end-line="342" selection-end-column="78" />
               <folding>
-                <marker date="1511718816000" expanded="true" signature="11691:11750" ph="{...}" />
+                <marker date="1511828852000" expanded="true" signature="11415:11474" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GroupNode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sgraph/GroupNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="611">
+              <caret line="301" column="17" lean-forward="false" selection-start-line="301" selection-start-column="17" selection-end-line="301" selection-end-column="17" />
+              <folding>
+                <marker date="1511828852000" expanded="true" signature="9617:9717" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -53,10 +73,10 @@
       <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2460">
-              <caret line="182" column="0" lean-forward="false" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
+            <state relative-caret-position="138">
+              <caret line="183" column="0" lean-forward="false" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
               <folding>
-                <marker date="1511718816000" expanded="true" signature="7913:8034" ph="{...}" />
+                <marker date="1511828852000" expanded="true" signature="7917:8038" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -65,8 +85,8 @@
       <file leaf-file-name="Scenegraph.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sgraph/Scenegraph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1320">
-              <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+            <state relative-caret-position="123">
+              <caret line="146" column="28" lean-forward="true" selection-start-line="146" selection-start-column="28" selection-end-line="146" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -75,49 +95,53 @@
       <file leaf-file-name="sphere-test.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+            <state relative-caret-position="25">
+              <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LeafNode.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LeafNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sgraph/LeafNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="486" column="70" lean-forward="true" selection-start-line="486" selection-start-column="70" selection-end-line="486" selection-end-column="70" />
+            <state relative-caret-position="170">
+              <caret line="464" column="40" lean-forward="false" selection-start-line="464" selection-start-column="40" selection-end-line="464" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2463#2464#0" expanded="true" />
+                <element signature="e#2512#2513#0" expanded="true" />
+                <element signature="e#2674#2675#0" expanded="true" />
+                <element signature="e#2708#2709#0" expanded="true" />
+                <element signature="e#2794#2795#0" expanded="true" />
+                <element signature="e#2825#2826#0" expanded="true" />
+                <element signature="e#3886#3887#0" expanded="true" />
+                <element signature="e#3915#3916#0" expanded="true" />
+                <element signature="e#4034#4041#0" expanded="true" />
+                <element signature="e#4305#4306#0" expanded="true" />
+                <element signature="e#4340#4341#0" expanded="true" />
+                <element signature="e#4382#4383#0" expanded="true" />
+                <element signature="e#4418#4419#0" expanded="true" />
+                <element signature="e#4463#4464#0" expanded="true" />
+                <element signature="e#4499#4500#0" expanded="true" />
+                <element signature="e#4543#4544#0" expanded="true" />
+                <element signature="e#4578#4579#0" expanded="true" />
+                <element signature="e#5917#5918#0" expanded="true" />
+                <element signature="e#5953#5954#0" expanded="true" />
+                <element signature="e#17140#17141#0" expanded="true" />
+                <element signature="e#17205#17206#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package-list" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package-list">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Color.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Color.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/util/Color.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-33">
-              <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+              <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Image.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Image.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
@@ -125,7 +149,7 @@
         <entry file="file://$PROJECT_DIR$/src/util/TextureImage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="279">
-              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -135,9 +159,20 @@
         <entry file="file://$PROJECT_DIR$/src/sgraph/GL3ScenegraphRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3270">
-              <caret line="231" column="0" lean-forward="false" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
+              <caret line="226" column="0" lean-forward="false" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <marker date="1511828852000" expanded="true" signature="7936:8036" ph="{...}" />
+                <marker date="1511828852000" expanded="true" signature="8041:8552" ph="/**...*/" />
+                <marker date="1511828852000" expanded="true" signature="8678:11618" ph="{...}" />
+                <marker date="1511828852000" expanded="true" signature="10744:10809" ph="//..." />
+                <marker date="1511828852000" expanded="true" signature="11626:11756" ph="/**...*/" />
+                <marker date="1511828852000" expanded="true" signature="11888:12183" ph="{...}" />
+                <marker date="1511828852000" expanded="true" signature="12241:12393" ph="{...}" />
+                <marker date="1511828852000" expanded="false" signature="12445:12460" ph=" { " />
+                <marker date="1511828852000" expanded="false" signature="12481:12487" ph=" }" />
+                <marker date="1511828852000" expanded="false" signature="12548:12563" ph=" { " />
+                <marker date="1511828852000" expanded="false" signature="12604:12610" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -547,7 +582,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="5" y="23" width="1680" height="952" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902467" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -557,9 +591,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28207847" sideWeight="0.5104167" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28177458" sideWeight="0.48958334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28177458" sideWeight="0.48958334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297362" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1013431" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -869,17 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sgraph/GroupNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1305">
-          <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1511718816000" expanded="true" signature="9757:9857" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/JOGLFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="930">
@@ -898,54 +921,21 @@
     <entry file="file://$PROJECT_DIR$/src/sgraph/GL3ScenegraphRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3270">
-          <caret line="231" column="0" lean-forward="false" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
+          <caret line="226" column="0" lean-forward="false" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1511828852000" expanded="true" signature="7936:8036" ph="{...}" />
+            <marker date="1511828852000" expanded="true" signature="8041:8552" ph="/**...*/" />
+            <marker date="1511828852000" expanded="true" signature="8678:11618" ph="{...}" />
+            <marker date="1511828852000" expanded="true" signature="10744:10809" ph="//..." />
+            <marker date="1511828852000" expanded="true" signature="11626:11756" ph="/**...*/" />
+            <marker date="1511828852000" expanded="true" signature="11888:12183" ph="{...}" />
+            <marker date="1511828852000" expanded="true" signature="12241:12393" ph="{...}" />
+            <marker date="1511828852000" expanded="false" signature="12445:12460" ph=" { " />
+            <marker date="1511828852000" expanded="false" signature="12481:12487" ph=" }" />
+            <marker date="1511828852000" expanded="false" signature="12548:12563" ph=" { " />
+            <marker date="1511828852000" expanded="false" signature="12604:12610" ph=" }" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2460">
-          <caret line="182" column="0" lean-forward="false" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
-          <folding>
-            <marker date="1511718816000" expanded="true" signature="7913:8034" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sgraph/TransformNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="354" column="32" lean-forward="false" selection-start-line="354" selection-start-column="32" selection-end-line="354" selection-end-column="32" />
-          <folding>
-            <marker date="1511718816000" expanded="true" signature="11691:11750" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sgraph/Scenegraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/TextureImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/Color.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-33">
-          <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -957,10 +947,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sgraph/GroupNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="611">
+          <caret line="301" column="17" lean-forward="false" selection-start-line="301" selection-start-column="17" selection-end-line="301" selection-end-column="17" />
+          <folding>
+            <marker date="1511828852000" expanded="true" signature="9617:9717" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="183" column="0" lean-forward="false" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
+          <folding>
+            <marker date="1511828852000" expanded="true" signature="7917:8038" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sgraph/LeafNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="464" column="40" lean-forward="false" selection-start-line="464" selection-start-column="40" selection-end-line="464" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2463#2464#0" expanded="true" />
+            <element signature="e#2512#2513#0" expanded="true" />
+            <element signature="e#2674#2675#0" expanded="true" />
+            <element signature="e#2708#2709#0" expanded="true" />
+            <element signature="e#2794#2795#0" expanded="true" />
+            <element signature="e#2825#2826#0" expanded="true" />
+            <element signature="e#3886#3887#0" expanded="true" />
+            <element signature="e#3915#3916#0" expanded="true" />
+            <element signature="e#4034#4041#0" expanded="true" />
+            <element signature="e#4305#4306#0" expanded="true" />
+            <element signature="e#4340#4341#0" expanded="true" />
+            <element signature="e#4382#4383#0" expanded="true" />
+            <element signature="e#4418#4419#0" expanded="true" />
+            <element signature="e#4463#4464#0" expanded="true" />
+            <element signature="e#4499#4500#0" expanded="true" />
+            <element signature="e#4543#4544#0" expanded="true" />
+            <element signature="e#4578#4579#0" expanded="true" />
+            <element signature="e#5917#5918#0" expanded="true" />
+            <element signature="e#5953#5954#0" expanded="true" />
+            <element signature="e#17140#17141#0" expanded="true" />
+            <element signature="e#17205#17206#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sgraph/Scenegraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="146" column="28" lean-forward="true" selection-start-line="146" selection-start-column="28" selection-end-line="146" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/TextureImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sgraph/TransformNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="342" column="78" lean-forward="true" selection-start-line="342" selection-start-column="78" selection-end-line="342" selection-end-column="78" />
+          <folding>
+            <marker date="1511828852000" expanded="true" signature="11415:11474" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+        <state relative-caret-position="25">
+          <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -970,13 +1037,11 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sgraph/LeafNode.java">
+    <entry file="file://$PROJECT_DIR$/src/util/Color.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="486" column="70" lean-forward="true" selection-start-line="486" selection-start-column="70" selection-end-line="486" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-33">
+          <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>

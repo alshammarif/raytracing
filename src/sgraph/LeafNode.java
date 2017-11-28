@@ -421,20 +421,20 @@ public class LeafNode extends AbstractNode
         {
             if(ls.get(i).getPosition().w != 0)
             {
-                lv = new Vector3f(ls.get(i).getPosition().x() - fposition.x(),
-                                  ls.get(i).getPosition().y() - fposition.y(),
-                                  ls.get(i).getPosition().z() - fposition.z());
+                lv = new Vector3f(ls.get(i).getPosition().x - fposition.x,
+                                  ls.get(i).getPosition().y - fposition.y,
+                                  ls.get(i).getPosition().z - fposition.z);
                 lv = lv.normalize();
                 si = 1;
             }
             else
             {
-                lv = new Vector3f(-ls.get(i).getPosition().x(),
-                                  -ls.get(i).getPosition().y(),
-                                  -ls.get(i).getPosition().z());
+                lv = new Vector3f(-ls.get(i).getPosition().x,
+                                  -ls.get(i).getPosition().y,
+                                  -ls.get(i).getPosition().z);
                 lv = lv.normalize();
                 // Calculation of si
-                float cosphi = ls.get(i).getSpotDirection().normalize().dot(-lv.x(),-lv.y(),-lv.z(),1);
+                float cosphi = ls.get(i).getSpotDirection().normalize().dot(-lv.x,-lv.y,-lv.z,1);
                 float cosTheta = (float)Math.cos(ls.get(i).getSpotCutoff());
                 if(cosphi>cosTheta)
                     si=1;
@@ -442,11 +442,11 @@ public class LeafNode extends AbstractNode
                     si=0;
             }
 
-            normalView = new Vector3f(norm.x(),norm.y(),norm.z());
+            normalView = new Vector3f(norm.x,norm.y,norm.z);
             normalView = normalView.normalize();
 
             nDotl = normalView.dot(lv);
-            viewVec = new Vector3f(-fposition.x(),-fposition.y(),-fposition.z()).normalize();
+            viewVec = new Vector3f(-fposition.x,-fposition.y,-fposition.z).normalize();
             Vector3f negLight = lv.negate();
             negLight = negLight.normalize();
             reflectVec = negLight.reflect(normalView);
@@ -454,20 +454,20 @@ public class LeafNode extends AbstractNode
 
             rDotv = (Math.max(reflectVec.dot(viewVec),0.0f));
 
-            amb = new Vector3f(material.getAmbient().x() * ls.get(i).getAmbient().x(),
-                               material.getAmbient().y() * ls.get(i).getAmbient().y(),
-                               material.getAmbient().z() * ls.get(i).getAmbient().z());
-            c.addColor(amb.x(),amb.y(),amb.z());
+            amb = new Vector3f(material.getAmbient().x * ls.get(i).getAmbient().x,
+                               material.getAmbient().y * ls.get(i).getAmbient().y,
+                               material.getAmbient().z * ls.get(i).getAmbient().z);
+            c.addColor(amb.x,amb.y,amb.z);
 
-            dif = new Vector3f(material.getDiffuse().x() * ls.get(i).getDiffuse().x() * Math.max(nDotl,0.0f),
-                               material.getDiffuse().y() * ls.get(i).getDiffuse().y() * Math.max(nDotl,0.0f),
-                               material.getDiffuse().z() * ls.get(i).getDiffuse().z() * Math.max(nDotl,0.0f));
-            c.addColor(dif.x(),dif.y(),dif.z());
+            dif = new Vector3f(material.getDiffuse().x * ls.get(i).getDiffuse().x * Math.max(nDotl,0.0f),
+                               material.getDiffuse().y * ls.get(i).getDiffuse().y * Math.max(nDotl,0.0f),
+                               material.getDiffuse().z * ls.get(i).getDiffuse().z * Math.max(nDotl,0.0f));
+            c.addColor(dif.x,dif.y,dif.z);
             if(nDotl>0)
             {
-                spec = new Vector3f(material.getSpecular().x() * ls.get(i).getSpecular().x() * (float)Math.pow(rDotv,material.getShininess()),
-                                    material.getSpecular().y() * ls.get(i).getSpecular().y() * (float)Math.pow(rDotv,material.getShininess()),
-                                    material.getSpecular().z() * ls.get(i).getSpecular().z() * (float)Math.pow(rDotv,material.getShininess()));
+                spec = new Vector3f(material.getSpecular().x * ls.get(i).getSpecular().x * (float)Math.pow(rDotv,material.getShininess()),
+                                    material.getSpecular().y * ls.get(i).getSpecular().y * (float)Math.pow(rDotv,material.getShininess()),
+                                    material.getSpecular().z * ls.get(i).getSpecular().z * (float)Math.pow(rDotv,material.getShininess()));
             }
 //            Vector4f texVector;
 //            TextureImage tex = textures.get(textureName);

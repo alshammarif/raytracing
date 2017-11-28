@@ -12,5 +12,5 @@ out vec4 outColor;
 
 void main()
     {
-    outColor = texture(image,fTexCoord.st);
+    outColor = fColor * texture(image,fTexCoord.st);
     }
