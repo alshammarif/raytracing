@@ -345,8 +345,9 @@ public class TransformNode extends AbstractNode
         int color=0;
         modelview.push(new Matrix4f(modelview.peek()));
         modelview.peek().mul(transform);
-        if(child!=null)
+        if(child!=null){
             color = child.rayCast(r1,modelview, ls);
+        }
         modelview.pop();
         return color;
     }

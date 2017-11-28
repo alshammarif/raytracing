@@ -92,7 +92,7 @@ public class GroupNode extends AbstractNode {
 
             children.get(i).draw(context, modelView);
         }
-        //context.setShaderLights(lights);
+
     }
 
     /**
@@ -297,11 +297,15 @@ public class GroupNode extends AbstractNode {
     public int rayCast(Ray r1, Stack<Matrix4f> modelview, ArrayList<Light> ls)
     {
        int color=0;
-        for(int i=0;i<children.size();i++) {
+       ArrayList<Integer> hitRecord = new ArrayList<>();
+        for(int i=0;i<children.size();i++)
+        {
             color = children.get(i).rayCast(r1, modelview, ls);
             if(color > 0)
-                return color;
+                hitRecord.add(color);
         }
+        if(hitRecord.size()>0)
+            color = hitRecord.get(0);
         return color;
     }
 }

@@ -164,9 +164,10 @@ public class View {
 //      lights.addAll(scenegraph.getLights(scenegraph.getRoot(),modelView));
 
 
-      modelView.peek().lookAt(new Vector3f(0,0,10), new Vector3f(0, 0, 0), new Vector3f(0, 1, 0));
 
-      lights = (scenegraph.getLights(scenegraph.getRoot(),modelView));
+      modelView.peek().lookAt(new Vector3f(0,0,10), new Vector3f(0, 0, 0), new Vector3f(0, 1, 0));
+    lights = (scenegraph.getLights(scenegraph.getRoot(),modelView));
+
 
 
       trackballTransform = new Matrix4f();

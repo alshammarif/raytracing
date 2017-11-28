@@ -255,13 +255,13 @@ public class LeafNode extends AbstractNode
 
     public int rayCast(Ray r1,Stack<Matrix4f> modelview, ArrayList<Light> ls) //object -> view
     {
-        this.modelView = modelview.peek();
+        Matrix4f model = modelview.peek();
         Matrix4f inv = (modelview.peek().invert());
-        inv.transform(r1.s);
-        inv.transform(r1.v);
+//        inv.transform(r1.s);
+//        inv.transform(r1.v);
 
-        //r1.s = r1.s.mul(inv);
-        //r1.v = r1.v.mul(inv);
+        r1.s = r1.s.mul(inv);
+        r1.v = r1.v.mul(inv);
         if(this.objInstanceName.equals("Box")) {
             float tmin = (float) (-0.5 - r1.s.x) / r1.v.x;
             float tmax = (float) (0.5 - r1.s.x) / r1.v.x;
@@ -313,7 +313,6 @@ public class LeafNode extends AbstractNode
 
             if(tmin<0 && tmax<0)
             {
-
                 return new  Color().toInt();}
 
             if(tmin==0 && tmax==0)
@@ -336,10 +335,10 @@ public class LeafNode extends AbstractNode
 
             if(d1<d2)
             {
-                return shade(p1,ls,this.modelView).toInt();}
+                return shade(p1,ls,model).toInt();}
             else
             {
-                return shade(p2,ls,this.modelView ).toInt();}
+                return shade(p2,ls,model).toInt();}
         }
         else
         {
@@ -362,23 +361,12 @@ public class LeafNode extends AbstractNode
                 p1.x = r1.s.x + (r1.v.x * tmin);
                 p1.y = r1.s.y + (r1.v.y * tmin);
                 p1.z = r1.s.z + (r1.v.z * tmin);
-                return shade(p1,ls,modelview.peek()).toInt();
+                return shade(p1,ls,model).toInt();
             }
             tmin = (- B - ((float)Math.sqrt((Math.pow((double)(B), 2))-(4*(A*C)))))/(2*A);
             tmax = (- B + ((float)Math.sqrt((Math.pow((double)(B), 2))-(4*(A*C)))))/(2*A);
 
-            if(tmin> tmax) {
-                float temp = tmin;
-                tmin = tmax;
-                tmax = temp;
-            }
 
-            if(tmin <0) {
-                tmin = tmax;
-                if(tmin<0) {
-                    return new  Color().toInt();
-                }
-            }
             // Points of intersection
             Vector4f p1, p2;
             p1 = new Vector4f(0,0,0,1);
@@ -397,10 +385,10 @@ public class LeafNode extends AbstractNode
 
             if(d1<d2)
             {
-                return shade(p1,ls,this.modelView).toInt();
+                return shade(p1,ls,model).toInt();
             }
             else {
-                return shade(p2, ls,this.modelView).toInt();
+                return shade(p2, ls,model).toInt();
             }
         }
     }
@@ -469,17 +457,18 @@ public class LeafNode extends AbstractNode
                                     material.getSpecular().y() * ls.get(i).getSpecular().y() * (float)Math.pow(rDotv,material.getShininess()),
                                     material.getSpecular().z() * ls.get(i).getSpecular().z() * (float)Math.pow(rDotv,material.getShininess()));
             }
-//            Vector4f texVector;
-//            TextureImage tex = textures.get(textureName);
-//
-//            if(objInstanceName.equals("Sphere"))
-//                texVector  = getSphereTexture(p1,tex);
-//            else
-//                texVector = getBoxTexture(p1,tex);
-//
-//            Vector4f texColor = tex.getColor(texVector.x,texVector.y);
-//            c.mul(texColor.x(),texColor.y(),texColor.z());
-//            c.addColor(spec.x(),spec.y(),spec.z());
+            c.addColor(spec.x, spec.y, spec.z);
+            Vector4f texVector;
+            TextureImage tex = textures.get(textureName);
+
+            if(objInstanceName.equals("Sphere"))
+                texVector  = getSphereTexture(p1,tex);
+            else
+                texVector = getBoxTexture(p1,tex);
+
+            Vector4f texColor = tex.getColor(texVector.x,texVector.y);
+            c.mul(texColor.x(),texColor.y(),texColor.z());
+            c.addColor(spec.x(),spec.y(),spec.z());
             c.mul(si,si,si);
         }
         return c;
