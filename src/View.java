@@ -1,5 +1,6 @@
 import com.jogamp.common.nio.Buffers;
 import com.jogamp.opengl.*;
+import com.jogamp.opengl.math.Matrix4;
 import com.jogamp.opengl.util.GLBuffers;
 
 import com.jogamp.opengl.util.awt.AWTGLReadBufferUtil;
@@ -159,24 +160,9 @@ public class View {
 
       modelView.push(new Matrix4f());
 
-//      lights.addAll(table_scene.getLights(table_scene.getRoot(),modelView));
-//      lights.addAll(scene.getLights(scene.getRoot(),modelView));
-//      lights.addAll(scenegraph.getLights(scenegraph.getRoot(),modelView));
-
-
-
       modelView.peek().lookAt(new Vector3f(0,0,10), new Vector3f(0, 0, 0), new Vector3f(0, 1, 0));
-    lights = (scenegraph.getLights(scenegraph.getRoot(),modelView));
+       lights = (scenegraph.getLights(scenegraph.getRoot(),modelView));
 
-
-
-      trackballTransform = new Matrix4f();
-//              .translate(20,50,zoom)
-//              .rotate(-ang2,1,0,0)// up and down
-//              .translate(0,0,0);
-    /*
-     *Supply the shader with all the matrices it expects.
-    */
 
     gl.glUniformMatrix4fv(projectionLocation, 1, false, projection.get(fb));
 
@@ -184,17 +170,7 @@ public class View {
     {
         scenegraph.draw(modelView);
         scenegraph.raytrace(800,800,modelView,lights);
-//        scenegraph.animate(i);
-//        scenegraph_clone.explode(0);
     }
-
-//    table_scene.draw(modelView);
-//    scene.draw(modelView);
-//     if(isE)
-//      {
-//          scenegraph_clone.draw(modelView);
-//          scenegraph_clone.explode(10);
-//      }
 
 
     gl.glFlush();

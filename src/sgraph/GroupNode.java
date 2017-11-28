@@ -153,7 +153,7 @@ public class GroupNode extends AbstractNode {
         ArrayList<Light> ll = new ArrayList<Light>();
         for(int i = 0; i < lights.size(); i++) {
             Light l = lights.get(i);
-            l.setPosition(l.getPosition().mul(modelView.peek()));
+            l.setPosition(l.getPosition());
             ll.add(l);
         }
         for(int j = 0; j < children.size(); j++) {
@@ -161,7 +161,7 @@ public class GroupNode extends AbstractNode {
                     cll.addAll(children.get(j).getLights(modelView));
             for(int k = 0; k < cll.size(); k++) {
                 Light l = cll.get(k);
-                l.setPosition(l.getPosition().mul(modelView.peek()));
+                l.setPosition(l.getPosition());
                 ll.add(l);
             }
         }

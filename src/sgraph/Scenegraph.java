@@ -14,6 +14,7 @@ import javax.swing.plaf.LabelUI;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.rmi.MarshalException;
 import java.util.*;
 import java.util.List;
 
@@ -147,6 +148,7 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
     public List<Integer> raytrace(int width, int height, Stack<Matrix4f> modelview, ArrayList<Light> ls) throws Exception
     {
         List<Integer> hitRecord = new ArrayList<>();
+
         File file =  new File("Image.png");
         BufferedImage out = new BufferedImage(800,800,BufferedImage.TYPE_INT_RGB);
         //ray
@@ -157,12 +159,9 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
             for(int x=0;x<width;x++)
             {
                 v = new Vector4f(x-width/2,y-height/2,(float)(-0.5*height/Math.tan(Math.toRadians(30))),0);
-               // Matrix4f mult = modelview.peek();
-                //s = s.mul(mult); // view-to-world
-                v = v.mul(new Matrix4f().lookAt(new Vector3f(0,0,10),new Vector3f(0,0,0), new Vector3f(0,1,0))); // view co-ordinate system
-                util.Ray r1 = new util.Ray(s,v);//world coordinate System
+                util.Ray r1 = new util.Ray(s,v);
                 int color = root.rayCast(r1, modelview, ls);
-                out.setRGB(x,y,color);
+                out.setRGB(x,(height-1)-y,color);
             }
         }
         ImageIO.write(out, "PNG",file);

@@ -1,0 +1,47 @@
+<scene>
+    <instance name="Box" path="models/box-outside"></instance>
+    <instance name="Sphere" path="models/sphere"></instance>
+    <image name="earth"  path="textures/earthmap.jpg" />
+    <image name="checker"  path="textures/checkerboard.png" />
+    <image name="die"  path="textures/die.png" />
+    <image path="textures/whitebox.png" name="whitebox"/>
+    <image path="textures/white.png" name="white"/>
+    <light>
+        <ambient>1 0 1</ambient>
+        <diffuse>0.9 0.9 0.9</diffuse>
+        <specular>1 1 1</specular>
+        <position>0 0 150</position>
+    </light>
+    <transform>
+        <set>
+
+        </set>
+        <object instanceof="" texture="">
+
+        </object>
+    </transform>
+    <transform>
+        <set>
+
+        </set>
+        <object instanceof="" texture="">
+
+        </object>
+    </transform>
+    <transform>
+        <set>
+
+        </set>
+        <object instanceof="" texture="">
+
+        </object>
+    </transform>
+    <transform>
+        <set>
+
+        </set>
+        <object instanceof="" texture="">
+
+        </object>
+    </transform>
+</scene>
