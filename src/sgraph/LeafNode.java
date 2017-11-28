@@ -8,6 +8,8 @@ import org.joml.Vector4f;
 import util.*;
 import util.Color;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -397,9 +399,11 @@ public class LeafNode extends AbstractNode
 
             if(d1<d2)
             {
+
                 return shade(p1,ls,this.modelView).toInt();
             }
             else {
+
                 return shade(p2, ls,this.modelView).toInt();
             }
         }
@@ -462,13 +466,21 @@ public class LeafNode extends AbstractNode
 
             c.addColor(spec.x,spec.y,spec.z);
 
+            c.addColor(spec.x,spec.y,spec.z);
+            Vector4f texVector;
             TextureImage tex = textures.get(textureName);
+            float pz = (float) round(p1.z, 2);
+            float px = (float) round(p1.x, 2);
+            float py = (float) round(p1.y, 2);
+            Vector4f np1 = new Vector4f(px, py, pz, p1.w);
             if(tex == null)
                 System.out.println("No texture found");
-            Vector4f texVector = getSphereTexture(p1,tex);
-
+            if(objInstanceName.equals("Sphere"))
+                texVector  = getSphereTexture(p1);
+            else {
+                texVector = getBoxTexture(np1);
+            }
             Vector4f texColor = tex.getColor(texVector.x,texVector.y);
-            System.out.println("TexColor= "+texColor.x+" "+texColor.y+" "+texColor.z);
             c.mul(texColor.x,texColor.y,texColor.z);
         }
         return c;
@@ -495,29 +507,56 @@ public class LeafNode extends AbstractNode
         return new Vector4f(p1.x,p1.y,p1.z,0).normalize();
     }
 
-//    private void getBoxTexture(Vector4f p1, TextureImage tex)
-//    {
-//        if(p1.x == 0.5)
-//        {
-//            float t = (float)(0.25*(p1.y+0.5)+0.25);
-//            float s = (float)(0.25*(p1.z+0.5)+0.5);
-//        }
-//        else if(p1.x == -0.5)
-//        {
-//            float t = (float)(0.25*(p1.y+0.5)+0.25);
-//            float s = (float)(0.25*(p1.z+0.5)+0.5);
-//        }
-//        else if(p1.z == 0.5)
-//            return new Vector3f(0,0,1);
-//        else if(p1.z == -0.5)
-//            return new Vector3f(0,0,-1);
-//        else if(p1.y == 0.5)
-//            return new Vector3f(0,1,0);
-//        else
-//            return new Vector3f(0,-1,0);
-//
-//    }
-    private Vector4f getSphereTexture(Vector4f p1, TextureImage tex)
+    private Vector4f getBoxTexture(Vector4f p1)
+    {
+        float s=-1,t=-1;
+        //right face
+        if(p1.x == 0.5)
+        {
+             t = (float)(0.25*(p1.y+0.5)+0.5);
+             s = (float)(0.25*(Math.abs(p1.z-0.5))+0.5);
+             return new Vector4f(s,t,0,1);
+        }
+        //left face
+        else if(p1.x == -0.5)
+        {
+             t = (float)(0.25*(p1.y+0.5)+0.5);
+             s = (float)(0.25*(p1.z+0.5)+0);
+            return new Vector4f(s,t,0,1);
+        }
+        //front face
+        if(p1.z == 0.5000001)
+        {
+             t = (float)(0.25*(p1.y+0.5)+0.5);
+             s = (float)(0.25*(p1.x+0.5)+0.25);
+            return new Vector4f(s,t,0,1);
+        }
+        //back face
+        if(p1.z == -0.5)
+        {
+             t = (float)(0.25*(p1.y+0.5)+0.5);
+             s = (float)(0.25*(Math.abs(p1.x-0.5))+0.75);
+            return new Vector4f(s,t,0,1);
+        }
+        //top face
+        if(p1.y == 0.5)
+        {
+             t = (float)(0.25*(Math.abs(p1.z-0.5))+0.75);
+             s = (float)(0.25*(p1.x+0.5)+0.25);
+            return new Vector4f(s,t,0,1);
+        }
+        //bottom face
+        if(p1.y == -0.5)
+        {
+             t = (float)(0.25*(p1.z+0.5)+0.25);
+             s = (float)(0.25*(p1.x+0.5)+0.25);
+             return new Vector4f(s,t,0,1);
+        }
+
+        return new Vector4f(s,t,0,1);
+        
+    }
+    private Vector4f getSphereTexture(Vector4f p1)
     {
         float phi = (float)Math.asin(p1.y);
         float theta = (float)Math.atan2(p1.z,p1.x);
@@ -529,4 +568,12 @@ public class LeafNode extends AbstractNode
 //        System.out.println("get tex_y");
         return new Vector4f(tex_x,tex_y,0,1);
     }
+    private static double round(double value, int places) {
+        if (places < 0) throw new IllegalArgumentException();
+
+        BigDecimal bd = new BigDecimal(Double.toString(value));
+        bd = bd.setScale(places, RoundingMode.HALF_UP);
+        return bd.doubleValue();
+    }
 }
+
