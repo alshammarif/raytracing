@@ -158,7 +158,7 @@ public class View {
       program.enable(gl);
 
       modelView.push(new Matrix4f());
-      lights.addAll(scenegraph.getLights(scenegraph.getRoot(),modelView));
+
 //      lights.addAll(table_scene.getLights(table_scene.getRoot(),modelView));
 //      lights.addAll(scene.getLights(scene.getRoot(),modelView));
 //      lights.addAll(scenegraph.getLights(scenegraph.getRoot(),modelView));
@@ -166,6 +166,7 @@ public class View {
 
       modelView.peek().lookAt(new Vector3f(0,0,10), new Vector3f(0, 0, 0), new Vector3f(0, 1, 0));
 
+      lights = (scenegraph.getLights(scenegraph.getRoot(),modelView));
 
 
       trackballTransform = new Matrix4f();
@@ -181,7 +182,7 @@ public class View {
     if(!isE)
     {
         scenegraph.draw(modelView);
-        scenegraph.raytrace(800,800,modelView);
+        scenegraph.raytrace(800,800,modelView,lights);
 //        scenegraph.animate(i);
 //        scenegraph_clone.explode(0);
     }

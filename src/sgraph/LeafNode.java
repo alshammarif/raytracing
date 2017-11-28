@@ -8,8 +8,6 @@ import org.joml.Vector4f;
 import util.*;
 import util.Color;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -399,11 +397,9 @@ public class LeafNode extends AbstractNode
 
             if(d1<d2)
             {
-
                 return shade(p1,ls,this.modelView).toInt();
             }
             else {
-
                 return shade(p2, ls,this.modelView).toInt();
             }
         }
@@ -411,7 +407,8 @@ public class LeafNode extends AbstractNode
 
     private Color shade(Vector4f p1, ArrayList<Light> ls, Matrix4f modelView)
     {
-        Color c= new Color();
+        int si;
+        Color c = new Color();
         if(this.objInstanceName.equals("Box"))
             norm = this.getNormalBox(p1);
         else
@@ -420,27 +417,36 @@ public class LeafNode extends AbstractNode
         norm = norm.normalize();
         fposition = new Vector4f(p1.x,p1.y,p1.z,1);
         fposition = fposition.mul(modelView);
-
         for(int i=0;i<ls.size();i++)
         {
             if(ls.get(i).getPosition().w != 0)
             {
-                lv = new Vector3f(ls.get(i).getPosition().x - fposition.x,
-                                  ls.get(i).getPosition().y - fposition.y,
-                                  ls.get(i).getPosition().z - fposition.z);
+                lv = new Vector3f(ls.get(i).getPosition().x() - fposition.x(),
+                                  ls.get(i).getPosition().y() - fposition.y(),
+                                  ls.get(i).getPosition().z() - fposition.z());
+                lv = lv.normalize();
+                si = 1;
             }
             else
             {
-                lv = new Vector3f(-ls.get(i).getPosition().x,
-                        -ls.get(i).getPosition().y,
-                        -ls.get(i).getPosition().z);
+                lv = new Vector3f(-ls.get(i).getPosition().x(),
+                                  -ls.get(i).getPosition().y(),
+                                  -ls.get(i).getPosition().z());
+                lv = lv.normalize();
+                // Calculation of si
+                float cosphi = ls.get(i).getSpotDirection().normalize().dot(-lv.x(),-lv.y(),-lv.z(),1);
+                float cosTheta = (float)Math.cos(ls.get(i).getSpotCutoff());
+                if(cosphi>cosTheta)
+                    si=1;
+                else
+                    si=0;
             }
-            lv = lv.normalize();
-            normalView = new Vector3f(norm.x,norm.y,norm.z);
+
+            normalView = new Vector3f(norm.x(),norm.y(),norm.z());
             normalView = normalView.normalize();
 
             nDotl = normalView.dot(lv);
-            viewVec = new Vector3f(-fposition.x,-fposition.y,-fposition.z).normalize();
+            viewVec = new Vector3f(-fposition.x(),-fposition.y(),-fposition.z()).normalize();
             Vector3f negLight = lv.negate();
             negLight = negLight.normalize();
             reflectVec = negLight.reflect(normalView);
@@ -448,58 +454,57 @@ public class LeafNode extends AbstractNode
 
             rDotv = (Math.max(reflectVec.dot(viewVec),0.0f));
 
-            amb = new Vector3f(material.getAmbient().x * ls.get(i).getAmbient().x,
-                               material.getAmbient().y * ls.get(i).getAmbient().y,
-                               material.getAmbient().z * ls.get(i).getAmbient().z);
-            c.addColor(amb.x,amb.y,amb.z);
+            amb = new Vector3f(material.getAmbient().x() * ls.get(i).getAmbient().x(),
+                               material.getAmbient().y() * ls.get(i).getAmbient().y(),
+                               material.getAmbient().z() * ls.get(i).getAmbient().z());
+            c.addColor(amb.x(),amb.y(),amb.z());
 
-            dif = new Vector3f(material.getDiffuse().x * ls.get(i).getDiffuse().x * Math.max(nDotl,0.0f),
-                               material.getDiffuse().y * ls.get(i).getDiffuse().y * Math.max(nDotl,0.0f),
-                               material.getDiffuse().z * ls.get(i).getDiffuse().z * Math.max(nDotl,0.0f));
-            c.addColor(dif.x,dif.y,dif.z);
+            dif = new Vector3f(material.getDiffuse().x() * ls.get(i).getDiffuse().x() * Math.max(nDotl,0.0f),
+                               material.getDiffuse().y() * ls.get(i).getDiffuse().y() * Math.max(nDotl,0.0f),
+                               material.getDiffuse().z() * ls.get(i).getDiffuse().z() * Math.max(nDotl,0.0f));
+            c.addColor(dif.x(),dif.y(),dif.z());
             if(nDotl>0)
             {
-                spec = new Vector3f(material.getSpecular().x * ls.get(i).getSpecular().x * (float)Math.pow(rDotv,material.getShininess()),
-                                    material.getSpecular().y * ls.get(i).getSpecular().y * (float)Math.pow(rDotv,material.getShininess()),
-                                    material.getSpecular().z * ls.get(i).getSpecular().z * (float)Math.pow(rDotv,material.getShininess()));
+                spec = new Vector3f(material.getSpecular().x() * ls.get(i).getSpecular().x() * (float)Math.pow(rDotv,material.getShininess()),
+                                    material.getSpecular().y() * ls.get(i).getSpecular().y() * (float)Math.pow(rDotv,material.getShininess()),
+                                    material.getSpecular().z() * ls.get(i).getSpecular().z() * (float)Math.pow(rDotv,material.getShininess()));
             }
-
-            c.addColor(spec.x,spec.y,spec.z);
-
-            c.addColor(spec.x,spec.y,spec.z);
-            Vector4f texVector;
-            TextureImage tex = textures.get(textureName);
-            float pz = (float) round(p1.z, 2);
-            float px = (float) round(p1.x, 2);
-            float py = (float) round(p1.y, 2);
-            Vector4f np1 = new Vector4f(px, py, pz, p1.w);
-            if(tex == null)
-                System.out.println("No texture found");
-            if(objInstanceName.equals("Sphere"))
-                texVector  = getSphereTexture(p1);
-            else {
-                texVector = getBoxTexture(np1);
-            }
-            Vector4f texColor = tex.getColor(texVector.x,texVector.y);
-            c.mul(texColor.x,texColor.y,texColor.z);
+//            Vector4f texVector;
+//            TextureImage tex = textures.get(textureName);
+//
+//            if(objInstanceName.equals("Sphere"))
+//                texVector  = getSphereTexture(p1,tex);
+//            else
+//                texVector = getBoxTexture(p1,tex);
+//
+//            Vector4f texColor = tex.getColor(texVector.x,texVector.y);
+//            c.mul(texColor.x(),texColor.y(),texColor.z());
+//            c.addColor(spec.x(),spec.y(),spec.z());
+            c.mul(si,si,si);
         }
         return c;
     }
 
     private Vector4f getNormalBox(Vector4f p1)
     {
-        if(p1.x == 0.5)
-            return new Vector4f(1,0,0,0);
-        if(p1.x == -0.5)
-            return new Vector4f(-1,0,0,0);
-        if(p1.y == 0.5)
-            return new Vector4f(0,1,0,0);
-        if(p1.y == -0.5)
-            return new Vector4f(0,-1,0,0);
-        if(p1.z == 0.5)
-            return new Vector4f(0,0,1,0);
+        if(p1.x <= 0.51 && p1.x >= 0.49)
+            return new Vector4f(1,0,0,0).normalize();
+        else if(p1.x >= -0.51 && p1.x <= -0.49)
+            return new Vector4f(-1,0,0,0).normalize();
+        else if(p1.y <= 0.51 && p1.y >= 0.49)
+            return new Vector4f(0,1,0,0).normalize();
+        else if(p1.y >= -0.51 && p1.y <= -0.49)
+            return new Vector4f(0,-1,0,0).normalize();
+        else if(p1.z <= 0.51 && p1.z >= 0.49)
+            return new Vector4f(0,0,1,0).normalize();
+        else if(p1.z >= -0.51 && p1.z <= -0.49)
+            return new Vector4f(0,0,-1,0).normalize();
         else
-            return new Vector4f(0,0,-1,0);
+        {
+            System.out.println("Error");
+            System.out.println(p1);
+            return new Vector4f();
+        }
     }
 
     private Vector4f getNormalSphere(Vector4f p1)
@@ -507,73 +512,48 @@ public class LeafNode extends AbstractNode
         return new Vector4f(p1.x,p1.y,p1.z,0).normalize();
     }
 
-    private Vector4f getBoxTexture(Vector4f p1)
+    private Vector4f getBoxTexture(Vector4f p1, TextureImage tex)
     {
-        float s=-1,t=-1;
-        //right face
-        if(p1.x == 0.5)
+        float s=0,t=0;
+        if(p1.x <= 0.51 && p1.x >= 0.49)
         {
-             t = (float)(0.25*(p1.y+0.5)+0.5);
-             s = (float)(0.25*(Math.abs(p1.z-0.5))+0.5);
-             return new Vector4f(s,t,0,1);
+             t = (float)(0.25*(p1.y+0.5)+0.50);
+             s = (float)(0.25*(p1.z+0.5)+0.25);
         }
-        //left face
-        else if(p1.x == -0.5)
+        else if(p1.x >= -0.51 && p1.x <= -0.49)
         {
-             t = (float)(0.25*(p1.y+0.5)+0.5);
+             t = (float)(0.25*(p1.y+0.5)+0.25);
              s = (float)(0.25*(p1.z+0.5)+0);
-            return new Vector4f(s,t,0,1);
         }
-        //front face
-        if(p1.z == 0.5000001)
+        else if(p1.z <= 0.51 && p1.z >= 0.49)
+        {
+             t = (float)(0.25*(p1.y+0.5)+0.25);
+             s = (float)(0.25*(p1.x+0.5)+0.75);
+        }
+        else if(p1.z >= -0.51 && p1.z <= -0.49)
         {
              t = (float)(0.25*(p1.y+0.5)+0.5);
-             s = (float)(0.25*(p1.x+0.5)+0.25);
-            return new Vector4f(s,t,0,1);
+             s = (float)(0.25*(p1.x+0.5)+0.5);
         }
-        //back face
-        if(p1.z == -0.5)
+        else if(p1.y <= 0.51 && p1.y >= 0.49)
         {
-             t = (float)(0.25*(p1.y+0.5)+0.5);
-             s = (float)(0.25*(Math.abs(p1.x-0.5))+0.75);
-            return new Vector4f(s,t,0,1);
+             t = (float)(0.25*(p1.z+0.5)+0.75);
+             s = (float)(0.25*(p1.x+0.5)+0.5);
         }
-        //top face
-        if(p1.y == 0.5)
+        else if(p1.y >= -0.51 && p1.y <= -0.49)
         {
-             t = (float)(0.25*(Math.abs(p1.z-0.5))+0.75);
+             t = (float)(0.25*(p1.z+0.5)+0);
              s = (float)(0.25*(p1.x+0.5)+0.25);
-            return new Vector4f(s,t,0,1);
         }
-        //bottom face
-        if(p1.y == -0.5)
-        {
-             t = (float)(0.25*(p1.z+0.5)+0.25);
-             s = (float)(0.25*(p1.x+0.5)+0.25);
-             return new Vector4f(s,t,0,1);
-        }
-
         return new Vector4f(s,t,0,1);
         
     }
-    private Vector4f getSphereTexture(Vector4f p1)
+    private Vector4f getSphereTexture(Vector4f p1, TextureImage tex)
     {
         float phi = (float)Math.asin(p1.y);
         float theta = (float)Math.atan2(p1.z,p1.x);
-        float s = (float)(theta+Math.PI)/(float)(2*Math.PI);
-        float t = (float)(phi + Math.PI/2)/(float)(Math.PI);
-        float tex_x =  s;
-//        System.out.println("get tex_x");
-        float tex_y =  t;
-//        System.out.println("get tex_y");
-        return new Vector4f(tex_x,tex_y,0,1);
-    }
-    private static double round(double value, int places) {
-        if (places < 0) throw new IllegalArgumentException();
-
-        BigDecimal bd = new BigDecimal(Double.toString(value));
-        bd = bd.setScale(places, RoundingMode.HALF_UP);
-        return bd.doubleValue();
+        float s = (float)(theta+3.14)/(float)(2*3.14);
+        float t = (float)((phi +3.14)/2)/(float)(3.14);
+        return new Vector4f(s,t,0,1);
     }
 }
-

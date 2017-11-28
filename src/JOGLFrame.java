@@ -116,7 +116,7 @@ public class JOGLFrame extends JFrame {
     //Add an animator to the canvas
     AnimatorBase animator = new FPSAnimator(canvas, 60);
     animator.setUpdateFPSFrames(50, null);
-    animator.start();
+   // animator.start();
   }
 
   private class KeyboardListener implements KeyListener {

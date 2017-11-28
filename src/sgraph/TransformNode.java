@@ -207,7 +207,7 @@ public class TransformNode extends AbstractNode
         ArrayList<Light> ll = new ArrayList<Light>();
         for(int i = 0; i < lights.size(); i++) {
             Light l = lights.get(i);
-            l.setPosition(l.getPosition().mul(modelView.peek()).mul(transform));
+            l.setPosition(l.getPosition().mul(transform));
             ll.add(l);
         }
         ArrayList<Light> cll = new ArrayList<Light>();
@@ -345,12 +345,6 @@ public class TransformNode extends AbstractNode
         int color=0;
         modelview.push(new Matrix4f(modelview.peek()));
         modelview.peek().mul(transform);
-        for(int i=0;i<this.lights.size();i++)
-        {
-            this.lights.get(i).setPosition(lights.get(i).getPosition().mul(modelview.peek()));
-            if(!ls.contains(this.lights.get(i)))
-                ls.add(this.lights.get(i));
-        }
         if(child!=null)
             color = child.rayCast(r1,modelview, ls);
         modelview.pop();

@@ -296,11 +296,6 @@ public class GroupNode extends AbstractNode {
 
     public int rayCast(Ray r1, Stack<Matrix4f> modelview, ArrayList<Light> ls)
     {
-       for(int i=0;i<lights.size();i++)
-       {
-           if(!ls.contains(lights.get(i)))
-                ls.add(lights.get(i));
-       }
        int color=0;
         for(int i=0;i<children.size();i++) {
             color = children.get(i).rayCast(r1, modelview, ls);
