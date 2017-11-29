@@ -8,12 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ba3d3202-2c53-42d8-bf08-84f95de96922" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Image.png" afterPath="$PROJECT_DIR$/Image.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/JOGLFrame$1.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/JOGLFrame$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/GroupNode.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/GroupNode.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/scenegraphmodels/sphere-test.xml" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/scenegraphmodels/sphere-test.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JOGLFrame.java" afterPath="$PROJECT_DIR$/src/JOGLFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml" afterPath="$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sgraph/LeafNode.java" afterPath="$PROJECT_DIR$/src/sgraph/LeafNode.java" />
     </list>
     <ignored path="Scenegraphs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,8 +38,8 @@
             <state relative-caret-position="447">
               <caret line="353" column="0" lean-forward="false" selection-start-line="353" selection-start-column="0" selection-end-line="353" selection-end-column="0" />
               <folding>
-                <marker date="1511912334000" expanded="true" signature="11448:11554" ph="{...}" />
-                <marker date="1511912334000" expanded="true" signature="11495:11554" ph="{...}" />
+                <marker date="1511919762000" expanded="true" signature="11448:11554" ph="{...}" />
+                <marker date="1511919762000" expanded="true" signature="11495:11554" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -52,7 +48,7 @@
       <file leaf-file-name="GroupNode.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sgraph/GroupNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="342">
               <caret line="303" column="12" lean-forward="false" selection-start-line="303" selection-start-column="12" selection-end-line="303" selection-end-column="25" />
               <folding>
                 <element signature="e#3077#3084#0" expanded="true" />
@@ -128,8 +124,8 @@
       <file leaf-file-name="LeafNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sgraph/LeafNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1374">
-              <caret line="552" column="25" lean-forward="false" selection-start-line="552" selection-start-column="25" selection-end-line="552" selection-end-column="25" />
+            <state relative-caret-position="189">
+              <caret line="434" column="0" lean-forward="false" selection-start-line="434" selection-start-column="0" selection-end-line="434" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2463#2464#0" expanded="true" />
@@ -140,7 +136,6 @@
                 <element signature="e#2825#2826#0" expanded="true" />
                 <element signature="e#3886#3887#0" expanded="true" />
                 <element signature="e#3915#3916#0" expanded="true" />
-                <element signature="e#4034#4041#0" expanded="true" />
                 <element signature="e#4283#4284#0" expanded="true" />
                 <element signature="e#4318#4319#0" expanded="true" />
                 <element signature="e#4360#4361#0" expanded="true" />
@@ -151,8 +146,8 @@
                 <element signature="e#4556#4557#0" expanded="true" />
                 <element signature="e#5895#5896#0" expanded="true" />
                 <element signature="e#5931#5932#0" expanded="true" />
-                <marker date="1511929910000" expanded="false" signature="17524:17539" ph=" { " />
-                <marker date="1511929910000" expanded="false" signature="17589:17595" ph=" }" />
+                <marker date="1511919762000" expanded="false" signature="17524:17539" ph=" { " />
+                <marker date="1511919762000" expanded="false" signature="17589:17595" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -285,8 +280,8 @@
         <option value="$PROJECT_DIR$/src/scenegraphmodels/ray-trace.xml" />
         <option value="$PROJECT_DIR$/src/JOGLFrame.java" />
         <option value="$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml" />
-        <option value="$PROJECT_DIR$/src/sgraph/LeafNode.java" />
         <option value="$PROJECT_DIR$/src/sgraph/GroupNode.java" />
+        <option value="$PROJECT_DIR$/src/sgraph/LeafNode.java" />
       </list>
     </option>
   </component>
@@ -902,7 +897,7 @@
         <state relative-caret-position="2265">
           <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
           <folding>
-            <marker date="1511912334000" expanded="true" signature="7230:7351" ph="{...}" />
+            <marker date="1511919762000" expanded="true" signature="7230:7351" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -928,8 +923,8 @@
         <state relative-caret-position="447">
           <caret line="353" column="0" lean-forward="false" selection-start-line="353" selection-start-column="0" selection-end-line="353" selection-end-column="0" />
           <folding>
-            <marker date="1511912334000" expanded="true" signature="11448:11554" ph="{...}" />
-            <marker date="1511912334000" expanded="true" signature="11495:11554" ph="{...}" />
+            <marker date="1511919762000" expanded="true" signature="11448:11554" ph="{...}" />
+            <marker date="1511919762000" expanded="true" signature="11495:11554" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -982,10 +977,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Image.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sgraph/LeafNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1374">
-          <caret line="552" column="25" lean-forward="false" selection-start-line="552" selection-start-column="25" selection-end-line="552" selection-end-column="25" />
+        <state relative-caret-position="189">
+          <caret line="434" column="0" lean-forward="false" selection-start-line="434" selection-start-column="0" selection-end-line="434" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2463#2464#0" expanded="true" />
@@ -996,7 +996,6 @@
             <element signature="e#2825#2826#0" expanded="true" />
             <element signature="e#3886#3887#0" expanded="true" />
             <element signature="e#3915#3916#0" expanded="true" />
-            <element signature="e#4034#4041#0" expanded="true" />
             <element signature="e#4283#4284#0" expanded="true" />
             <element signature="e#4318#4319#0" expanded="true" />
             <element signature="e#4360#4361#0" expanded="true" />
@@ -1007,20 +1006,15 @@
             <element signature="e#4556#4557#0" expanded="true" />
             <element signature="e#5895#5896#0" expanded="true" />
             <element signature="e#5931#5932#0" expanded="true" />
-            <marker date="1511929910000" expanded="false" signature="17524:17539" ph=" { " />
-            <marker date="1511929910000" expanded="false" signature="17589:17595" ph=" }" />
+            <marker date="1511919762000" expanded="false" signature="17524:17539" ph=" { " />
+            <marker date="1511919762000" expanded="false" signature="17589:17595" ph=" }" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Image.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sgraph/GroupNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="342">
           <caret line="303" column="12" lean-forward="false" selection-start-line="303" selection-start-column="12" selection-end-line="303" selection-end-column="25" />
           <folding>
             <element signature="e#3077#3084#0" expanded="true" />
