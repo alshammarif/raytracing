@@ -288,7 +288,7 @@ public class LeafNode extends AbstractNode
             }
 
             if ((tmin > tymax) || (tymin > tmax))
-                return new Color().toInt();
+                return new Color(-1,-1,-1).toInt();
 
             if (tymin > tmin)
                 tmin = tymin;
@@ -307,7 +307,7 @@ public class LeafNode extends AbstractNode
             }
 
             if ((tmin > tzmax) || (tzmin > tmax))
-                return new  Color().toInt();
+                return new  Color(-1,-1,-1).toInt();
 
             if (tzmin > tmin)
                 tmin = tzmin;
@@ -317,10 +317,10 @@ public class LeafNode extends AbstractNode
 
             if(tmin<0 && tmax<0)
             {
-                return new  Color().toInt();}
+                return new  Color(-1,-1,-1).toInt();}
 
             if(tmin==0 && tmax==0)
-                return new  Color().toInt();
+                return new  Color(-1,-1,-1).toInt();
 
             Vector4f p1, p2;
             p1 = new Vector4f(RayCopy.s.x + (RayCopy.v.x * tmin),
@@ -355,7 +355,7 @@ public class LeafNode extends AbstractNode
             C = (((float)(Math.pow((double)(RayCopy.s.x), 2)) + (float)(Math.pow((double)(RayCopy.s.y), 2)) + (float)(Math.pow((double)(RayCopy.s.z), 2))) - 1);
 
             if((float)((Math.pow((double) B, 2))) < (4*(A*C))) {
-                return new  Color().toInt();
+                return new  Color(-1,-1,-1).toInt();
             }
 
             if((float)((Math.pow((double) B, 2))) == (4*(A*C))) {
@@ -407,8 +407,7 @@ public class LeafNode extends AbstractNode
         else
             norm = new Vector4f(getNormalSphere(p1));
         norm.mul(model,norm);
-
-        fposition = new Vector4f(p1.x,p1.y,p1.z,1);
+        fposition = new Vector4f(p1);
         fposition.mul(model,fposition);
         Matrix4f normalMatrix = new Matrix4f(model);
         normalMatrix.invert().transpose();
@@ -433,8 +432,9 @@ public class LeafNode extends AbstractNode
 //                float cosphi = ls.get(i).getSpotDirection().normalize().dot(-lv.x,-lv.y,-lv.z,1);
 //                float cosTheta = (float)Math.cos(ls.get(i).getSpotCutoff());
 
-                float cosphi = ls.get(i).getSpotDirection().normalize().dot(-lv.x,-lv.y,-lv.z,1);
-                float cosTheta = (float)Math.cos(Math.toRadians(ls.get(i).getSpotCutoff()));
+                Vector4f dVec = new Vector4f(ls.get(i).getSpotDirection()).normalize();
+                float cosphi = dVec.dot(-lv.x,-lv.y,-lv.z,0);
+                float cosTheta = (float)(Math.toRadians(ls.get(i).getSpotCutoff()));
                 if(cosphi>cosTheta)
                     si=1;
                 else
@@ -457,8 +457,8 @@ public class LeafNode extends AbstractNode
                                material.getAmbient().z * ls.get(i).getAmbient().z);
             c.addColor(amb.x,amb.y,amb.z);
             dif = new Vector3f(material.getDiffuse().x * ls.get(i).getDiffuse().x * Math.max(nDotl,0.0f),
-                    material.getDiffuse().y * ls.get(i).getDiffuse().y * Math.max(nDotl,0.0f),
-                    material.getDiffuse().z * ls.get(i).getDiffuse().z * Math.max(nDotl,0.0f));
+                               material.getDiffuse().y * ls.get(i).getDiffuse().y * Math.max(nDotl,0.0f),
+                               material.getDiffuse().z * ls.get(i).getDiffuse().z * Math.max(nDotl,0.0f));
             c.addColor(dif.x,dif.y,dif.z);
 
             if(nDotl>0)
@@ -469,16 +469,16 @@ public class LeafNode extends AbstractNode
                 c.addColor(spec.x, spec.y, spec.z);
             }
             c.mul(si,si,si);
-            Vector4f texVector;
-            TextureImage tex = textures.get(textureName);
-
-            if(objInstanceName.equals("Sphere"))
-                texVector  = new Vector4f(getSphereTexture(p1,tex));
-            else
-                texVector = new Vector4f(getBoxTexture(p1,tex));
-            Vector4f texColor = tex.getColor(texVector.x,texVector.y);
-            c.mul(texColor.x,texColor.y,texColor.z);
         }
+        Vector4f texVector;
+        TextureImage tex = textures.get(textureName);
+
+        if(objInstanceName.equals("Sphere"))
+            texVector  = new Vector4f(getSphereTexture(p1,tex));
+        else
+            texVector = new Vector4f(getBoxTexture(p1,tex));
+        Vector4f texColor = tex.getColor(texVector.x,texVector.y);
+        c.mul(texColor.x,texColor.y,texColor.z);
         return c;
     }
 
@@ -551,6 +551,6 @@ public class LeafNode extends AbstractNode
         float theta = (float)Math.atan2(-p1.z,p1.x);
         float s = (float)(theta+Math.PI)/(float)(2*Math.PI);
         float t = (float)(phi +(Math.PI/2))/(float)(Math.PI);
-        return new Vector4f(s,t,0,1);
+        return new Vector4f(s,1-t,0,1);
     }
 }
