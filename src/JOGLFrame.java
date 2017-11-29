@@ -65,7 +65,7 @@ public class JOGLFrame extends JFrame {
           textRenderer = new MyTextRenderer(glAutoDrawable);
           InputStream in = getClass().getClassLoader()
                   .getResourceAsStream
-                          ("scenegraphmodels/ray-trace.xml");
+                          ("scenegraphmodels/sphere-test.xml");
           view.initScenegraph(glAutoDrawable, in);
 
 

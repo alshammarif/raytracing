@@ -548,9 +548,9 @@ public class LeafNode extends AbstractNode
     private Vector4f getSphereTexture(Vector4f p1, TextureImage tex)
     {
         float phi = (float)Math.asin(p1.y);
-        float theta = (float)Math.atan2(p1.z,p1.x);
-        float s = (float)(theta+3.14)/(float)(2*3.14);
-        float t = (float)((phi +3.14)/2)/(float)(3.14);
+        float theta = (float)Math.atan2(-p1.z,p1.x);
+        float s = (float)(theta+Math.PI)/(float)(2*Math.PI);
+        float t = (float)(phi +(Math.PI/2))/(float)(Math.PI);
         return new Vector4f(s,t,0,1);
     }
 }

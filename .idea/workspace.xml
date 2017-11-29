@@ -8,17 +8,12 @@
   <component name="ChangeListManager">
     <list default="true" id="ba3d3202-2c53-42d8-bf08-84f95de96922" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Image.png" afterPath="$PROJECT_DIR$/Image.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/AbstractNode.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/AbstractNode.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/GroupNode.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/GroupNode.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/LeafNode.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/LeafNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/JOGLFrame$1.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/JOGLFrame$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/scenegraphmodels/ray-trace.xml" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/scenegraphmodels/ray-trace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scenegraphmodels/ray-trace.xml" afterPath="$PROJECT_DIR$/src/scenegraphmodels/ray-trace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sgraph/AbstractNode.java" afterPath="$PROJECT_DIR$/src/sgraph/AbstractNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sgraph/GroupNode.java" afterPath="$PROJECT_DIR$/src/sgraph/GroupNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sgraph/INode.java" afterPath="$PROJECT_DIR$/src/sgraph/INode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/scenegraphmodels/sphere-test.xml" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/scenegraphmodels/sphere-test.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JOGLFrame.java" afterPath="$PROJECT_DIR$/src/JOGLFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml" afterPath="$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sgraph/LeafNode.java" afterPath="$PROJECT_DIR$/src/sgraph/LeafNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sgraph/TransformNode.java" afterPath="$PROJECT_DIR$/src/sgraph/TransformNode.java" />
     </list>
     <ignored path="Scenegraphs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,12 +49,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GroupNode.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GroupNode.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sgraph/GroupNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="305" column="5" lean-forward="false" selection-start-line="305" selection-start-column="5" selection-end-line="305" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="357">
+              <caret line="303" column="12" lean-forward="false" selection-start-line="303" selection-start-column="12" selection-end-line="303" selection-end-column="25" />
+              <folding>
+                <element signature="e#3077#3084#0" expanded="true" />
+                <element signature="e#4095#4096#0" expanded="true" />
+                <element signature="e#4126#4127#0" expanded="true" />
+                <element signature="e#4163#4164#0" expanded="true" />
+                <element signature="e#4192#4193#0" expanded="true" />
+                <element signature="e#4320#4327#0" expanded="true" />
+                <element signature="e#4593#4600#0" expanded="true" />
+                <element signature="e#4936#4937#0" expanded="true" />
+                <element signature="e#4971#4972#0" expanded="true" />
+                <element signature="e#5023#5024#0" expanded="true" />
+                <element signature="e#5059#5060#0" expanded="true" />
+                <element signature="e#5104#5105#0" expanded="true" />
+                <element signature="e#5140#5141#0" expanded="true" />
+                <element signature="e#5184#5185#0" expanded="true" />
+                <element signature="e#5219#5220#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -87,8 +98,8 @@
       <file leaf-file-name="sphere-test.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3">
-              <caret line="54" column="17" lean-forward="true" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
+            <state relative-caret-position="93">
+              <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -98,7 +109,7 @@
         <entry file="file://$PROJECT_DIR$/src/JOGLFrame.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="188">
-              <caret line="67" column="54" lean-forward="false" selection-start-line="67" selection-start-column="54" selection-end-line="67" selection-end-column="54" />
+              <caret line="67" column="56" lean-forward="false" selection-start-line="67" selection-start-column="56" selection-end-line="67" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -117,23 +128,37 @@
       <file leaf-file-name="LeafNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sgraph/LeafNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1092">
-              <caret line="366" column="58" lean-forward="false" selection-start-line="366" selection-start-column="58" selection-end-line="366" selection-end-column="58" />
+            <state relative-caret-position="1374">
+              <caret line="552" column="25" lean-forward="false" selection-start-line="552" selection-start-column="25" selection-end-line="552" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1511912334000" expanded="true" signature="12856:16664" ph="{...}" />
-                <marker date="1511912334000" expanded="true" signature="14025:14224" ph="//..." />
-                <marker date="1511912334000" expanded="true" signature="16717:17473" ph="{...}" />
-                <marker date="1511912334000" expanded="false" signature="17524:17539" ph=" { " />
-                <marker date="1511912334000" expanded="false" signature="17589:17595" ph=" }" />
-                <marker date="1511912334000" expanded="true" signature="17667:18708" ph="{...}" />
-                <marker date="1511912334000" expanded="true" signature="18782:19034" ph="{...}" />
+                <element signature="e#2463#2464#0" expanded="true" />
+                <element signature="e#2512#2513#0" expanded="true" />
+                <element signature="e#2674#2675#0" expanded="true" />
+                <element signature="e#2708#2709#0" expanded="true" />
+                <element signature="e#2794#2795#0" expanded="true" />
+                <element signature="e#2825#2826#0" expanded="true" />
+                <element signature="e#3886#3887#0" expanded="true" />
+                <element signature="e#3915#3916#0" expanded="true" />
+                <element signature="e#4034#4041#0" expanded="true" />
+                <element signature="e#4283#4284#0" expanded="true" />
+                <element signature="e#4318#4319#0" expanded="true" />
+                <element signature="e#4360#4361#0" expanded="true" />
+                <element signature="e#4396#4397#0" expanded="true" />
+                <element signature="e#4441#4442#0" expanded="true" />
+                <element signature="e#4477#4478#0" expanded="true" />
+                <element signature="e#4521#4522#0" expanded="true" />
+                <element signature="e#4556#4557#0" expanded="true" />
+                <element signature="e#5895#5896#0" expanded="true" />
+                <element signature="e#5931#5932#0" expanded="true" />
+                <marker date="1511929910000" expanded="false" signature="17524:17539" ph=" { " />
+                <marker date="1511929910000" expanded="false" signature="17589:17595" ph=" }" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Image.png" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Image.png" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Image.png">
           <provider selected="true" editor-type-id="images">
             <state />
@@ -254,14 +279,14 @@
         <option value="$PROJECT_DIR$/src/sgraph/IScenegraphRenderer.java" />
         <option value="$PROJECT_DIR$/src/sgraph/Scenegraph.java" />
         <option value="$PROJECT_DIR$/src/util/Color.java" />
-        <option value="$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml" />
-        <option value="$PROJECT_DIR$/src/JOGLFrame.java" />
         <option value="$PROJECT_DIR$/src/sgraph/TransformNode.java" />
         <option value="$PROJECT_DIR$/src/sgraph/INode.java" />
         <option value="$PROJECT_DIR$/src/sgraph/AbstractNode.java" />
+        <option value="$PROJECT_DIR$/src/scenegraphmodels/ray-trace.xml" />
+        <option value="$PROJECT_DIR$/src/JOGLFrame.java" />
+        <option value="$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml" />
         <option value="$PROJECT_DIR$/src/sgraph/LeafNode.java" />
         <option value="$PROJECT_DIR$/src/sgraph/GroupNode.java" />
-        <option value="$PROJECT_DIR$/src/scenegraphmodels/ray-trace.xml" />
       </list>
     </option>
   </component>
@@ -898,14 +923,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JOGLFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="67" column="54" lean-forward="false" selection-start-line="67" selection-start-column="54" selection-end-line="67" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sgraph/TransformNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="447">
@@ -941,39 +958,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sgraph/LeafNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1092">
-          <caret line="366" column="58" lean-forward="false" selection-start-line="366" selection-start-column="58" selection-end-line="366" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1511912334000" expanded="true" signature="12856:16664" ph="{...}" />
-            <marker date="1511912334000" expanded="true" signature="14025:14224" ph="//..." />
-            <marker date="1511912334000" expanded="true" signature="16717:17473" ph="{...}" />
-            <marker date="1511912334000" expanded="false" signature="17524:17539" ph=" { " />
-            <marker date="1511912334000" expanded="false" signature="17589:17595" ph=" }" />
-            <marker date="1511912334000" expanded="true" signature="17667:18708" ph="{...}" />
-            <marker date="1511912334000" expanded="true" signature="18782:19034" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sgraph/GroupNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="305" column="5" lean-forward="false" selection-start-line="305" selection-start-column="5" selection-end-line="305" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3">
-          <caret line="54" column="17" lean-forward="true" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/ray-trace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="507">
@@ -982,9 +966,80 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/JOGLFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="67" column="56" lean-forward="false" selection-start-line="67" selection-start-column="56" selection-end-line="67" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sgraph/LeafNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1374">
+          <caret line="552" column="25" lean-forward="false" selection-start-line="552" selection-start-column="25" selection-end-line="552" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2463#2464#0" expanded="true" />
+            <element signature="e#2512#2513#0" expanded="true" />
+            <element signature="e#2674#2675#0" expanded="true" />
+            <element signature="e#2708#2709#0" expanded="true" />
+            <element signature="e#2794#2795#0" expanded="true" />
+            <element signature="e#2825#2826#0" expanded="true" />
+            <element signature="e#3886#3887#0" expanded="true" />
+            <element signature="e#3915#3916#0" expanded="true" />
+            <element signature="e#4034#4041#0" expanded="true" />
+            <element signature="e#4283#4284#0" expanded="true" />
+            <element signature="e#4318#4319#0" expanded="true" />
+            <element signature="e#4360#4361#0" expanded="true" />
+            <element signature="e#4396#4397#0" expanded="true" />
+            <element signature="e#4441#4442#0" expanded="true" />
+            <element signature="e#4477#4478#0" expanded="true" />
+            <element signature="e#4521#4522#0" expanded="true" />
+            <element signature="e#4556#4557#0" expanded="true" />
+            <element signature="e#5895#5896#0" expanded="true" />
+            <element signature="e#5931#5932#0" expanded="true" />
+            <marker date="1511929910000" expanded="false" signature="17524:17539" ph=" { " />
+            <marker date="1511929910000" expanded="false" signature="17589:17595" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Image.png">
       <provider selected="true" editor-type-id="images">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sgraph/GroupNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="303" column="12" lean-forward="false" selection-start-line="303" selection-start-column="12" selection-end-line="303" selection-end-column="25" />
+          <folding>
+            <element signature="e#3077#3084#0" expanded="true" />
+            <element signature="e#4095#4096#0" expanded="true" />
+            <element signature="e#4126#4127#0" expanded="true" />
+            <element signature="e#4163#4164#0" expanded="true" />
+            <element signature="e#4192#4193#0" expanded="true" />
+            <element signature="e#4320#4327#0" expanded="true" />
+            <element signature="e#4593#4600#0" expanded="true" />
+            <element signature="e#4936#4937#0" expanded="true" />
+            <element signature="e#4971#4972#0" expanded="true" />
+            <element signature="e#5023#5024#0" expanded="true" />
+            <element signature="e#5059#5060#0" expanded="true" />
+            <element signature="e#5104#5105#0" expanded="true" />
+            <element signature="e#5140#5141#0" expanded="true" />
+            <element signature="e#5184#5185#0" expanded="true" />
+            <element signature="e#5219#5220#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>
