@@ -13,126 +13,126 @@
         <position>0 0 150</position>
     </light>
     <group>
-    <transform>
-        <set>
-            <translate>1.5 -2 -3</translate>
-            <scale>1 1 1</scale>
-        </set>
-        <object instanceof="Sphere" texture="earth">
-            <material>
-                <ambient>0.7 1 0</ambient>
-                <diffuse>0.9 0.9 0.9</diffuse>
-                <specular>1 1 1</specular>
-                <shininess>50</shininess>
-            </material>
-        </object>
-    </transform>
-    <transform>
-        <set>
-            <translate>-2 -1.25 -4</translate>
-            <scale>2 2 2</scale>
-        </set>
-        <object instanceof="Sphere" texture="checker">
-            <material>
-                <ambient>0.3 1 0.5</ambient>
-                <diffuse>0.9 0.9 0.9</diffuse>
-                <specular>1 1 1</specular>
-                <shininess>50</shininess>
-            </material>
-        </object>
-    </transform>
-    <transform>
-        <set>
-            <translate>2 -1.25 -7</translate>
-            <scale>2 2 2</scale>
-        </set>
-        <object instanceof="Sphere" texture="checker">
-            <material>
-                <ambient>1 0.5 0.7</ambient>
-                <diffuse>0.9 0.9 0.9</diffuse>
-                <specular>1 1 1</specular>
-                <shininess>50</shininess>
-            </material>
-        </object>
-    </transform>
+        <transform>
+            <set>
+                <translate>0 -3.25 -6.5</translate>
+                <rotate>-90 1 0 0</rotate>
+                <scale>12 10.5 0.25</scale>
+            </set>
+            <object instanceof="Box" texture="whitebox">
+                <material>
+                    <ambient>1 0 1</ambient>
+                    <diffuse>0.9 0.9 0.9</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>50</shininess>
+                </material>
+            </object>
+        </transform>
+        <transform>
+            <set>
+                <translate>0 3 -5.75</translate>
+                <rotate>-90 1 0 0</rotate>
+                <scale>11.25 10.5 0.25</scale>
+            </set>
+            <object instanceof="Box" texture="whitebox">
+                <material>
+                    <ambient>1 0 1</ambient>
+                    <diffuse>0.9 0.9 0.9</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>50</shininess>
+                </material>
+            </object>
+        </transform>
+        <transform>
+            <set>
+                <translate>-4.67 0 -3.25</translate>
+                <rotate>-90 0 1 0</rotate>
+                <scale>8.5 5 0.25</scale>
+
+            </set>
+            <object instanceof="Box" texture="whitebox">
+                <material>
+                    <ambient>0.5 0.5 0.5</ambient>
+                    <diffuse>0.9 0.9 0.9</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>50</shininess>
+                </material>
+            </object>
+        </transform>
+        <transform>
+            <set>
+                <translate>4.67 0 -3.25</translate>
+                <rotate>90 0 1 0</rotate>
+                <scale>8.5 5 0.25</scale>
+
+            </set>
+            <object instanceof="Box" texture="whitebox">
+                <material>
+                    <ambient>0.5 0.5 0.5</ambient>
+                    <diffuse>0.9 0.9 0.9</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>50</shininess>
+                </material>
+            </object>
+        </transform>
+        <transform>
+            <set>
+                <translate>0 0 -7</translate>
+                <scale>9 5 0.25</scale>
+
+            </set>
+            <object instanceof="Box" texture="whitebox">
+                <material>
+                    <ambient>0.5 0.5 0.5</ambient>
+                    <diffuse>0.9 0.9 0.9</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>50</shininess>
+                </material>
+            </object>
+        </transform>
     </group>
     <group>
-    <transform>
-        <set>
-            <translate>0 -3.25 -6.5</translate>
-            <rotate>-90 1 0 0</rotate>
-            <scale>12 10.5 0.25</scale>
-        </set>
-        <object instanceof="Box" texture="whitebox">
-            <material>
-                <ambient>1 0 1</ambient>
-                <diffuse>0.9 0.9 0.9</diffuse>
-                <specular>1 1 1</specular>
-                <shininess>50</shininess>
-            </material>
-        </object>
-    </transform>
-    <transform>
-        <set>
-            <translate>0 3 -5.75</translate>
-            <rotate>-90 1 0 0</rotate>
-            <scale>11.25 10.5 0.25</scale>
-        </set>
-        <object instanceof="Box" texture="whitebox">
-            <material>
-                <ambient>1 0 1</ambient>
-                <diffuse>0.9 0.9 0.9</diffuse>
-                <specular>1 1 1</specular>
-                <shininess>50</shininess>
-            </material>
-        </object>
-    </transform>
-    <transform>
-    <set>
-        <translate>-4.67 0 -3.25</translate>
-        <rotate>-90 0 1 0</rotate>
-        <scale>8.5 5 0.25</scale>
-
-    </set>
-    <object instanceof="Box" texture="whitebox">
-        <material>
-            <ambient>0.5 0.5 0.5</ambient>
-            <diffuse>0.9 0.9 0.9</diffuse>
-            <specular>1 1 1</specular>
-            <shininess>50</shininess>
-        </material>
-    </object>
-    </transform>
-    <transform>
-        <set>
-            <translate>4.67 0 -3.25</translate>
-            <rotate>90 0 1 0</rotate>
-            <scale>8.5 5 0.25</scale>
-
-        </set>
-        <object instanceof="Box" texture="whitebox">
-            <material>
-                <ambient>0.5 0.5 0.5</ambient>
-                <diffuse>0.9 0.9 0.9</diffuse>
-                <specular>1 1 1</specular>
-                <shininess>50</shininess>
-            </material>
-        </object>
-    </transform>
-    <transform>
-        <set>
-            <translate>0 0 -7</translate>
-            <scale>9 5 0.25</scale>
-
-        </set>
-        <object instanceof="Box" texture="whitebox">
-            <material>
-                <ambient>0.5 0.5 0.5</ambient>
-                <diffuse>0.9 0.9 0.9</diffuse>
-                <specular>1 1 1</specular>
-                <shininess>50</shininess>
-            </material>
-        </object>
-    </transform>
+        <transform>
+            <set>
+                <translate>2 -1.25 -7</translate>
+                <scale>2 2 2</scale>
+            </set>
+            <object instanceof="Sphere" texture="checker">
+                <material>
+                    <ambient>1 0.5 0.7</ambient>
+                    <diffuse>0.9 0.9 0.9</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>50</shininess>
+                </material>
+            </object>
+        </transform>
+        <transform>
+            <set>
+                <translate>1.5 -2 -3</translate>
+                <scale>1 1 1</scale>
+            </set>
+            <object instanceof="Sphere" texture="earth">
+                <material>
+                    <ambient>0.7 1 0</ambient>
+                    <diffuse>0.9 0.9 0.9</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>50</shininess>
+                </material>
+            </object>
+        </transform>
+        <transform>
+            <set>
+                <translate>-2 -1.25 -4</translate>
+                <scale>2 2 2</scale>
+            </set>
+            <object instanceof="Sphere" texture="checker">
+                <material>
+                    <ambient>0.3 1 0.5</ambient>
+                    <diffuse>0.9 0.9 0.9</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>50</shininess>
+                </material>
+            </object>
+        </transform>
     </group>
 </scene>

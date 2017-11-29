@@ -1,7 +1,6 @@
 package sgraph;
 
 import org.joml.Matrix4f;
-import org.joml.Vector4f;
 import util.Light;
 
 /**
@@ -145,7 +144,6 @@ public abstract class AbstractNode implements INode
     public void addLight(Light l) {
         throw new UnsupportedOperationException("Lights not supported yet!");
     }
-
 
 
 

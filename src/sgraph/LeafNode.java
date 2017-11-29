@@ -48,7 +48,6 @@ public class LeafNode extends AbstractNode
     Vector4f norm;
     Vector3f normalView;
     float nDotl, rDotv;
-    Vector4f point;
 
     public ArrayList<Light> lights;
 
@@ -79,7 +78,6 @@ public class LeafNode extends AbstractNode
         currentMesh = new PolygonMesh();
         center = new Vector4f();
         textures = new HashMap<>();
-        point = new Vector4f();
     }
 
     /*
@@ -398,7 +396,6 @@ public class LeafNode extends AbstractNode
             }
         }
     }
-
 
     private Color shade(Vector4f p1, ArrayList<Light> ls, Matrix4f modelView)
     {

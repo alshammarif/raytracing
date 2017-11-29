@@ -7,7 +7,6 @@ import util.IVertexData;
 import util.Light;
 import util.PolygonMesh;
 import util.Ray;
-import util.Vector;
 
 import java.util.*;
 
@@ -304,13 +303,9 @@ public class GroupNode extends AbstractNode {
             color = children.get(i).rayCast(r1, modelview, ls);
             if(color > 0)
                 hitRecord.add(color);
-
         }
-
         if(hitRecord.size()>0)
-        color = hitRecord.get(0);
+            color = hitRecord.get(hitRecord.size()-1);
         return color;
     }
-
-
 }
