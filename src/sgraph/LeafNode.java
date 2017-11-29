@@ -146,7 +146,7 @@ public class LeafNode extends AbstractNode
         ArrayList<Light> llights = new ArrayList<Light>();
         for(int i = 0; i < lights.size(); i++) {
             Light l = lights.get(i);
-            l.setPosition(l.getPosition().mul(modelView.peek()));
+            l.setPosition(l.getPosition());
             llights.add(l);
         }
         return llights;
@@ -255,16 +255,20 @@ public class LeafNode extends AbstractNode
 
     public int rayCast(Ray r1,Stack<Matrix4f> modelview, ArrayList<Light> ls) //object -> view
     {
-        this.modelView = modelview.peek();
-        Matrix4f inv = (modelview.peek().invert());
-        inv.transform(r1.s);
-        inv.transform(r1.v);
+        Matrix4f model = new Matrix4f(modelview.peek());
+        Matrix4f copy = new Matrix4f(modelview.peek());
+        Matrix4f inv = new Matrix4f(copy.invert());
 
-        //r1.s = r1.s.mul(inv);
-        //r1.v = r1.v.mul(inv);
+        Ray RayCopy = new Ray(r1);
+
+        inv.transform(RayCopy.s);
+        inv.transform(RayCopy.v);
+
+//        r1.s = r1.s.mul(inv);
+//        r1.v = r1.v.mul(inv);
         if(this.objInstanceName.equals("Box")) {
-            float tmin = (float) (-0.5 - r1.s.x) / r1.v.x;
-            float tmax = (float) (0.5 - r1.s.x) / r1.v.x;
+            float tmin = (float) (-0.5 - RayCopy.s.x) / RayCopy.v.x;
+            float tmax = (float) (0.5 - RayCopy.s.x) / RayCopy.v.x;
 
             if (tmin > tmax)
             {
@@ -273,8 +277,8 @@ public class LeafNode extends AbstractNode
                 tmin = temp;
             }
 
-            float tymin = (float) (-0.5 - r1.s.y) / r1.v.y;
-            float tymax = (float) (0.5 - r1.s.y) / r1.v.y;
+            float tymin = (float) (-0.5 - RayCopy.s.y) / RayCopy.v.y;
+            float tymax = (float) (0.5 - RayCopy.s.y) / RayCopy.v.y;
 
             if (tymin > tymax)
             {
@@ -292,8 +296,8 @@ public class LeafNode extends AbstractNode
             if (tymax < tmax)
                 tmax = tymax;
 
-            float tzmin = (float) (-0.5 - r1.s.z) / r1.v.z;
-            float tzmax = (float) (0.5 - r1.s.z) / r1.v.z;
+            float tzmin = (float) (-0.5 - RayCopy.s.z) / RayCopy.v.z;
+            float tzmax = (float) (0.5 - RayCopy.s.z) / RayCopy.v.z;
 
             if (tzmin > tzmax)
             {
@@ -313,33 +317,32 @@ public class LeafNode extends AbstractNode
 
             if(tmin<0 && tmax<0)
             {
-
                 return new  Color().toInt();}
 
             if(tmin==0 && tmax==0)
                 return new  Color().toInt();
 
             Vector4f p1, p2;
-            p1 = new Vector4f(0,0,0,1);
-            p1.x = r1.s.x + (r1.v.x * tmin);
-            p1.y = r1.s.y + (r1.v.y * tmin);
-            p1.z = r1.s.z + (r1.v.z * tmin);
+            p1 = new Vector4f(RayCopy.s.x + (RayCopy.v.x * tmin),
+                              RayCopy.s.y + (RayCopy.v.y * tmin),
+                              RayCopy.s.z + (RayCopy.v.z * tmin),1);
 
-            p2 = new Vector4f(0,0,0,1);
-            p2.x = r1.s.x + (r1.v.x * tmax);
-            p2.y = r1.s.y + (r1.v.y * tmax);
-            p2.z = r1.s.z + (r1.v.z * tmax);
+            p2 = new Vector4f(RayCopy.s.x + (RayCopy.v.x * tmax),
+                              RayCopy.s.y + (RayCopy.v.y * tmax),
+                              RayCopy.s.z + (RayCopy.v.z * tmax),1);
 
             float d1,d2;
-            d1 = (float)Math.sqrt((Math.pow((p1.x-r1.s.x),2))+Math.pow((p1.y-r1.s.y),2)+Math.pow((p1.z-r1.s.z),2));
-            d2 = (float)Math.sqrt((Math.pow((p2.x-r1.s.x),2))+Math.pow((p2.y-r1.s.y),2)+Math.pow((p2.z-r1.s.z),2));
+            d1 = (float)Math.sqrt((Math.pow((p1.x-RayCopy.s.x),2))+Math.pow((p1.y-RayCopy.s.y),2)+Math.pow((p1.z-RayCopy.s.z),2));
+            d2 = (float)Math.sqrt((Math.pow((p2.x-RayCopy.s.x),2))+Math.pow((p2.y-RayCopy.s.y),2)+Math.pow((p2.z-RayCopy.s.z),2));
 
             if(d1<d2)
             {
-                return shade(p1,ls,this.modelView).toInt();}
+                return shade(p1,ls,model).toInt();
+                }
             else
             {
-                return shade(p2,ls,this.modelView ).toInt();}
+                return shade(p2,ls,model).toInt();
+            }
         }
         else
         {
@@ -347,9 +350,9 @@ public class LeafNode extends AbstractNode
             float A,B,C;
 
 
-            A = ((float)(Math.pow((double)(r1.v.x), 2)) + (float)(Math.pow((double)(r1.v.y), 2))  + (float)(Math.pow((double)(r1.v.z), 2)) );
-            B = ((2*(r1.v.x*r1.s.x))+ (2*(r1.v.y*r1.s.y))+(2*(r1.v.z*r1.s.z)));
-            C = (((float)(Math.pow((double)(r1.s.x), 2)) + (float)(Math.pow((double)(r1.s.y), 2)) + (float)(Math.pow((double)(r1.s.z), 2))) - 1);
+            A = ((float)(Math.pow((double)(RayCopy.v.x), 2)) + (float)(Math.pow((double)(RayCopy.v.y), 2))  + (float)(Math.pow((double)(RayCopy.v.z), 2)) );
+            B = ((2*(RayCopy.v.x*RayCopy.s.x))+ (2*(RayCopy.v.y*RayCopy.s.y))+(2*(RayCopy.v.z*RayCopy.s.z)));
+            C = (((float)(Math.pow((double)(RayCopy.s.x), 2)) + (float)(Math.pow((double)(RayCopy.s.y), 2)) + (float)(Math.pow((double)(RayCopy.s.z), 2))) - 1);
 
             if((float)((Math.pow((double) B, 2))) < (4*(A*C))) {
                 return new  Color().toInt();
@@ -359,64 +362,57 @@ public class LeafNode extends AbstractNode
                 tmin = (- B - ((float)Math.sqrt((Math.pow((double)(B), 2))-(4*(A*C)))))/(2*A);
                 Vector4f p1;
                 p1 = new Vector4f(0,0,0,1);
-                p1.x = r1.s.x + (r1.v.x * tmin);
-                p1.y = r1.s.y + (r1.v.y * tmin);
-                p1.z = r1.s.z + (r1.v.z * tmin);
-                return shade(p1,ls,modelview.peek()).toInt();
+                p1.x = RayCopy.s.x + (RayCopy.v.x * tmin);
+                p1.y = RayCopy.s.y + (RayCopy.v.y * tmin);
+                p1.z = RayCopy.s.z + (RayCopy.v.z * tmin);
+                return shade(p1,ls,model).toInt();
             }
             tmin = (- B - ((float)Math.sqrt((Math.pow((double)(B), 2))-(4*(A*C)))))/(2*A);
             tmax = (- B + ((float)Math.sqrt((Math.pow((double)(B), 2))-(4*(A*C)))))/(2*A);
 
-            if(tmin> tmax) {
-                float temp = tmin;
-                tmin = tmax;
-                tmax = temp;
-            }
 
-            if(tmin <0) {
-                tmin = tmax;
-                if(tmin<0) {
-                    return new  Color().toInt();
-                }
-            }
             // Points of intersection
             Vector4f p1, p2;
             p1 = new Vector4f(0,0,0,1);
-            p1.x = r1.s.x + (r1.v.x * tmin);
-            p1.y = r1.s.y + (r1.v.y * tmin);
-            p1.z = r1.s.z + (r1.v.z * tmin);
+            p1.x = RayCopy.s.x + (RayCopy.v.x * tmin);
+            p1.y = RayCopy.s.y + (RayCopy.v.y * tmin);
+            p1.z = RayCopy.s.z + (RayCopy.v.z * tmin);
 
             p2 = new Vector4f(0,0,0,1);
-            p2.x = r1.s.x + (r1.v.x * tmax);
-            p2.y = r1.s.y + (r1.v.y * tmax);
-            p2.z = r1.s.z + (r1.v.z * tmax);
+            p2.x = RayCopy.s.x + (RayCopy.v.x * tmax);
+            p2.y = RayCopy.s.y + (RayCopy.v.y * tmax);
+            p2.z = RayCopy.s.z + (RayCopy.v.z * tmax);
 
             float d1,d2;
-            d1 = (float)Math.sqrt((Math.pow((p1.x-r1.s.x),2))+Math.pow((p1.y-r1.s.y),2)+Math.pow((p1.z-r1.s.z),2));
-            d2 = (float)Math.sqrt((Math.pow((p2.x-r1.s.x),2))+Math.pow((p2.y-r1.s.y),2)+Math.pow((p2.z-r1.s.z),2));
+            d1 = (float)Math.sqrt((Math.pow((p1.x-RayCopy.s.x),2))+Math.pow((p1.y-RayCopy.s.y),2)+Math.pow((p1.z-RayCopy.s.z),2));
+            d2 = (float)Math.sqrt((Math.pow((p2.x-RayCopy.s.x),2))+Math.pow((p2.y-RayCopy.s.y),2)+Math.pow((p2.z-RayCopy.s.z),2));
 
             if(d1<d2)
             {
-                return shade(p1,ls,this.modelView).toInt();
+                return shade(p1,ls,model).toInt();
             }
             else {
-                return shade(p2, ls,this.modelView).toInt();
+                return shade(p2, ls,model).toInt();
             }
         }
     }
 
     private Color shade(Vector4f p1, ArrayList<Light> ls, Matrix4f modelView)
     {
+        Matrix4f model = new Matrix4f(modelView);
         int si;
-        Color c = new Color();
+        Color c = new Color(0,0,0);
         if(this.objInstanceName.equals("Box"))
-            norm = this.getNormalBox(p1);
+            norm = new Vector4f(getNormalBox(p1));
         else
-            norm = this.getNormalSphere(p1);
-        norm = norm.mul(modelView);
-        norm = norm.normalize();
+            norm = new Vector4f(getNormalSphere(p1));
+        norm.mul(model,norm);
+
         fposition = new Vector4f(p1.x,p1.y,p1.z,1);
-        fposition = fposition.mul(modelView);
+        fposition.mul(model,fposition);
+        Matrix4f normalMatrix = new Matrix4f(model);
+        normalMatrix.invert().transpose();
+
         for(int i=0;i<ls.size();i++)
         {
             if(ls.get(i).getPosition().w != 0)
@@ -434,23 +430,25 @@ public class LeafNode extends AbstractNode
                                   -ls.get(i).getPosition().z);
                 lv = lv.normalize();
                 // Calculation of si
+//                float cosphi = ls.get(i).getSpotDirection().normalize().dot(-lv.x,-lv.y,-lv.z,1);
+//                float cosTheta = (float)Math.cos(ls.get(i).getSpotCutoff());
+
                 float cosphi = ls.get(i).getSpotDirection().normalize().dot(-lv.x,-lv.y,-lv.z,1);
-                float cosTheta = (float)Math.cos(ls.get(i).getSpotCutoff());
+                float cosTheta = (float)Math.cos(Math.toRadians(ls.get(i).getSpotCutoff()));
                 if(cosphi>cosTheta)
                     si=1;
                 else
                     si=0;
             }
 
-            normalView = new Vector3f(norm.x,norm.y,norm.z);
-            normalView = normalView.normalize();
+            norm.mul(normalMatrix);
+            norm.normalize();
+            normalView = new Vector3f(norm.x,norm.y,norm.z).normalize();
 
             nDotl = normalView.dot(lv);
             viewVec = new Vector3f(-fposition.x,-fposition.y,-fposition.z).normalize();
-            Vector3f negLight = lv.negate();
-            negLight = negLight.normalize();
-            reflectVec = negLight.reflect(normalView);
-            reflectVec = reflectVec.normalize();
+            Vector3f negLight = new Vector3f(-lv.x,-lv.y,-lv.z).normalize();
+            reflectVec = new Vector3f(negLight.reflect(normalView).normalize());
 
             rDotv = (Math.max(reflectVec.dot(viewVec),0.0f));
 
@@ -458,29 +456,28 @@ public class LeafNode extends AbstractNode
                                material.getAmbient().y * ls.get(i).getAmbient().y,
                                material.getAmbient().z * ls.get(i).getAmbient().z);
             c.addColor(amb.x,amb.y,amb.z);
-
             dif = new Vector3f(material.getDiffuse().x * ls.get(i).getDiffuse().x * Math.max(nDotl,0.0f),
-                               material.getDiffuse().y * ls.get(i).getDiffuse().y * Math.max(nDotl,0.0f),
-                               material.getDiffuse().z * ls.get(i).getDiffuse().z * Math.max(nDotl,0.0f));
+                    material.getDiffuse().y * ls.get(i).getDiffuse().y * Math.max(nDotl,0.0f),
+                    material.getDiffuse().z * ls.get(i).getDiffuse().z * Math.max(nDotl,0.0f));
             c.addColor(dif.x,dif.y,dif.z);
+
             if(nDotl>0)
             {
                 spec = new Vector3f(material.getSpecular().x * ls.get(i).getSpecular().x * (float)Math.pow(rDotv,material.getShininess()),
                                     material.getSpecular().y * ls.get(i).getSpecular().y * (float)Math.pow(rDotv,material.getShininess()),
                                     material.getSpecular().z * ls.get(i).getSpecular().z * (float)Math.pow(rDotv,material.getShininess()));
+                c.addColor(spec.x, spec.y, spec.z);
             }
-//            Vector4f texVector;
-//            TextureImage tex = textures.get(textureName);
-//
-//            if(objInstanceName.equals("Sphere"))
-//                texVector  = getSphereTexture(p1,tex);
-//            else
-//                texVector = getBoxTexture(p1,tex);
-//
-//            Vector4f texColor = tex.getColor(texVector.x,texVector.y);
-//            c.mul(texColor.x(),texColor.y(),texColor.z());
-//            c.addColor(spec.x(),spec.y(),spec.z());
             c.mul(si,si,si);
+            Vector4f texVector;
+            TextureImage tex = textures.get(textureName);
+
+            if(objInstanceName.equals("Sphere"))
+                texVector  = new Vector4f(getSphereTexture(p1,tex));
+            else
+                texVector = new Vector4f(getBoxTexture(p1,tex));
+            Vector4f texColor = tex.getColor(texVector.x,texVector.y);
+            c.mul(texColor.x,texColor.y,texColor.z);
         }
         return c;
     }

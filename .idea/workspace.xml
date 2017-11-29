@@ -7,23 +7,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba3d3202-2c53-42d8-bf08-84f95de96922" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scenegraphmodels/ray-trace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Image.png" afterPath="$PROJECT_DIR$/Image.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/JOGLFrame.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/JOGLFrame.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/View.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/View.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/GL3ScenegraphRenderer.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/GL3ScenegraphRenderer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/GroupNode.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/GroupNode.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/IScenegraph.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/IScenegraph.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/LeafNode.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/LeafNode.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/Scenegraph.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/Scenegraph.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/TransformNode.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/TransformNode.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/textures/checkerboard-busy-box.png" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/textures/checkerboard-busy-box.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/util/Color.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/util/Color.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/util/Ray.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/util/Ray.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/util/TextureImage.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/util/TextureImage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/scenegraphmodels/sphere-test.xml" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/scenegraphmodels/sphere-test.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/shaders/gouraud-multiple.frag" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/shaders/gouraud-multiple.frag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/shaders/gouraud-multiple.vert" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/shaders/gouraud-multiple.vert" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JOGLFrame.java" afterPath="$PROJECT_DIR$/src/JOGLFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View.java" afterPath="$PROJECT_DIR$/src/View.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml" afterPath="$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sgraph/GroupNode.java" afterPath="$PROJECT_DIR$/src/sgraph/GroupNode.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sgraph/LeafNode.java" afterPath="$PROJECT_DIR$/src/sgraph/LeafNode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sgraph/Scenegraph.java" afterPath="$PROJECT_DIR$/src/sgraph/Scenegraph.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sgraph/TransformNode.java" afterPath="$PROJECT_DIR$/src/sgraph/TransformNode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/Color.java" afterPath="$PROJECT_DIR$/src/util/Color.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/Ray.java" afterPath="$PROJECT_DIR$/src/util/Ray.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/TextureImage.java" afterPath="$PROJECT_DIR$/src/util/TextureImage.java" />
     </list>
     <ignored path="Scenegraphs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,25 +52,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="TransformNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sgraph/TransformNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="342" column="78" lean-forward="true" selection-start-line="342" selection-start-column="78" selection-end-line="342" selection-end-column="78" />
-              <folding>
-                <marker date="1511828852000" expanded="true" signature="11415:11474" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="GroupNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sgraph/GroupNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="611">
-              <caret line="301" column="17" lean-forward="false" selection-start-line="301" selection-start-column="17" selection-end-line="301" selection-end-column="17" />
+            <state relative-caret-position="402">
+              <caret line="307" column="52" lean-forward="false" selection-start-line="307" selection-start-column="52" selection-end-line="307" selection-end-column="52" />
               <folding>
-                <marker date="1511828852000" expanded="true" signature="9617:9717" ph="{...}" />
+                <marker date="1511912241000" expanded="true" signature="9762:9790" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -73,11 +67,21 @@
       <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="183" column="0" lean-forward="false" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
+            <state relative-caret-position="2265">
+              <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
               <folding>
-                <marker date="1511828852000" expanded="true" signature="7917:8038" ph="{...}" />
+                <marker date="1511911822000" expanded="true" signature="7230:7351" ph="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JOGLFrame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/JOGLFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="67" column="54" lean-forward="false" selection-start-line="67" selection-start-column="54" selection-end-line="67" selection-end-column="54" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -86,17 +90,7 @@
         <entry file="file://$PROJECT_DIR$/src/sgraph/Scenegraph.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="123">
-              <caret line="146" column="28" lean-forward="true" selection-start-line="146" selection-start-column="28" selection-end-line="146" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sphere-test.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+              <caret line="147" column="28" lean-forward="false" selection-start-line="147" selection-start-column="28" selection-end-line="147" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -105,41 +99,27 @@
       <file leaf-file-name="LeafNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sgraph/LeafNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="464" column="40" lean-forward="false" selection-start-line="464" selection-start-column="40" selection-end-line="464" selection-end-column="40" />
+            <state relative-caret-position="278">
+              <caret line="435" column="93" lean-forward="false" selection-start-line="435" selection-start-column="93" selection-end-line="435" selection-end-column="93" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2463#2464#0" expanded="true" />
-                <element signature="e#2512#2513#0" expanded="true" />
-                <element signature="e#2674#2675#0" expanded="true" />
-                <element signature="e#2708#2709#0" expanded="true" />
-                <element signature="e#2794#2795#0" expanded="true" />
-                <element signature="e#2825#2826#0" expanded="true" />
-                <element signature="e#3886#3887#0" expanded="true" />
-                <element signature="e#3915#3916#0" expanded="true" />
-                <element signature="e#4034#4041#0" expanded="true" />
-                <element signature="e#4305#4306#0" expanded="true" />
-                <element signature="e#4340#4341#0" expanded="true" />
-                <element signature="e#4382#4383#0" expanded="true" />
-                <element signature="e#4418#4419#0" expanded="true" />
-                <element signature="e#4463#4464#0" expanded="true" />
-                <element signature="e#4499#4500#0" expanded="true" />
-                <element signature="e#4543#4544#0" expanded="true" />
-                <element signature="e#4578#4579#0" expanded="true" />
-                <element signature="e#5917#5918#0" expanded="true" />
-                <element signature="e#5953#5954#0" expanded="true" />
-                <element signature="e#17140#17141#0" expanded="true" />
-                <element signature="e#17205#17206#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Color.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/util/Color.java">
+      <file leaf-file-name="Image.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Image.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ray-trace.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/ray-trace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-33">
-              <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+            <state relative-caret-position="179">
+              <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -148,32 +128,19 @@
       <file leaf-file-name="TextureImage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/TextureImage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
+            <state relative-caret-position="-198">
               <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GL3ScenegraphRenderer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sgraph/GL3ScenegraphRenderer.java">
+      <file leaf-file-name="Color.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/Color.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3270">
-              <caret line="226" column="0" lean-forward="false" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1511828852000" expanded="true" signature="7936:8036" ph="{...}" />
-                <marker date="1511828852000" expanded="true" signature="8041:8552" ph="/**...*/" />
-                <marker date="1511828852000" expanded="true" signature="8678:11618" ph="{...}" />
-                <marker date="1511828852000" expanded="true" signature="10744:10809" ph="//..." />
-                <marker date="1511828852000" expanded="true" signature="11626:11756" ph="/**...*/" />
-                <marker date="1511828852000" expanded="true" signature="11888:12183" ph="{...}" />
-                <marker date="1511828852000" expanded="true" signature="12241:12393" ph="{...}" />
-                <marker date="1511828852000" expanded="false" signature="12445:12460" ph=" { " />
-                <marker date="1511828852000" expanded="false" signature="12481:12487" ph=" }" />
-                <marker date="1511828852000" expanded="false" signature="12548:12563" ph=" { " />
-                <marker date="1511828852000" expanded="false" signature="12604:12610" ph=" }" />
-              </folding>
+            <state relative-caret-position="202">
+              <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -239,7 +206,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/ScenegraphViewer.java" />
         <option value="$PROJECT_DIR$/src/scenegraphmodels/ice-cream.xml" />
         <option value="$PROJECT_DIR$/src/scenegraphmodels/hat.xml" />
         <option value="$PROJECT_DIR$/src/exporter.java" />
@@ -277,7 +243,6 @@
         <option value="$PROJECT_DIR$/src/shaders/phong-multiple.frag" />
         <option value="$PROJECT_DIR$/src/sgraph/SceneXMLReader.java" />
         <option value="$PROJECT_DIR$/src/util/PolygonMesh.java" />
-        <option value="$PROJECT_DIR$/src/JOGLFrame.java" />
         <option value="$PROJECT_DIR$/src/sgraph/AbstractNode.java" />
         <option value="$PROJECT_DIR$/src/View.java" />
         <option value="$PROJECT_DIR$/src/sgraph/IScenegraph.java" />
@@ -285,11 +250,13 @@
         <option value="$PROJECT_DIR$/src/sgraph/IScenegraphRenderer.java" />
         <option value="$PROJECT_DIR$/src/sgraph/INode.java" />
         <option value="$PROJECT_DIR$/src/sgraph/Scenegraph.java" />
-        <option value="$PROJECT_DIR$/src/sgraph/GroupNode.java" />
         <option value="$PROJECT_DIR$/src/sgraph/TransformNode.java" />
         <option value="$PROJECT_DIR$/src/util/Color.java" />
         <option value="$PROJECT_DIR$/src/sgraph/LeafNode.java" />
         <option value="$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml" />
+        <option value="$PROJECT_DIR$/src/sgraph/GroupNode.java" />
+        <option value="$PROJECT_DIR$/src/JOGLFrame.java" />
+        <option value="$PROJECT_DIR$/src/scenegraphmodels/ray-trace.xml" />
       </list>
     </option>
   </component>
@@ -306,7 +273,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="219" />
+    <option name="x" value="97" />
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="952" />
@@ -327,9 +294,9 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -346,25 +313,7 @@
               <item name="Scenegraphs" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scenegraphs-textures" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="scenegraphmodels" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Scenegraphs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scenegraphs-textures" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sgraph" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Scenegraphs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scenegraphs-textures" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="shaders" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Scenegraphs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scenegraphs-textures" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="textures" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -581,7 +530,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="5" y="23" width="1680" height="952" extended-state="6" />
+    <frame x="3" y="23" width="1680" height="952" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902467" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -591,12 +541,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28207847" sideWeight="0.5104167" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28177458" sideWeight="0.48958334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28177458" sideWeight="0.48958334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297362" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1013431" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.102564104" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -626,7 +576,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39660656" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39568347" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902467" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33093524" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -636,8 +586,8 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28177458" sideWeight="0.48958334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0989011" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297362" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.102564104" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733813" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -664,7 +614,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/newscenegraphmodels/scene.xml" />
     <entry file="file://$PROJECT_DIR$/src/newscenegraphmodels/scene/Room2.xml" />
     <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/humanoid-YMCA.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -719,13 +668,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/scene/Room1.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="54" lean-forward="true" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -903,14 +845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JOGLFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../JOGL/jar/jogl-all.jar!/jogamp/opengl/GLDrawableHelper.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1104">
@@ -920,21 +854,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sgraph/GL3ScenegraphRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3270">
+        <state relative-caret-position="3195">
           <caret line="226" column="0" lean-forward="false" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1511828852000" expanded="true" signature="7936:8036" ph="{...}" />
-            <marker date="1511828852000" expanded="true" signature="8041:8552" ph="/**...*/" />
-            <marker date="1511828852000" expanded="true" signature="8678:11618" ph="{...}" />
-            <marker date="1511828852000" expanded="true" signature="10744:10809" ph="//..." />
-            <marker date="1511828852000" expanded="true" signature="11626:11756" ph="/**...*/" />
-            <marker date="1511828852000" expanded="true" signature="11888:12183" ph="{...}" />
-            <marker date="1511828852000" expanded="true" signature="12241:12393" ph="{...}" />
-            <marker date="1511828852000" expanded="false" signature="12445:12460" ph=" { " />
-            <marker date="1511828852000" expanded="false" signature="12481:12487" ph=" }" />
-            <marker date="1511828852000" expanded="false" signature="12548:12563" ph=" { " />
-            <marker date="1511828852000" expanded="false" signature="12604:12610" ph=" }" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -943,92 +866,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sgraph/TransformNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4860">
+          <caret line="344" column="78" lean-forward="false" selection-start-line="344" selection-start-column="78" selection-end-line="344" selection-end-column="78" />
+          <folding>
+            <marker date="1511911822000" expanded="true" signature="11448:11554" ph="{...}" />
+            <marker date="1511911822000" expanded="true" signature="11495:11554" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/Color.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sgraph/GroupNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="301" column="17" lean-forward="false" selection-start-line="301" selection-start-column="17" selection-end-line="301" selection-end-column="17" />
+        <state relative-caret-position="402">
+          <caret line="307" column="52" lean-forward="false" selection-start-line="307" selection-start-column="52" selection-end-line="307" selection-end-column="52" />
           <folding>
-            <marker date="1511828852000" expanded="true" signature="9617:9717" ph="{...}" />
+            <marker date="1511912241000" expanded="true" signature="9762:9790" ph="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="183" column="0" lean-forward="false" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
-          <folding>
-            <marker date="1511828852000" expanded="true" signature="7917:8038" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sgraph/LeafNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="464" column="40" lean-forward="false" selection-start-line="464" selection-start-column="40" selection-end-line="464" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2463#2464#0" expanded="true" />
-            <element signature="e#2512#2513#0" expanded="true" />
-            <element signature="e#2674#2675#0" expanded="true" />
-            <element signature="e#2708#2709#0" expanded="true" />
-            <element signature="e#2794#2795#0" expanded="true" />
-            <element signature="e#2825#2826#0" expanded="true" />
-            <element signature="e#3886#3887#0" expanded="true" />
-            <element signature="e#3915#3916#0" expanded="true" />
-            <element signature="e#4034#4041#0" expanded="true" />
-            <element signature="e#4305#4306#0" expanded="true" />
-            <element signature="e#4340#4341#0" expanded="true" />
-            <element signature="e#4382#4383#0" expanded="true" />
-            <element signature="e#4418#4419#0" expanded="true" />
-            <element signature="e#4463#4464#0" expanded="true" />
-            <element signature="e#4499#4500#0" expanded="true" />
-            <element signature="e#4543#4544#0" expanded="true" />
-            <element signature="e#4578#4579#0" expanded="true" />
-            <element signature="e#5917#5918#0" expanded="true" />
-            <element signature="e#5953#5954#0" expanded="true" />
-            <element signature="e#17140#17141#0" expanded="true" />
-            <element signature="e#17205#17206#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sgraph/Scenegraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="146" column="28" lean-forward="true" selection-start-line="146" selection-start-column="28" selection-end-line="146" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/TextureImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sgraph/TransformNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="342" column="78" lean-forward="true" selection-start-line="342" selection-start-column="78" selection-end-line="342" selection-end-column="78" />
-          <folding>
-            <marker date="1511828852000" expanded="true" signature="11415:11474" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1037,10 +903,70 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/Color.java">
+    <entry file="file://$PROJECT_DIR$/src/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-33">
-          <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        <state relative-caret-position="2265">
+          <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+          <folding>
+            <marker date="1511911822000" expanded="true" signature="7230:7351" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/scene/Room1.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="47" column="44" lean-forward="true" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sgraph/LeafNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="435" column="93" lean-forward="false" selection-start-line="435" selection-start-column="93" selection-end-line="435" selection-end-column="93" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JOGLFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="67" column="54" lean-forward="false" selection-start-line="67" selection-start-column="54" selection-end-line="67" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="44" column="42" lean-forward="true" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sgraph/Scenegraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="147" column="28" lean-forward="false" selection-start-line="147" selection-start-column="28" selection-end-line="147" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/TextureImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-198">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/ray-trace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
           <folding />
         </state>
       </provider>

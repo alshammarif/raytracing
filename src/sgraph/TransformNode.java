@@ -205,6 +205,8 @@ public class TransformNode extends AbstractNode
     @Override
     public ArrayList<Light> getLights(Stack<Matrix4f> modelView) {
         ArrayList<Light> ll = new ArrayList<Light>();
+        modelView.push(new Matrix4f(modelView.peek()));
+        modelView.peek().mul(transform);
         for(int i = 0; i < lights.size(); i++) {
             Light l = lights.get(i);
             l.setPosition(l.getPosition().mul(transform));
@@ -214,10 +216,10 @@ public class TransformNode extends AbstractNode
                 cll.addAll(child.getLights(modelView));
         for(int j = 0; j < cll.size(); j++) {
             Light l = cll.get(j);
-            l.setPosition(l.getPosition().mul(transform));
+            l.setPosition(l.getPosition());
             ll.add(l);
         }
-
+        modelView.pop();
         return ll;
     }
 
@@ -342,10 +344,9 @@ public class TransformNode extends AbstractNode
 
     public int rayCast(Ray r1, Stack<Matrix4f> modelview, ArrayList<Light> ls)
     {
-        int color=0;
+        int color;
         modelview.push(new Matrix4f(modelview.peek()));
         modelview.peek().mul(transform);
-        if(child!=null)
             color = child.rayCast(r1,modelview, ls);
         modelview.pop();
         return color;

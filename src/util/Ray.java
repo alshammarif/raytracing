@@ -9,8 +9,13 @@ public class Ray
 
     public Ray(Vector4f s, Vector4f v)
     {
-        this.s = s;
-        this.v = v;
+        this.s = new Vector4f(s);
+        this.v = new Vector4f(v);
+    }
+    public Ray(Ray r1)
+    {
+        this.s = new Vector4f(r1.s);
+        this.v = new Vector4f(r1.v);
     }
 
 }

@@ -24,7 +24,7 @@ public class Color {
             this.r =1;
         this.g+=g;
         if(this.g>1)
-            this.r =1;
+            this.g =1;
         this.b+=b;
         if(this.b>1)
             this.b=1;
@@ -37,7 +37,7 @@ public class Color {
             this.r =1;
         this.g*=g;
         if(this.g>1)
-            this.r =1;
+            this.g =1;
         this.b*=b;
         if(this.b>1)
             this.b=1;

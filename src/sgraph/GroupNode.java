@@ -92,7 +92,7 @@ public class GroupNode extends AbstractNode {
 
             children.get(i).draw(context, modelView);
         }
-        //context.setShaderLights(lights);
+
     }
 
     /**
@@ -153,7 +153,7 @@ public class GroupNode extends AbstractNode {
         ArrayList<Light> ll = new ArrayList<Light>();
         for(int i = 0; i < lights.size(); i++) {
             Light l = lights.get(i);
-            l.setPosition(l.getPosition().mul(modelView.peek()));
+            l.setPosition(l.getPosition());
             ll.add(l);
         }
         for(int j = 0; j < children.size(); j++) {
@@ -161,7 +161,7 @@ public class GroupNode extends AbstractNode {
                     cll.addAll(children.get(j).getLights(modelView));
             for(int k = 0; k < cll.size(); k++) {
                 Light l = cll.get(k);
-                l.setPosition(l.getPosition().mul(modelView.peek()));
+                l.setPosition(l.getPosition());
                 ll.add(l);
             }
         }
@@ -297,11 +297,15 @@ public class GroupNode extends AbstractNode {
     public int rayCast(Ray r1, Stack<Matrix4f> modelview, ArrayList<Light> ls)
     {
        int color=0;
-        for(int i=0;i<children.size();i++) {
+       ArrayList<Integer> hitRecord = new ArrayList<>();
+        for(int i=0;i<children.size();i++)
+        {
             color = children.get(i).rayCast(r1, modelview, ls);
             if(color > 0)
-                return color;
+                hitRecord.add(color);
         }
+        if(hitRecord.size()>0)
+            color = hitRecord.get(hitRecord.size()-1);
         return color;
     }
 }
