@@ -12,6 +12,7 @@
         <specular>0.3 0.3 0.3</specular>
         <position>0 0 150</position>
     </light>
+    <group>
     <transform>
         <set>
             <translate>1.5 -2 -3</translate>
@@ -54,6 +55,8 @@
             </material>
         </object>
     </transform>
+    </group>
+    <group>
     <transform>
         <set>
             <translate>0 -3.25 -6.5</translate>
@@ -131,30 +134,5 @@
             </material>
         </object>
     </transform>
-    <!--<transform>-->
-        <!--<set>-->
-
-        <!--</set>-->
-        <!--<object instanceof="Box" texture="whitebox">-->
-            <!---->
-
-        <!--</object>-->
-    <!--</transform>-->
-    <!--<transform>-->
-        <!--<set>-->
-
-        <!--</set>-->
-        <!--<object instanceof="Box" texture="">-->
-
-        <!--</object>-->
-    <!--</transform>-->
-    <!--<transform>-->
-        <!--<set>-->
-
-        <!--</set>-->
-        <!--<object instanceof="Box" texture="">-->
-
-        <!--</object>-->
-    <!--</transform>-->
-
+    </group>
 </scene>

@@ -172,6 +172,8 @@ public interface INode
      */
      int rayCast(Ray r1, Stack<Matrix4f> modelview, ArrayList<Light> lights);
 
+
+
 //     Vector4f getNormal();
 //
 //     Vector4f getPostion();
