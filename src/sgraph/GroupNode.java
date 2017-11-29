@@ -301,11 +301,11 @@ public class GroupNode extends AbstractNode {
         for(int i=0;i<children.size();i++)
         {
             color = children.get(i).rayCast(r1, modelview, ls);
-            if(color > 0)
+            if(color >= 0)
                 hitRecord.add(color);
         }
         if(hitRecord.size()>0)
-            color = hitRecord.get(hitRecord.size()-1);
+            color = hitRecord.get(0);
         return color;
     }
 }

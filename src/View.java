@@ -93,41 +93,6 @@ public class View {
     renderer.initShaderProgram(program, shaderVarsToVertexAttribs);
     scenegraph.setRenderer(renderer);
     scenegraph.setTextures();
-
-//      scenegraph_clone.makeScenegraph(scenegraph.getRoot());
-//      shaderVarsToVertexAttribs.put("vPosition", "position");
-//      shaderVarsToVertexAttribs.put("vNormal", "normal");
-//      shaderVarsToVertexAttribs.put("vTexCoord", "texcoord");
-//      renderer.initShaderProgram(program, shaderVarsToVertexAttribs);
-//      scenegraph_clone.setRenderer(renderer);
-//      scenegraph_clone.setTextures();
-//
-//
-//      table_scene = sgraph.SceneXMLReader.importScenegraph(getClass().getClassLoader()
-//              .getResourceAsStream
-//                      ("scenegraphmodels/table-scene.xml"), new VertexAttribProducer());
-//      renderer = new sgraph.GL3ScenegraphRenderer();
-//      renderer.setContext(gla);
-//      shaderVarsToVertexAttribs = new HashMap<String, String>();
-//      shaderVarsToVertexAttribs.put("vPosition", "position");
-//      shaderVarsToVertexAttribs.put("vNormal", "normal");
-//      shaderVarsToVertexAttribs.put("vTexCoord", "texcoord");
-//      renderer.initShaderProgram(program, shaderVarsToVertexAttribs);
-//      table_scene.setRenderer(renderer);
-//      table_scene.setTextures();
-//
-//    scene = sgraph.SceneXMLReader.importScenegraph(getClass().getClassLoader()
-//            .getResourceAsStream
-//                    ("scenegraphmodels/scene.xml"), new VertexAttribProducer());
-//   renderer = new sgraph.GL3ScenegraphRenderer();
-//    renderer.setContext(gla);
-//   shaderVarsToVertexAttribs = new HashMap<String, String>();
-//    shaderVarsToVertexAttribs.put("vPosition", "position");
-//    shaderVarsToVertexAttribs.put("vNormal", "normal");
-//    shaderVarsToVertexAttribs.put("vTexCoord", "texcoord");
-//    renderer.initShaderProgram(program, shaderVarsToVertexAttribs);
-//    scene.setRenderer(renderer);
-//    scene.setTextures();
     program.disable(gl);
   }
 

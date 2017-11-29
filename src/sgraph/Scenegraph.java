@@ -148,7 +148,6 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
     public List<Integer> raytrace(int width, int height, Stack<Matrix4f> modelview, ArrayList<Light> ls) throws Exception
     {
         List<Integer> hitRecord = new ArrayList<>();
-
         File file =  new File("Image.png");
         BufferedImage out = new BufferedImage(800,800,BufferedImage.TYPE_INT_RGB);
         //ray
@@ -161,6 +160,8 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
                 v = new Vector4f(x-width/2,y-height/2,(float)(-0.5*height/Math.tan(Math.toRadians(30))),0);
                 util.Ray r1 = new util.Ray(s,v);
                 int color = root.rayCast(r1, modelview, ls);
+                if(color<0)
+                    color=0;
                 out.setRGB(x,(height-1)-y,color);
             }
         }
