@@ -92,6 +92,6 @@ void main()
         fColor = fColor + vec4(ambient+diffuse+specular,1.0);
     }
 
-    fTexCoord = texturematrix * vec4(1*vTexCoord.s,1*vTexCoord.t,0,1);
+    fTexCoord =  vec4(1*vTexCoord.s,1*vTexCoord.t,0,1);
 
 }

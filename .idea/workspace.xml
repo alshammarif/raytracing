@@ -8,8 +8,22 @@
   <component name="ChangeListManager">
     <list default="true" id="ba3d3202-2c53-42d8-bf08-84f95de96922" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Image.png" afterPath="$PROJECT_DIR$/Image.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/JOGLFrame$1.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/JOGLFrame$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/View.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/View.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/GroupNode.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/GroupNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/LeafNode.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/LeafNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/Scenegraph.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/Scenegraph.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/textures/earthmap.png" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/textures/earthmap.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/util/Color.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/util/Color.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/util/TextureImage.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/util/TextureImage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/scenegraphmodels/ray-trace.xml" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/scenegraphmodels/ray-trace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/scenegraphmodels/sphere-test.xml" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/scenegraphmodels/sphere-test.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/shaders/gouraud-multiple.vert" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/shaders/gouraud-multiple.vert" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JOGLFrame.java" afterPath="$PROJECT_DIR$/src/JOGLFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scenegraphmodels/ray-trace.xml" afterPath="$PROJECT_DIR$/src/scenegraphmodels/ray-trace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml" afterPath="$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/Color.java" afterPath="$PROJECT_DIR$/src/util/Color.java" />
     </list>
     <ignored path="Scenegraphs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,32 +46,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="TransformNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sgraph/TransformNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="353" column="0" lean-forward="false" selection-start-line="353" selection-start-column="0" selection-end-line="353" selection-end-column="0" />
-              <folding>
-                <marker date="1511919762000" expanded="true" signature="11448:11554" ph="{...}" />
-                <marker date="1511919762000" expanded="true" signature="11495:11554" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GroupNode.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GroupNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sgraph/GroupNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="303" column="12" lean-forward="false" selection-start-line="303" selection-start-column="12" selection-end-line="303" selection-end-column="25" />
+            <state relative-caret-position="4170">
+              <caret line="300" column="42" lean-forward="false" selection-start-line="300" selection-start-column="42" selection-end-line="300" selection-end-column="42" />
               <folding>
-                <element signature="e#3077#3084#0" expanded="true" />
                 <element signature="e#4095#4096#0" expanded="true" />
                 <element signature="e#4126#4127#0" expanded="true" />
                 <element signature="e#4163#4164#0" expanded="true" />
                 <element signature="e#4192#4193#0" expanded="true" />
-                <element signature="e#4320#4327#0" expanded="true" />
-                <element signature="e#4593#4600#0" expanded="true" />
                 <element signature="e#4936#4937#0" expanded="true" />
                 <element signature="e#4971#4972#0" expanded="true" />
                 <element signature="e#5023#5024#0" expanded="true" />
@@ -71,22 +69,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sgraph/AbstractNode.java">
+      <file leaf-file-name="View.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582">
-              <caret line="145" column="5" lean-forward="false" selection-start-line="145" selection-start-column="5" selection-end-line="145" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="INode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sgraph/INode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="174" column="0" lean-forward="false" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="307">
+              <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+              <folding>
+                <element signature="e#2629#2645#0" expanded="true" />
+                <element signature="e#5073#5074#0" expanded="true" />
+                <element signature="e#5117#5118#0" expanded="true" />
+                <marker date="1511973464000" expanded="true" signature="5437:5558" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,8 +87,8 @@
       <file leaf-file-name="sphere-test.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+            <state relative-caret-position="300">
+              <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -104,8 +97,18 @@
       <file leaf-file-name="JOGLFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JOGLFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="67" column="56" lean-forward="false" selection-start-line="67" selection-start-column="56" selection-end-line="67" selection-end-column="56" />
+            <state relative-caret-position="645">
+              <caret line="67" column="55" lean-forward="false" selection-start-line="67" selection-start-column="55" selection-end-line="67" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Color.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/Color.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -114,9 +117,11 @@
       <file leaf-file-name="Scenegraph.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sgraph/Scenegraph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="167" column="20" lean-forward="false" selection-start-line="167" selection-start-column="20" selection-end-line="167" selection-end-column="20" />
-              <folding />
+            <state relative-caret-position="2190">
+              <caret line="168" column="20" lean-forward="false" selection-start-line="168" selection-start-column="20" selection-end-line="168" selection-end-column="20" />
+              <folding>
+                <marker date="1511973464000" expanded="false" signature="5247:5279" ph="&lt;~&gt;" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -124,8 +129,8 @@
       <file leaf-file-name="LeafNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sgraph/LeafNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="434" column="0" lean-forward="false" selection-start-line="434" selection-start-column="0" selection-end-line="434" selection-end-column="0" />
+            <state relative-caret-position="7485">
+              <caret line="541" column="44" lean-forward="false" selection-start-line="541" selection-start-column="44" selection-end-line="541" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2463#2464#0" expanded="true" />
@@ -146,9 +151,19 @@
                 <element signature="e#4556#4557#0" expanded="true" />
                 <element signature="e#5895#5896#0" expanded="true" />
                 <element signature="e#5931#5932#0" expanded="true" />
-                <marker date="1511919762000" expanded="false" signature="17524:17539" ph=" { " />
-                <marker date="1511919762000" expanded="false" signature="17589:17595" ph=" }" />
+                <element signature="e#17588#17589#0" expanded="true" />
+                <element signature="e#17653#17654#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gouraud-multiple.vert" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/shaders/gouraud-multiple.vert">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="35" column="16" lean-forward="false" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -163,8 +178,8 @@
       <file leaf-file-name="ray-trace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/ray-trace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="135" column="20" lean-forward="false" selection-start-line="135" selection-start-column="20" selection-end-line="135" selection-end-column="20" />
+            <state relative-caret-position="525">
+              <caret line="35" column="18" lean-forward="false" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -273,15 +288,15 @@
         <option value="$PROJECT_DIR$/src/sgraph/GL3ScenegraphRenderer.java" />
         <option value="$PROJECT_DIR$/src/sgraph/IScenegraphRenderer.java" />
         <option value="$PROJECT_DIR$/src/sgraph/Scenegraph.java" />
-        <option value="$PROJECT_DIR$/src/util/Color.java" />
         <option value="$PROJECT_DIR$/src/sgraph/TransformNode.java" />
         <option value="$PROJECT_DIR$/src/sgraph/INode.java" />
         <option value="$PROJECT_DIR$/src/sgraph/AbstractNode.java" />
-        <option value="$PROJECT_DIR$/src/scenegraphmodels/ray-trace.xml" />
-        <option value="$PROJECT_DIR$/src/JOGLFrame.java" />
-        <option value="$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml" />
         <option value="$PROJECT_DIR$/src/sgraph/GroupNode.java" />
+        <option value="$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml" />
+        <option value="$PROJECT_DIR$/src/JOGLFrame.java" />
+        <option value="$PROJECT_DIR$/src/util/Color.java" />
         <option value="$PROJECT_DIR$/src/sgraph/LeafNode.java" />
+        <option value="$PROJECT_DIR$/src/scenegraphmodels/ray-trace.xml" />
       </list>
     </option>
   </component>
@@ -319,9 +334,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -329,27 +342,12 @@
               <item name="Scenegraphs" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scenegraphs-textures" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Scenegraphs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scenegraphs-textures" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Scenegraphs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scenegraphs-textures" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="scenegraphmodels" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Scenegraphs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scenegraphs-textures" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sgraph" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -561,23 +559,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="3" y="23" width="1680" height="952" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1680" height="952" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902467" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33093524" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28207847" sideWeight="0.5104167" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28177458" sideWeight="0.48958334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28177458" sideWeight="0.48958334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297362" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.102564104" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.103785105" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -589,6 +585,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33093524" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733813" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -787,13 +784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shaders/gouraud-multiple.vert">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="19" lean-forward="false" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/shaders/gouraud-multiple.frag">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -834,7 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
           <caret line="126" column="76" lean-forward="false" selection-start-line="126" selection-start-column="76" selection-end-line="126" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -842,7 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="454">
           <caret line="85" column="4" lean-forward="false" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -884,29 +872,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/Color.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2265">
-          <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
-          <folding>
-            <marker date="1511919762000" expanded="true" signature="7230:7351" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/scene/Room1.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="47" column="44" lean-forward="true" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -914,7 +883,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-198">
           <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -922,10 +890,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="447">
           <caret line="353" column="0" lean-forward="false" selection-start-line="353" selection-start-column="0" selection-end-line="353" selection-end-column="0" />
-          <folding>
-            <marker date="1511919762000" expanded="true" signature="11448:11554" ph="{...}" />
-            <marker date="1511919762000" expanded="true" signature="11495:11554" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -933,7 +897,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="174" column="0" lean-forward="false" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -941,38 +904,68 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="582">
           <caret line="145" column="5" lean-forward="false" selection-start-line="145" selection-start-column="5" selection-end-line="145" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sgraph/Scenegraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="167" column="20" lean-forward="false" selection-start-line="167" selection-start-column="20" selection-end-line="167" selection-end-column="20" />
-          <folding />
+        <state relative-caret-position="2190">
+          <caret line="168" column="20" lean-forward="false" selection-start-line="168" selection-start-column="20" selection-end-line="168" selection-end-column="20" />
+          <folding>
+            <marker date="1511973464000" expanded="false" signature="5247:5279" ph="&lt;~&gt;" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/ray-trace.xml">
+    <entry file="file://$PROJECT_DIR$/src/sgraph/GroupNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="135" column="20" lean-forward="false" selection-start-line="135" selection-start-column="20" selection-end-line="135" selection-end-column="20" />
-          <folding />
+        <state relative-caret-position="4170">
+          <caret line="300" column="42" lean-forward="false" selection-start-line="300" selection-start-column="42" selection-end-line="300" selection-end-column="42" />
+          <folding>
+            <element signature="e#4095#4096#0" expanded="true" />
+            <element signature="e#4126#4127#0" expanded="true" />
+            <element signature="e#4163#4164#0" expanded="true" />
+            <element signature="e#4192#4193#0" expanded="true" />
+            <element signature="e#4936#4937#0" expanded="true" />
+            <element signature="e#4971#4972#0" expanded="true" />
+            <element signature="e#5023#5024#0" expanded="true" />
+            <element signature="e#5059#5060#0" expanded="true" />
+            <element signature="e#5104#5105#0" expanded="true" />
+            <element signature="e#5140#5141#0" expanded="true" />
+            <element signature="e#5184#5185#0" expanded="true" />
+            <element signature="e#5219#5220#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JOGLFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="67" column="56" lean-forward="false" selection-start-line="67" selection-start-column="56" selection-end-line="67" selection-end-column="56" />
+        <state relative-caret-position="645">
+          <caret line="67" column="55" lean-forward="false" selection-start-line="67" selection-start-column="55" selection-end-line="67" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/Color.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        <state relative-caret-position="300">
+          <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/ray-trace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="18" lean-forward="false" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -984,8 +977,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sgraph/LeafNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="434" column="0" lean-forward="false" selection-start-line="434" selection-start-column="0" selection-end-line="434" selection-end-column="0" />
+        <state relative-caret-position="7485">
+          <caret line="541" column="44" lean-forward="false" selection-start-line="541" selection-start-column="44" selection-end-line="541" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2463#2464#0" expanded="true" />
@@ -1006,32 +999,29 @@
             <element signature="e#4556#4557#0" expanded="true" />
             <element signature="e#5895#5896#0" expanded="true" />
             <element signature="e#5931#5932#0" expanded="true" />
-            <marker date="1511919762000" expanded="false" signature="17524:17539" ph=" { " />
-            <marker date="1511919762000" expanded="false" signature="17589:17595" ph=" }" />
+            <element signature="e#17588#17589#0" expanded="true" />
+            <element signature="e#17653#17654#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sgraph/GroupNode.java">
+    <entry file="file://$PROJECT_DIR$/src/shaders/gouraud-multiple.vert">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="303" column="12" lean-forward="false" selection-start-line="303" selection-start-column="12" selection-end-line="303" selection-end-column="25" />
+        <state relative-caret-position="525">
+          <caret line="35" column="16" lean-forward="false" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
           <folding>
-            <element signature="e#3077#3084#0" expanded="true" />
-            <element signature="e#4095#4096#0" expanded="true" />
-            <element signature="e#4126#4127#0" expanded="true" />
-            <element signature="e#4163#4164#0" expanded="true" />
-            <element signature="e#4192#4193#0" expanded="true" />
-            <element signature="e#4320#4327#0" expanded="true" />
-            <element signature="e#4593#4600#0" expanded="true" />
-            <element signature="e#4936#4937#0" expanded="true" />
-            <element signature="e#4971#4972#0" expanded="true" />
-            <element signature="e#5023#5024#0" expanded="true" />
-            <element signature="e#5059#5060#0" expanded="true" />
-            <element signature="e#5104#5105#0" expanded="true" />
-            <element signature="e#5140#5141#0" expanded="true" />
-            <element signature="e#5184#5185#0" expanded="true" />
-            <element signature="e#5219#5220#0" expanded="true" />
+            <element signature="e#2629#2645#0" expanded="true" />
+            <element signature="e#5073#5074#0" expanded="true" />
+            <element signature="e#5117#5118#0" expanded="true" />
+            <marker date="1511973464000" expanded="true" signature="5437:5558" ph="{...}" />
           </folding>
         </state>
       </provider>
