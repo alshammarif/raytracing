@@ -1,5 +1,6 @@
 package util;
 
+import org.joml.Vector3f;
 import org.joml.Vector4f;
 
 public class Ray
@@ -11,6 +12,11 @@ public class Ray
     {
         this.s = new Vector4f(s);
         this.v = new Vector4f(v);
+    }
+    public Ray(Vector4f s, Vector3f v)
+    {
+        this.s = new Vector4f(s);
+        this.v = new Vector4f(new Vector3f(v),0);
     }
     public Ray(Ray r1)
     {

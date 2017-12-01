@@ -61,6 +61,12 @@ public class Color {
         return (int)(r*255)<<16 | (int)(g*255)<<8 | (int)b*255;
     }
 
+    public Color toColor(int rgb)
+    {
+
+        return new Color((rgb>>16)&255,  (rgb>>8)&255,  rgb&255);
+    }
+
     public float getRed()
     {return this.r;}
 

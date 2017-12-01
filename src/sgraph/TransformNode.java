@@ -3,10 +3,7 @@ package sgraph;
 import com.jogamp.opengl.GLAutoDrawable;
 import org.joml.Matrix4f;
 import org.joml.Vector4f;
-import util.IVertexData;
-import util.Light;
-import util.PolygonMesh;
-import util.Ray;
+import util.*;
 
 import java.util.*;
 
@@ -342,13 +339,14 @@ public class TransformNode extends AbstractNode
         return  blank;
     }
 
-    public int rayCast(Ray r1, Stack<Matrix4f> modelview, ArrayList<Light> ls)
+    public Point rayCast(Ray r1, Stack<Matrix4f> modelview, ArrayList<Light> ls)
     {
         int color;
+        Point p1;
         modelview.push(new Matrix4f(modelview.peek()));
         modelview.peek().mul(transform);
-            color = child.rayCast(r1,modelview, ls);
+            p1 = child.rayCast(r1,modelview, ls);
         modelview.pop();
-        return color;
+        return p1;
     }
 }

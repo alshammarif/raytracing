@@ -4,10 +4,9 @@ import com.jogamp.opengl.GL3;
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
-import util.IVertexData;
-import util.Light;
-import util.PolygonMesh;
-import util.TextureImage;
+import util.*;
+import util.Color;
+import util.Point;
 
 import javax.imageio.ImageIO;
 import javax.swing.plaf.LabelUI;
@@ -148,7 +147,9 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
     public List<Integer> raytrace(int width, int height, Stack<Matrix4f> modelview, ArrayList<Light> ls) throws Exception
     {
         List<Integer> hitRecord = new ArrayList<>();
-        File file =  new File("Image.png");
+        File file =  new File("Image_with_shadows.png");
+        int color=0;
+        Vector3f lv;
         BufferedImage out = new BufferedImage(800,800,BufferedImage.TYPE_INT_RGB);
         //ray
         Vector4f s = new Vector4f(0,0,0,1);//view co-ordinate system
@@ -159,9 +160,38 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
             {
                 v = new Vector4f(x-width/2,y-height/2,(float)(-0.5*height/Math.tan(Math.toRadians(30))),0);
                 util.Ray r1 = new util.Ray(s,v);
-                int color = root.rayCast(r1, modelview, ls);
-                if(color<0)
-                    color=0;
+                util.Point p1 = root.rayCast(r1, modelview, ls);
+                if(p1.color<0)
+                    p1.color=0;
+                color = p1.color;
+
+                // shadow ray
+                    for (int i = 0; i < ls.size(); i++) {
+                        if(ls.get(i).getPosition().w != 0)
+                        {
+                            lv = new Vector3f(ls.get(i).getPosition().x - p1.x,
+                                    ls.get(i).getPosition().y - p1.y,
+                                    ls.get(i).getPosition().z - p1.z);
+                            lv = lv.normalize();
+                        }
+                        else
+                        {
+                            lv = new Vector3f(-ls.get(i).getPosition().x,
+                                    -ls.get(i).getPosition().y,
+                                    -ls.get(i).getPosition().z);
+                            lv = lv.normalize();
+                        }
+
+                        Vector4f shadowStart = new Vector4f(p1.x + (0.1f * lv.x), p1.y + (0.1f * lv.y), p1.z + (0.1f * lv.z), 1);
+                        Vector4f shadowDirection = new Vector4f(lv.x,lv.y,lv.z,0);
+                        Ray shadowRay = new Ray(shadowStart, shadowDirection);
+                        Point p2 = root.rayCast(shadowRay, modelview, ls);
+                        if (p2.color >= 1)
+                        {
+                            Color c = new Color(0.1f,0.1f,0.1f);
+                            color = c.toInt();
+                        }
+                    }
                 out.setRGB(x,(height-1)-y,color);
             }
         }

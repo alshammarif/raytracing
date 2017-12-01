@@ -131,11 +131,9 @@ public class View {
 
     gl.glUniformMatrix4fv(projectionLocation, 1, false, projection.get(fb));
 
-    if(!isE)
-    {
-        scenegraph.draw(modelView);
+        //scenegraph.draw(modelView);
         scenegraph.raytrace(800,800,modelView,lights);
-    }
+
 
 
     gl.glFlush();

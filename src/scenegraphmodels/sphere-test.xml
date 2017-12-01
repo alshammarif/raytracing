@@ -10,21 +10,39 @@
 		<ambient>1 1 1</ambient>
 		<diffuse>0.9 0.9 0.9</diffuse>
 		<specular>1 1 1</specular>
-		<position>0 0 150</position>
+		<position>100 0 150</position>
 	</light>
 	<transform>
 		<set>
-			<scale>3 3 3</scale>
+			<scale>2 2 2</scale>
 		</set>
-		<object instanceof="Sphere" texture="checker">
+		<object instanceof="Shpere" texture="checker">
 			<material>
-				<ambient>1 1 1</ambient>
+				<ambient>1 0 1</ambient>
 				<diffuse>0.9 0.9 0.9</diffuse>
 				<specular>0.6 0.6 0.6</specular>
+				<absorption>1</absorption>
+				<reflectance>0</reflectance>
+				<transparancy>0</transparancy>
 				<shininess>50</shininess>
 			</material>
 		</object>
 	</transform>
-
-
+	<transform>
+		<set>
+			<translate>0 0 -3</translate>
+			<scale>1 1 1</scale>
+		</set>
+		<object instanceof="sphere" texture="white">
+			<material>
+				<ambient>1 0 1</ambient>
+				<diffuse>0.9 0.9 0.9</diffuse>
+				<specular>0.6 0.6 0.6</specular>
+				<absorption>1</absorption>
+				<reflectance>0</reflectance>
+				<transparancy>0</transparancy>
+				<shininess>50</shininess>
+			</material>
+		</object>
+	</transform>
 </scene>
