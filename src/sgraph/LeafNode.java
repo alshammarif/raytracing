@@ -381,6 +381,15 @@ public class LeafNode extends AbstractNode
             tmax = (- B + ((float)Math.sqrt((Math.pow((double)(B), 2))-(4*(A*C)))))/(2*A);
 
 
+
+            if(tmin<0)
+            {
+                tmin = tmax;
+                if(tmin<=0)
+                    return new Point(new Vector4f(0,0,0,1),new Color(-1,-1,-1).toInt());
+            }
+
+
             // Points of intersection
             Vector4f p1, p2;
             p1 = new Vector4f(0,0,0,1);

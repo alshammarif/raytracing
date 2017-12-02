@@ -192,6 +192,7 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
                             color = c.toInt();
                         }
                     }
+                    
                 out.setRGB(x,(height-1)-y,color);
             }
         }
