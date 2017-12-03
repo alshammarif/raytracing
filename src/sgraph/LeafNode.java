@@ -265,6 +265,9 @@ public class LeafNode extends AbstractNode
         inv.transform(RayCopy.s);
         inv.transform(RayCopy.v);
 
+        boolean isReflective = false;
+        if(material.getReflection()>0.0f)
+            isReflective = true;
 
 //        r1.s = r1.s.mul(inv);
 //        r1.v = r1.v.mul(inv);
@@ -333,6 +336,10 @@ public class LeafNode extends AbstractNode
                               RayCopy.s.y + (RayCopy.v.y * tmax),
                               RayCopy.s.z + (RayCopy.v.z * tmax),1);
 
+
+            norm = new Vector4f(getNormalBox(p1));
+            norm.mul(model,norm);
+
             float d1,d2;
             d1 = (float)Math.sqrt((Math.pow((p1.x-RayCopy.s.x),2))+Math.pow((p1.y-RayCopy.s.y),2)+Math.pow((p1.z-RayCopy.s.z),2));
             d2 = (float)Math.sqrt((Math.pow((p2.x-RayCopy.s.x),2))+Math.pow((p2.y-RayCopy.s.y),2)+Math.pow((p2.z-RayCopy.s.z),2));
@@ -342,13 +349,13 @@ public class LeafNode extends AbstractNode
             {
                 fposition = new Vector4f(p1);
                 fposition.mul(model,fposition);
-                return new Point(new Vector4f(fposition.x(),fposition.y(),fposition.z(),1),shade(p1,ls,model).toInt());
+                return new Point(new Vector4f(fposition.x(),fposition.y(),fposition.z(),1),shade(p1,ls,model).toInt(),norm, isReflective,this.material);
             }
             else
             {
                 fposition = new Vector4f(p2);
                 fposition.mul(model,fposition);
-                return new Point(new Vector4f(fposition.x(),fposition.y(),fposition.z(),1),shade(p2,ls,model).toInt());
+                return new Point(new Vector4f(fposition.x(),fposition.y(),fposition.z(),1),shade(p2,ls,model).toInt(),norm, isReflective, this.material);
             }
         }
         else
@@ -375,7 +382,9 @@ public class LeafNode extends AbstractNode
                 Vector4f pointCopy = new Vector4f(p1);
                 fposition = new Vector4f(pointCopy);
                 fposition.mul(model,fposition);
-                return new Point(new Vector4f(fposition.x(),fposition.y(),fposition.z(),1),shade(p1,ls,model).toInt());
+                norm = new Vector4f(getNormalBox(p1));
+                norm.mul(model,norm);
+                return new Point(new Vector4f(fposition.x(),fposition.y(),fposition.z(),1),shade(p1,ls,model).toInt(),norm, isReflective, this.material);
             }
             tmin = (- B - ((float)Math.sqrt((Math.pow((double)(B), 2))-(4*(A*C)))))/(2*A);
             tmax = (- B + ((float)Math.sqrt((Math.pow((double)(B), 2))-(4*(A*C)))))/(2*A);
@@ -402,6 +411,10 @@ public class LeafNode extends AbstractNode
             p2.y = RayCopy.s.y + (RayCopy.v.y * tmax);
             p2.z = RayCopy.s.z + (RayCopy.v.z * tmax);
 
+
+            norm = new Vector4f(getNormalSphere(p1));
+            norm.mul(model,norm);
+
             float d1,d2;
             d1 = (float)Math.sqrt((Math.pow((p1.x-RayCopy.s.x),2))+Math.pow((p1.y-RayCopy.s.y),2)+Math.pow((p1.z-RayCopy.s.z),2));
             d2 = (float)Math.sqrt((Math.pow((p2.x-RayCopy.s.x),2))+Math.pow((p2.y-RayCopy.s.y),2)+Math.pow((p2.z-RayCopy.s.z),2));
@@ -411,14 +424,15 @@ public class LeafNode extends AbstractNode
                 Vector4f pointCopy = new Vector4f(p1);
                 fposition = new Vector4f(pointCopy);
                 fposition.mul(model,fposition);
-                return new Point(new Vector4f(fposition.x(),fposition.y(),fposition.z(),1),shade(p1,ls,model).toInt());
+
+                return new Point(new Vector4f(fposition.x(),fposition.y(),fposition.z(),1),shade(p1,ls,model).toInt(),norm, isReflective,this.material);
             }
             else
             {
                 Vector4f pointCopy = new Vector4f(p1);
                 fposition = new Vector4f(pointCopy);
                 fposition.mul(model,fposition);
-                return new Point(new Vector4f(fposition.x(),fposition.y(),fposition.z(),1),shade(p2,ls,model).toInt());
+                return new Point(new Vector4f(fposition.x(),fposition.y(),fposition.z(),1),shade(p2,ls,model).toInt(),norm, isReflective, this.material);
             }
         }
     }
@@ -456,8 +470,6 @@ public class LeafNode extends AbstractNode
                                   -ls.get(i).getPosition().z);
                 lv = lv.normalize();
                 // Calculation of si
-//                float cosphi = ls.get(i).getSpotDirection().normalize().dot(-lv.x,-lv.y,-lv.z,1);
-//                float cosTheta = (float)Math.cos(ls.get(i).getSpotCutoff());
 
                 Vector4f dVec = new Vector4f(ls.get(i).getSpotDirection()).normalize();
                 float phi = (float)Math.toDegrees(Math.acos(dVec.dot(-lv.x,-lv.y,-lv.z,0)));
@@ -497,6 +509,7 @@ public class LeafNode extends AbstractNode
             }
             c.mul(si,si,si);
         }
+        //Texture code commented,
 //        Vector4f texVector;
 //        TextureImage tex = textures.get(textureName);
 //

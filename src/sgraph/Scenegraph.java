@@ -192,7 +192,28 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
                             color = c.toInt();
                         }
                     }
-                    
+
+                //reflected Ray
+                if(p1.reflective)
+                {
+                    Vector3f reflectVec = new Vector3f(r1.v.x,r1.v.y,r1.v.z);
+                    reflectVec.reflect(p1.normal.x,p1.normal.y,p1.normal.z);
+
+                    Vector4f reflectStart = new Vector4f(p1.x,p1.y,p1.z,1);
+                    Ray reflectRay = new Ray(reflectStart,reflectVec);
+                    Point p3 = root.rayCast(reflectRay,modelview,ls);
+                    if(p3.color<0)
+                        p3.color = 0;
+                    Color nc  = new Color(color);
+                    Color rc = new Color(p3.color);
+                    nc.addColor(p1.material.getAbsorption()*nc.getRed(),
+                            p1.material.getAbsorption()*nc.getGreen(),
+                            p1.material.getAbsorption()*nc.getBlue());
+                    nc.addColor(p1.material.getReflection()*rc.getRed(),
+                               p1.material.getReflection()*rc.getGreen(),
+                               p1.material.getReflection()*rc.getBlue());
+                    color = nc.toInt();
+                }
                 out.setRGB(x,(height-1)-y,color);
             }
         }
