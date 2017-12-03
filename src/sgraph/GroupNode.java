@@ -3,10 +3,8 @@ package sgraph;
 import com.jogamp.opengl.GLAutoDrawable;
 import org.joml.Matrix4f;
 import org.joml.Vector4f;
-import util.IVertexData;
-import util.Light;
-import util.PolygonMesh;
-import util.Ray;
+import util.*;
+import util.Vector;
 
 import java.util.*;
 
@@ -294,18 +292,31 @@ public class GroupNode extends AbstractNode {
         return blank;
     }
 
-    public int rayCast(Ray r1, Stack<Matrix4f> modelview, ArrayList<Light> ls)
+    public Point rayCast(Ray r1, Stack<Matrix4f> modelview, ArrayList<Light> ls)
     {
-       int color=0;
-       ArrayList<Integer> hitRecord = new ArrayList<>();
+        float shortest = 999999.0f;
+        Point p1;
+        ArrayList<Point> hitRecord = new ArrayList<>();
+        ArrayList<Float> distList = new ArrayList<>();
         for(int i=0;i<children.size();i++)
         {
-            color = children.get(i).rayCast(r1, modelview, ls);
-            if(color >= 0)
-                hitRecord.add(color);
+            p1 = children.get(i).rayCast(r1, modelview, ls);
+            if (p1.color > 0)
+            {
+                hitRecord.add(p1);
+                float dist = (float)Math.sqrt(Math.pow(p1.x-r1.s.x,2)+Math.pow(p1.y-r1.s.y,2)+Math.pow(p1.z-r1.s.z,2));
+                distList.add(dist);
+            }
         }
         if(hitRecord.size()>0)
-            color = hitRecord.get(0);
-        return color;
+        {
+            for(int i=0;i<distList.size();i++)
+            {
+                if(distList.get(i)<shortest)
+                    shortest = distList.get(i);
+            }
+            return hitRecord.get(distList.indexOf(shortest));
+        }
+        return new Point(new Vector4f(0,0,0,1), new Color(-1,-1,-1).toInt());
     }
 }

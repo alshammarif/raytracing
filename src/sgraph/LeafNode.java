@@ -7,6 +7,7 @@ import org.joml.Vector3f;
 import org.joml.Vector4f;
 import util.*;
 import util.Color;
+import util.Point;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -253,7 +254,7 @@ public class LeafNode extends AbstractNode
         return blank;
     }
 
-    public int rayCast(Ray r1,Stack<Matrix4f> modelview, ArrayList<Light> ls) //object -> view
+    public Point rayCast(Ray r1, Stack<Matrix4f> modelview, ArrayList<Light> ls) //object -> view
     {
         Matrix4f model = new Matrix4f(modelview.peek());
         Matrix4f copy = new Matrix4f(modelview.peek());
@@ -263,6 +264,7 @@ public class LeafNode extends AbstractNode
 
         inv.transform(RayCopy.s);
         inv.transform(RayCopy.v);
+
 
 //        r1.s = r1.s.mul(inv);
 //        r1.v = r1.v.mul(inv);
@@ -288,7 +290,7 @@ public class LeafNode extends AbstractNode
             }
 
             if ((tmin > tymax) || (tymin > tmax))
-                return new Color(-1,-1,-1).toInt();
+                return new Point(new Vector4f(0,0,0,1),new Color(-1,-1,-1).toInt());
 
             if (tymin > tmin)
                 tmin = tymin;
@@ -307,7 +309,7 @@ public class LeafNode extends AbstractNode
             }
 
             if ((tmin > tzmax) || (tzmin > tmax))
-                return new  Color(-1,-1,-1).toInt();
+                return new Point(new Vector4f(0,0,0,1),new Color(-1,-1,-1).toInt());
 
             if (tzmin > tmin)
                 tmin = tzmin;
@@ -317,10 +319,10 @@ public class LeafNode extends AbstractNode
 
             if(tmin<0 && tmax<0)
             {
-                return new  Color(-1,-1,-1).toInt();}
+                return new Point(new Vector4f(0,0,0,1),new Color(-1,-1,-1).toInt());}
 
             if(tmin==0 && tmax==0)
-                return new  Color(-1,-1,-1).toInt();
+                return new Point(new Vector4f(0,0,0,1),new Color(-1,-1,-1).toInt());
 
             Vector4f p1, p2;
             p1 = new Vector4f(RayCopy.s.x + (RayCopy.v.x * tmin),
@@ -335,13 +337,18 @@ public class LeafNode extends AbstractNode
             d1 = (float)Math.sqrt((Math.pow((p1.x-RayCopy.s.x),2))+Math.pow((p1.y-RayCopy.s.y),2)+Math.pow((p1.z-RayCopy.s.z),2));
             d2 = (float)Math.sqrt((Math.pow((p2.x-RayCopy.s.x),2))+Math.pow((p2.y-RayCopy.s.y),2)+Math.pow((p2.z-RayCopy.s.z),2));
 
+
             if(d1<d2)
             {
-                return shade(p1,ls,model).toInt();
-                }
+                fposition = new Vector4f(p1);
+                fposition.mul(model,fposition);
+                return new Point(new Vector4f(fposition.x,fposition.y,fposition.z,1),shade(p1,ls,model).toInt());
+            }
             else
             {
-                return shade(p2,ls,model).toInt();
+                fposition = new Vector4f(p2);
+                fposition.mul(model,fposition);
+                return new Point(new Vector4f(fposition.x,fposition.y,fposition.z,1),shade(p2,ls,model).toInt());
             }
         }
         else
@@ -355,7 +362,7 @@ public class LeafNode extends AbstractNode
             C = (((float)(Math.pow((double)(RayCopy.s.x), 2)) + (float)(Math.pow((double)(RayCopy.s.y), 2)) + (float)(Math.pow((double)(RayCopy.s.z), 2))) - 1);
 
             if((float)((Math.pow((double) B, 2))) < (4*(A*C))) {
-                return new  Color(-1,-1,-1).toInt();
+                return new Point(new Vector4f(0,0,0,1),new Color(-1,-1,-1).toInt());
             }
 
             if((float)((Math.pow((double) B, 2))) == (4*(A*C))) {
@@ -365,10 +372,22 @@ public class LeafNode extends AbstractNode
                 p1.x = RayCopy.s.x + (RayCopy.v.x * tmin);
                 p1.y = RayCopy.s.y + (RayCopy.v.y * tmin);
                 p1.z = RayCopy.s.z + (RayCopy.v.z * tmin);
-                return shade(p1,ls,model).toInt();
+                Vector4f pointCopy = new Vector4f(p1);
+                fposition = new Vector4f(pointCopy);
+                fposition.mul(model,fposition);
+                return new Point(new Vector4f(fposition.x,fposition.y,fposition.z,1),shade(p1,ls,model).toInt());
             }
             tmin = (- B - ((float)Math.sqrt((Math.pow((double)(B), 2))-(4*(A*C)))))/(2*A);
             tmax = (- B + ((float)Math.sqrt((Math.pow((double)(B), 2))-(4*(A*C)))))/(2*A);
+
+
+
+            if(tmin<0)
+            {
+                tmin = tmax;
+                if(tmin<=0)
+                    return new Point(new Vector4f(0,0,0,1),new Color(-1,-1,-1).toInt());
+            }
 
 
             // Points of intersection
@@ -389,16 +408,24 @@ public class LeafNode extends AbstractNode
 
             if(d1<d2)
             {
-                return shade(p1,ls,model).toInt();
+                Vector4f pointCopy = new Vector4f(p1);
+                fposition = new Vector4f(pointCopy);
+                fposition.mul(model,fposition);
+                return new Point(new Vector4f(fposition.x,fposition.y,fposition.z,1),shade(p1,ls,model).toInt());
             }
-            else {
-                return shade(p2, ls,model).toInt();
+            else
+            {
+                Vector4f pointCopy = new Vector4f(p1);
+                fposition = new Vector4f(pointCopy);
+                fposition.mul(model,fposition);
+                return new Point(new Vector4f(fposition.x,fposition.y,fposition.z,1),shade(p2,ls,model).toInt());
             }
         }
     }
 
     private Color shade(Vector4f p1, ArrayList<Light> ls, Matrix4f modelView)
     {
+
         Matrix4f model = new Matrix4f(modelView);
         int si;
         Color c = new Color(0,0,0);
@@ -433,9 +460,9 @@ public class LeafNode extends AbstractNode
 //                float cosTheta = (float)Math.cos(ls.get(i).getSpotCutoff());
 
                 Vector4f dVec = new Vector4f(ls.get(i).getSpotDirection()).normalize();
-                float cosphi = dVec.dot(-lv.x,-lv.y,-lv.z,0);
-                float cosTheta = (float)(Math.toRadians(ls.get(i).getSpotCutoff()));
-                if(cosphi>cosTheta)
+                float phi = (float)Math.toDegrees(Math.acos(dVec.dot(-lv.x,-lv.y,-lv.z,0)));
+                float Theta = (float)(ls.get(i).getSpotCutoff());
+                if(phi<Theta)
                     si=1;
                 else
                     si=0;
@@ -470,15 +497,16 @@ public class LeafNode extends AbstractNode
             }
             c.mul(si,si,si);
         }
-        Vector4f texVector;
-        TextureImage tex = textures.get(textureName);
-
-        if(objInstanceName.equals("Sphere"))
-            texVector  = new Vector4f(getSphereTexture(p1,tex));
-        else
-            texVector = new Vector4f(getBoxTexture(p1,tex));
-        Vector4f texColor = tex.getColor(texVector.x,texVector.y);
-        c.mul(texColor.x,texColor.y,texColor.z);
+//        Vector4f texVector;
+//        TextureImage tex = textures.get(textureName);
+//
+//        if(objInstanceName.equals("Sphere"))
+//            texVector  = new Vector4f(getSphereTexture(p1,tex));
+//        else
+//            texVector = new Vector4f(getBoxTexture(p1,tex));
+//        Vector4f texColor = tex.getColor(texVector.x,texVector.y);
+//        c.mul(texColor.x,texColor.y,texColor.z);
+//        System.out.println("Shade ends");
         return c;
     }
 
