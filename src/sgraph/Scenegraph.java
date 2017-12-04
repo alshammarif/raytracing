@@ -147,7 +147,7 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
     public List<Integer> raytrace(int width, int height, Stack<Matrix4f> modelview, ArrayList<Light> ls) throws Exception
     {
         List<Integer> hitRecord = new ArrayList<>();
-        File file =  new File("Image_with_shadows.png");
+        File file =  new File("Image.png");
         int color=0;
         Vector3f lv;
         BufferedImage out = new BufferedImage(800,800,BufferedImage.TYPE_INT_RGB);
@@ -165,7 +165,7 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
                     p1.color=0;
                 color = p1.color;
 
-                // shadow ray
+//                // shadow ray
                     for (int i = 0; i < ls.size(); i++) {
                         if(ls.get(i).getPosition().w != 0)
                         {
@@ -186,9 +186,10 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
                         Vector4f shadowDirection = new Vector4f(lv.x,lv.y,lv.z,0);
                         Ray shadowRay = new Ray(shadowStart, shadowDirection);
                         Point p2 = root.rayCast(shadowRay, modelview, ls);
-                        if (p2.color >= 1)
+                        if (p2.color >= 0)
                         {
-                            Color c = new Color(0.1f,0.1f,0.1f);
+                            Color c = new Color(color);
+                            c.mul(0.2f,0.2f,0.2f);
                             color = c.toInt();
                         }
                     }
@@ -196,22 +197,25 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
                 //reflected Ray
                 if(p1.reflective)
                 {
-                    Vector3f reflectVec = new Vector3f(r1.v.x,r1.v.y,r1.v.z);
-                    reflectVec.reflect(p1.normal.x,p1.normal.y,p1.normal.z);
-
-                    Vector4f reflectStart = new Vector4f(p1.x,p1.y,p1.z,1);
+                    Vector4f reflectVec;
+                    Vector3f normalView= new Vector3f(p1.normal.x,p1.normal.y,p1.normal.z).normalize();
+                    Vector3f viewVector = new Vector3f(p1.x,p1.y,p1.z).normalize();
+                    reflectVec = new Vector4f(viewVector.reflect(normalView),0);
+                    Vector4f reflectStart = new Vector4f(p1.x + (reflectVec.x*0.1f),p1.y + (reflectVec.y*0.1f),p1.z + (reflectVec.z*0.1f),1);
+                    reflectVec.normalize();
+                  // System.out.println("Incomming ray= "+r1.v);
+                   //System.out.println("Reflected Ray= "+reflectVec);
                     Ray reflectRay = new Ray(reflectStart,reflectVec);
                     Point p3 = root.rayCast(reflectRay,modelview,ls);
                     if(p3.color<0)
-                        p3.color = 0;
-                    Color nc  = new Color(color);
+                        p3.color = new Color(0.1f,0.1f,0.1f).toInt();
+
+                    Color nc = new Color(color);
                     Color rc = new Color(p3.color);
-                    nc.addColor(p1.material.getAbsorption()*nc.getRed(),
-                            p1.material.getAbsorption()*nc.getGreen(),
-                            p1.material.getAbsorption()*nc.getBlue());
-                    nc.addColor(p1.material.getReflection()*rc.getRed(),
-                               p1.material.getReflection()*rc.getGreen(),
-                               p1.material.getReflection()*rc.getBlue());
+
+                    nc.addColor(p1.material.getReflection() * rc.getRed(),
+                                p1.material.getReflection() * rc.getGreen(),
+                                p1.material.getReflection() * rc.getBlue());
                     color = nc.toInt();
                 }
                 out.setRGB(x,(height-1)-y,color);

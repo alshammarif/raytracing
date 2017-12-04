@@ -75,4 +75,9 @@ public class Color {
 
     public float getBlue()
     {return this.b;}
+
+    public String toString()
+    {
+        return ("color = ["+r+" "+g+" "+b+"]");
+    }
 }
