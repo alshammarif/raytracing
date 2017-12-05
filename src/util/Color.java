@@ -80,4 +80,15 @@ public class Color {
     {
         return ("color = ["+r+" "+g+" "+b+"]");
     }
+
+    public boolean equals(Color c)
+    {
+        if(c.getRed() != this.getRed())
+            return false;
+        if(c.getGreen() != this.getGreen())
+            return false;
+        if(c.getBlue() != this.getBlue())
+            return false;
+        return true;
+    }
 }

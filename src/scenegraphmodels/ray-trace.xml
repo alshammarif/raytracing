@@ -16,16 +16,17 @@
     <group>
         <transform>
             <set>
-                <translate>0 -1.25 -9</translate>
+                <translate>0 -1.25 -3</translate>
                 <scale>2 2 2</scale>
+
             </set>
             <object instanceof="Sphere" texture="white">
                 <material>
                     <ambient>1 0 1</ambient>
                     <diffuse>0.9 0.9 0.9</diffuse>
                     <specular>1 1 1</specular>
-                    <absorption>1</absorption>
-                    <reflection>0</reflection>
+                    <absorption>0.5</absorption>
+                    <reflection>0.5</reflection>
                     <shininess>50</shininess>
                 </material>
             </object>
@@ -42,8 +43,8 @@
                     <ambient>1 0 0</ambient>
                     <diffuse>0.9 0.9 0.9</diffuse>
                     <specular>1 1 1</specular>
-                    <absorption>0.5</absorption>
-                    <reflection>0.5</reflection>
+                    <absorption>1</absorption>
+                    <reflection>0</reflection>
                     <shininess>50</shininess>
                 </material>
             </object>
