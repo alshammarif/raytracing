@@ -44,21 +44,21 @@ public class Color {
             this.r = new Float(1);
         this.g = new Float(g * this.g);
         if(this.g>1)
-            this.g = new Float(g);
+            this.g = new Float(1);
         this.b = new Float(b * this.b);
         if(this.b>1)
             this.b=new Float(1);
         if(this.r<0)
-            this.r= new Float(0);;
+            this.r= new Float(0);
         if(this.g<0)
-            this.g=new Float(0);;
+            this.g=new Float(0);
         if(this.b<0)
-            this.b=new Float(0);;
+            this.b=new Float(0);
     }
 
     public int toInt()
     {
-        return (int)(r*255)<<16 | (int)(g*255)<<8 | (int)b*255;
+        return (int)(r*255)<<16 | (int)(g*255)<<8 | (int)(b*255);
     }
 
     public Color toColor(int rgb)
@@ -79,5 +79,16 @@ public class Color {
     public String toString()
     {
         return ("color = ["+r+" "+g+" "+b+"]");
+    }
+
+    public boolean equals(Color c)
+    {
+        if(c.getRed() != this.getRed())
+            return false;
+        if(c.getGreen() != this.getGreen())
+            return false;
+        if(c.getBlue() != this.getBlue())
+            return false;
+        return true;
     }
 }
