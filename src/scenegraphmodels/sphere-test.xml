@@ -1,48 +1,34 @@
 <scene>
-	<instance name="Box" path="models/box-outside"></instance>
-	<instance name="Sphere" path="models/sphere"></instance>
-	<image name="earth"  path="textures/earthmap.jpg" />
-	<image name="checker"  path="textures/checkerboard.png" />
-	<image name="die"  path="textures/die.png" />
-	<image path="textures/whitebox.png" name="whitebox"/>
-	<image path="textures/white.png" name="white"/>
-	<light>
-		<ambient>1 1 1</ambient>
-		<diffuse>0.9 0.9 0.9</diffuse>
-		<specular>1 1 1</specular>
-		<position>100 0 150</position>
-	</light>
-	<transform>
-		<set>
-			<scale>2 2 2</scale>
-		</set>
-		<object instanceof="Shpere" texture="checker">
-			<material>
-				<ambient>1 0 1</ambient>
-				<diffuse>0.9 0.9 0.9</diffuse>
-				<specular>0.6 0.6 0.6</specular>
-				<absorption>1</absorption>
-				<reflectance>0</reflectance>
-				<transparancy>0</transparancy>
-				<shininess>50</shininess>
-			</material>
-		</object>
-	</transform>
-	<transform>
-		<set>
-			<translate>0 0 -3</translate>
-			<scale>1 1 1</scale>
-		</set>
-		<object instanceof="sphere" texture="white">
-			<material>
-				<ambient>1 0 1</ambient>
-				<diffuse>0.9 0.9 0.9</diffuse>
-				<specular>0.6 0.6 0.6</specular>
-				<absorption>1</absorption>
-				<reflectance>0</reflectance>
-				<transparancy>0</transparancy>
-				<shininess>50</shininess>
-			</material>
-		</object>
-	</transform>
+    <instance name="Box" path="models/box-outside"></instance>
+   <instance name="Cylinder" path="models/cylinder"></instance>
+   <instance name="Sphere" path="models/sphere"></instance>
+    <image name="earth"  path="textures/earthmap.jpg" />
+    <image name="checker"  path="textures/checkerboard.png" />
+    <image name="checker-box"  path="textures/checkerboard-box.png" />
+    <image name="die"  path="textures/die.png" />
+    <image path="textures/whitebox.png" name="whitebox"/>
+    <image path="textures/white.png" name="white"/>
+    <light>
+        <ambient>1 1 1</ambient>
+        <diffuse>0.7 0.7 0.7</diffuse>
+        <specular>0.3 0.3 0.3</specular>
+        <position>200 50 150</position>
+    </light>
+    <group>
+        <transform>
+            <set>
+                <scale>1 1 1</scale>
+            </set>
+            <object instanceof="Cylinder" texture="white">
+                <material>
+                    <ambient>1 0 1</ambient>
+                    <diffuse>0.9 0.9 0.9</diffuse>
+                    <specular>1 1 1</specular>
+                    <absorption>1</absorption>
+                    <reflection>0</reflection>
+                    <shininess>50</shininess>
+                </material>
+            </object>
+        </transform>
+    </group>
 </scene>

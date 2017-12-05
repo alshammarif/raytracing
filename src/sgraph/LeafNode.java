@@ -265,6 +265,12 @@ public class LeafNode extends AbstractNode
         inv.transform(RayCopy.s);
         inv.transform(RayCopy.v);
 
+        boolean isReflective = false;
+        if(material.getReflection()>0.0f)
+            isReflective = true;
+
+        Matrix4f normalMatrix = new Matrix4f(model);
+        normalMatrix.invert().transpose();
 
 //        r1.s = r1.s.mul(inv);
 //        r1.v = r1.v.mul(inv);
@@ -333,6 +339,9 @@ public class LeafNode extends AbstractNode
                               RayCopy.s.y + (RayCopy.v.y * tmax),
                               RayCopy.s.z + (RayCopy.v.z * tmax),1);
 
+
+
+
             float d1,d2;
             d1 = (float)Math.sqrt((Math.pow((p1.x-RayCopy.s.x),2))+Math.pow((p1.y-RayCopy.s.y),2)+Math.pow((p1.z-RayCopy.s.z),2));
             d2 = (float)Math.sqrt((Math.pow((p2.x-RayCopy.s.x),2))+Math.pow((p2.y-RayCopy.s.y),2)+Math.pow((p2.z-RayCopy.s.z),2));
@@ -340,18 +349,28 @@ public class LeafNode extends AbstractNode
 
             if(d1<d2)
             {
+                norm = new Vector4f(getNormalBox(p1));
+                norm.mul(model,norm).normalize();
+                norm.mul(normalMatrix);
+                norm.normalize();
+                normalView = new Vector3f(norm.x,norm.y,norm.z).normalize();
                 fposition = new Vector4f(p1);
                 fposition.mul(model,fposition);
-                return new Point(new Vector4f(fposition.x,fposition.y,fposition.z,1),shade(p1,ls,model).toInt());
+                return new Point(new Vector4f(fposition.x,fposition.y,fposition.z,1),shade(p1,ls,model).toInt(),new Vector4f(normalView,0), isReflective,this.material);
             }
             else
             {
+                norm = new Vector4f(getNormalBox(p2));
+                norm.mul(model,norm).normalize();
+                norm.mul(normalMatrix);
+                norm.normalize();
+                normalView = new Vector3f(norm.x,norm.y,norm.z).normalize();
                 fposition = new Vector4f(p2);
                 fposition.mul(model,fposition);
-                return new Point(new Vector4f(fposition.x,fposition.y,fposition.z,1),shade(p2,ls,model).toInt());
+                return new Point(new Vector4f(fposition.x,fposition.y,fposition.z,1),shade(p2,ls,model).toInt(),new Vector4f(normalView,0), isReflective, this.material);
             }
         }
-        else
+        else if(objInstanceName.equals("Sphere"))
         {
             float tmax, tmin;
             float A,B,C;
@@ -375,7 +394,12 @@ public class LeafNode extends AbstractNode
                 Vector4f pointCopy = new Vector4f(p1);
                 fposition = new Vector4f(pointCopy);
                 fposition.mul(model,fposition);
-                return new Point(new Vector4f(fposition.x,fposition.y,fposition.z,1),shade(p1,ls,model).toInt());
+                norm = new Vector4f(getNormalSphere(p1));
+                norm.mul(model,norm).normalize();
+                norm.mul(normalMatrix);
+                norm.normalize();
+                normalView = new Vector3f(norm.x,norm.y,norm.z).normalize();
+                return new Point(new Vector4f(fposition.x,fposition.y,fposition.z,1),shade(p1,ls,model).toInt(),new Vector4f(normalView,0), isReflective, this.material);
             }
             tmin = (- B - ((float)Math.sqrt((Math.pow((double)(B), 2))-(4*(A*C)))))/(2*A);
             tmax = (- B + ((float)Math.sqrt((Math.pow((double)(B), 2))-(4*(A*C)))))/(2*A);
@@ -402,23 +426,136 @@ public class LeafNode extends AbstractNode
             p2.y = RayCopy.s.y + (RayCopy.v.y * tmax);
             p2.z = RayCopy.s.z + (RayCopy.v.z * tmax);
 
+
+
+
             float d1,d2;
             d1 = (float)Math.sqrt((Math.pow((p1.x-RayCopy.s.x),2))+Math.pow((p1.y-RayCopy.s.y),2)+Math.pow((p1.z-RayCopy.s.z),2));
             d2 = (float)Math.sqrt((Math.pow((p2.x-RayCopy.s.x),2))+Math.pow((p2.y-RayCopy.s.y),2)+Math.pow((p2.z-RayCopy.s.z),2));
 
             if(d1<d2)
             {
+                norm = new Vector4f(getNormalSphere(p1));
+                norm.mul(model,norm).normalize();
+                norm.mul(normalMatrix);
+                norm.normalize();
+                normalView = new Vector3f(norm.x,norm.y,norm.z).normalize();
                 Vector4f pointCopy = new Vector4f(p1);
                 fposition = new Vector4f(pointCopy);
                 fposition.mul(model,fposition);
-                return new Point(new Vector4f(fposition.x,fposition.y,fposition.z,1),shade(p1,ls,model).toInt());
+
+                return new Point(new Vector4f(fposition.x,fposition.y,fposition.z,1),shade(p1,ls,model).toInt(),new Vector4f(normalView,0), isReflective,this.material);
             }
             else
             {
+                norm = new Vector4f(getNormalSphere(p2));
+                norm.mul(model,norm).normalize();
+                norm.mul(normalMatrix);
+                norm.normalize();
+                normalView = new Vector3f(norm.x,norm.y,norm.z).normalize();
+                Vector4f pointCopy = new Vector4f(p2);
+                fposition = new Vector4f(pointCopy);
+                fposition.mul(model,fposition);
+                return new Point(new Vector4f(fposition.x,fposition.y,fposition.z,1),shade(p2,ls,model).toInt(),new Vector4f(normalView,0), isReflective, this.material);
+            }
+        }
+        else
+        {
+            float tmax, tmin;
+            float A,B,C;
+            A = (float)(Math.pow((double)(RayCopy.v.x), 2)) + (float)(Math.pow((double)(RayCopy.v.z), 2));
+            B = (2*(RayCopy.v.x*RayCopy.s.x))+ (2*(RayCopy.v.z*RayCopy.s.z));
+            C = (float)(Math.pow((double)(RayCopy.s.x), 2)) + (float)(Math.pow((double)(RayCopy.s.z), 2)) - (float)Math.pow(1,2);
+
+            if((float)((Math.pow((double) B, 2))) < (4*(A*C))) {
+                return new Point(new Vector4f(0,0,0,1),new Color(-1,-1,-1).toInt());
+            }
+
+            if((float)((Math.pow((double) B, 2))) == (4*(A*C))) {
+                tmin = (- B - ((float)Math.sqrt((Math.pow((double)(B), 2))-(4*(A*C)))))/(2*A);
+                Vector4f p1;
+                p1 = new Vector4f(0,0,0,1);
+                p1.x = RayCopy.s.x + (RayCopy.v.x * tmin);
+                p1.y = RayCopy.s.y + (RayCopy.v.y * tmin);
+                p1.z = RayCopy.s.z + (RayCopy.v.z * tmin);
+                if((p1.y<=-0.5 && p1.y>=0.5))
+                    return new Point(new Vector4f(0,0,0,1),new Color(-1,-1,-1).toInt());
                 Vector4f pointCopy = new Vector4f(p1);
                 fposition = new Vector4f(pointCopy);
                 fposition.mul(model,fposition);
-                return new Point(new Vector4f(fposition.x,fposition.y,fposition.z,1),shade(p2,ls,model).toInt());
+                norm = new Vector4f(getNormalCylinder(p1));
+                norm.mul(model,norm).normalize();
+                norm.mul(normalMatrix);
+                norm.normalize();
+                normalView = new Vector3f(norm.x,norm.y,norm.z).normalize();
+                return new Point(new Vector4f(fposition.x,fposition.y,fposition.z,1),shade(p1,ls,model).toInt(),new Vector4f(normalView,0), isReflective, this.material);
+            }
+
+            tmin = (- B - ((float)Math.sqrt((Math.pow((double)(B), 2))-(4*(A*C)))))/(2*A);
+            tmax = (- B + ((float)Math.sqrt((Math.pow((double)(B), 2))-(4*(A*C)))))/(2*A);
+
+//            if(tmin<tmax)
+//            {
+//                float temp = tmin;
+//                tmin = tmax;
+//                tmax = temp;
+//            }
+
+            if(tmin<0)
+            {
+                tmin = tmax;
+                if(tmin<=0)
+                    return new Point(new Vector4f(0,0,0,1),new Color(-1,-1,-1).toInt());
+            }
+
+            //Points of intersection
+            Vector4f p1, p2;
+            p1 = new Vector4f(0,0,0,1);
+            p1.x = RayCopy.s.x + (RayCopy.v.x * tmin);
+            p1.y = RayCopy.s.y + (RayCopy.v.y * tmin);
+            p1.z = RayCopy.s.z + (RayCopy.v.z * tmin);
+
+            if((p1.y<=-0.5 && p1.y>=0.5))
+                return new Point(new Vector4f(0,0,0,1),new Color(-1,-1,-1).toInt());
+
+
+            p2 = new Vector4f(0,0,0,1);
+            p2.x = RayCopy.s.x + (RayCopy.v.x * tmax);
+            p2.y = RayCopy.s.y + (RayCopy.v.y * tmax);
+            p2.z = RayCopy.s.z + (RayCopy.v.z * tmax);
+
+            if((p2.y<=-0.5 && p2.y>=0.5))
+                return new Point(new Vector4f(0,0,0,1),new Color(-1,-1,-1).toInt());
+
+
+
+            float d1,d2;
+            d1 = (float)Math.sqrt((Math.pow((p1.x-RayCopy.s.x),2))+Math.pow((p1.y-RayCopy.s.y),2)+Math.pow((p1.z-RayCopy.s.z),2));
+            d2 = (float)Math.sqrt((Math.pow((p2.x-RayCopy.s.x),2))+Math.pow((p2.y-RayCopy.s.y),2)+Math.pow((p2.z-RayCopy.s.z),2));
+
+            if(d1<d2)
+            {
+                norm = new Vector4f(getNormalCylinder(p1));
+                norm.mul(model,norm).normalize();
+                norm.mul(normalMatrix);
+                norm.normalize();
+                normalView = new Vector3f(norm.x,norm.y,norm.z).normalize();
+                Vector4f pointCopy = new Vector4f(p1);
+                fposition = new Vector4f(pointCopy);
+                fposition.mul(model,fposition);
+                return new Point(new Vector4f(fposition.x,fposition.y,fposition.z,1),shade(p1,ls,model).toInt(),new Vector4f(normalView,0), isReflective,this.material);
+            }
+            else
+            {
+                norm = new Vector4f(getNormalCylinder(p2));
+                norm.mul(model,norm).normalize();
+                norm.mul(normalMatrix);
+                norm.normalize();
+                normalView = new Vector3f(norm.x,norm.y,norm.z).normalize();
+                Vector4f pointCopy = new Vector4f(p2);
+                fposition = new Vector4f(pointCopy);
+                fposition.mul(model,fposition);
+                return new Point(new Vector4f(fposition.x,fposition.y,fposition.z,1),shade(p2,ls,model).toInt(),new Vector4f(normalView,0), isReflective, this.material);
             }
         }
     }
@@ -431,8 +568,10 @@ public class LeafNode extends AbstractNode
         Color c = new Color(0,0,0);
         if(this.objInstanceName.equals("Box"))
             norm = new Vector4f(getNormalBox(p1));
-        else
+        else if(this.objInstanceName.equals("Sphere"))
             norm = new Vector4f(getNormalSphere(p1));
+        else
+            norm = new Vector4f(getNormalCylinder(p1));
         norm.mul(model,norm);
         fposition = new Vector4f(p1);
         fposition.mul(model,fposition);
@@ -456,9 +595,6 @@ public class LeafNode extends AbstractNode
                                   -ls.get(i).getPosition().z);
                 lv = lv.normalize();
                 // Calculation of si
-//                float cosphi = ls.get(i).getSpotDirection().normalize().dot(-lv.x,-lv.y,-lv.z,1);
-//                float cosTheta = (float)Math.cos(ls.get(i).getSpotCutoff());
-
                 Vector4f dVec = new Vector4f(ls.get(i).getSpotDirection()).normalize();
                 float phi = (float)Math.toDegrees(Math.acos(dVec.dot(-lv.x,-lv.y,-lv.z,0)));
                 float Theta = (float)(ls.get(i).getSpotCutoff());
@@ -471,7 +607,6 @@ public class LeafNode extends AbstractNode
             norm.mul(normalMatrix);
             norm.normalize();
             normalView = new Vector3f(norm.x,norm.y,norm.z).normalize();
-
             nDotl = normalView.dot(lv);
             viewVec = new Vector3f(-fposition.x,-fposition.y,-fposition.z).normalize();
             Vector3f negLight = new Vector3f(-lv.x,-lv.y,-lv.z).normalize();
@@ -497,6 +632,8 @@ public class LeafNode extends AbstractNode
             }
             c.mul(si,si,si);
         }
+        c.mul(material.getAbsorption(),material.getAbsorption(),material.getAbsorption());
+        //Texture code commented,
 //        Vector4f texVector;
 //        TextureImage tex = textures.get(textureName);
 //
@@ -522,14 +659,8 @@ public class LeafNode extends AbstractNode
             return new Vector4f(0,-1,0,0).normalize();
         else if(p1.z <= 0.51 && p1.z >= 0.49)
             return new Vector4f(0,0,1,0).normalize();
-        else if(p1.z >= -0.51 && p1.z <= -0.49)
-            return new Vector4f(0,0,-1,0).normalize();
         else
-        {
-            System.out.println("Error");
-            System.out.println(p1);
-            return new Vector4f();
-        }
+            return new Vector4f(0,0,-1,0).normalize();
     }
 
     private Vector4f getNormalSphere(Vector4f p1)
@@ -572,6 +703,17 @@ public class LeafNode extends AbstractNode
         }
         return new Vector4f(s,t,0,1);
         
+    }
+    private Vector4f getNormalCylinder(Vector4f p1)
+    {
+        if(p1.y==0.5)
+            return new Vector4f(0,1,0,0);
+        if(p1.y==-0.5)
+            return new Vector4f(0,-1,0,0);
+        else
+        {
+            return new Vector4f(-p1.x,p1.y,-p1.z,0);
+        }
     }
     private Vector4f getSphereTexture(Vector4f p1, TextureImage tex)
     {

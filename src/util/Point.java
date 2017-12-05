@@ -5,6 +5,9 @@ import org.joml.Vector4f;
 public class Point {
     public float x, y, z;
     public int color;
+    public Vector4f normal;
+    public boolean reflective;
+    public  util.Material material;
 
     public Point(float x, float y, float z) {
         this.x = x;
@@ -18,6 +21,17 @@ public class Point {
         this.y = new Float(p1.y);
         this.z = new Float(p1.z);
         this.color = c;
+    }
+
+    public Point(Vector4f p1,int c,Vector4f norm,boolean reflective, util.Material material)
+    {
+        this.x = new Float(p1.x);
+        this.y = new Float(p1.y);
+        this.z = new Float(p1.z);
+        this.color = c;
+        this.normal = norm;
+        this.reflective = reflective;
+        this.material = material;
     }
 
     public double distanceTo(Point p) {

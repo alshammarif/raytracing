@@ -16,7 +16,7 @@
     <group>
         <transform>
             <set>
-                <translate>2 -1.25 -3</translate>
+                <translate>0 -1.25 -9</translate>
                 <scale>2 2 2</scale>
             </set>
             <object instanceof="Sphere" texture="white">
@@ -24,6 +24,24 @@
                     <ambient>1 0 1</ambient>
                     <diffuse>0.9 0.9 0.9</diffuse>
                     <specular>1 1 1</specular>
+                    <absorption>1</absorption>
+                    <reflection>0</reflection>
+                    <shininess>50</shininess>
+                </material>
+            </object>
+        </transform>
+        <transform>
+            <set>
+                <translate>-4 -1.25 -9</translate>
+                <scale>2 2 2</scale>
+            </set>
+            <object instanceof="Box" texture="white">
+                <material>
+                    <ambient>0 1 0</ambient>
+                    <diffuse>0.9 0.9 0.9</diffuse>
+                    <specular>1 1 1</specular>
+                    <absorption>1</absorption>
+                    <reflection>0</reflection>
                     <shininess>50</shininess>
                 </material>
             </object>
@@ -32,15 +50,32 @@
     <group>
         <transform>
             <set>
-                <translate>0 -3.25 -6.5</translate>
-                <rotate>-90 1 0 0</rotate>
+                <translate>0 0 -10.5</translate>
                 <scale>12 10.5 0.25</scale>
             </set>
             <object instanceof="Box" texture="whitebox">
                 <material>
-                    <ambient>1 0 1</ambient>
+                    <ambient>1 0 0</ambient>
                     <diffuse>0.9 0.9 0.9</diffuse>
                     <specular>1 1 1</specular>
+                    <absorption>0.5</absorption>
+                    <reflection>0.5</reflection>
+                    <shininess>50</shininess>
+                </material>
+            </object>
+        </transform>
+        <transform>
+            <set>
+                <translate>0 -3.25 -6.5</translate>
+                <scale>12 0.25 10.5</scale>
+            </set>
+            <object instanceof="Box" texture="whitebox">
+                <material>
+                    <ambient>1 0 0</ambient>
+                    <diffuse>0.9 0.9 0.9</diffuse>
+                    <specular>1 1 1</specular>
+                    <absorption>0.5</absorption>
+                    <reflection>0.5</reflection>
                     <shininess>50</shininess>
                 </material>
             </object>
