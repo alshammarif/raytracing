@@ -64,7 +64,7 @@ public class Color {
     public Color toColor(int rgb)
     {
 
-        return new Color((rgb>>16)&255,  (rgb>>8)&255,  rgb&255);
+        return new Color((rgb>>16)&255,  (rgb>>8)&255,  (rgb)&255);
     }
 
     public float getRed()

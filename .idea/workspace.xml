@@ -8,10 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ba3d3202-2c53-42d8-bf08-84f95de96922" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Image.png" afterPath="$PROJECT_DIR$/Image.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scenegraphmodels/ray-trace.xml" afterPath="$PROJECT_DIR$/src/scenegraphmodels/ray-trace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml" afterPath="$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sgraph/LeafNode.java" afterPath="$PROJECT_DIR$/src/sgraph/LeafNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sgraph/Scenegraph.java" afterPath="$PROJECT_DIR$/src/sgraph/Scenegraph.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/Color.java" afterPath="$PROJECT_DIR$/src/util/Color.java" />
     </list>
     <ignored path="Scenegraphs.iws" />
@@ -81,8 +79,8 @@
       <file leaf-file-name="Color.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/Color.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="60" column="64" lean-forward="false" selection-start-line="60" selection-start-column="64" selection-end-line="60" selection-end-column="64" />
+            <state relative-caret-position="324">
+              <caret line="66" column="57" lean-forward="false" selection-start-line="66" selection-start-column="57" selection-end-line="66" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -132,8 +130,8 @@
       <file leaf-file-name="ray-trace.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/ray-trace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+            <state relative-caret-position="15">
+              <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -247,9 +245,9 @@
         <option value="$PROJECT_DIR$/src/scenegraphmodels/shadows.xml" />
         <option value="$PROJECT_DIR$/src/JOGLFrame.java" />
         <option value="$PROJECT_DIR$/src/scenegraphmodels/sphere-test.xml" />
-        <option value="$PROJECT_DIR$/src/util/Color.java" />
         <option value="$PROJECT_DIR$/src/sgraph/Scenegraph.java" />
         <option value="$PROJECT_DIR$/src/sgraph/LeafNode.java" />
+        <option value="$PROJECT_DIR$/src/util/Color.java" />
         <option value="$PROJECT_DIR$/src/scenegraphmodels/ray-trace.xml" />
       </list>
     </option>
@@ -947,14 +945,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/Color.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="60" column="64" lean-forward="false" selection-start-line="60" selection-start-column="64" selection-end-line="60" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sgraph/Scenegraph.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="265">
@@ -981,6 +971,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/Color.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="66" column="57" lean-forward="false" selection-start-line="66" selection-start-column="57" selection-end-line="66" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Image.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -988,8 +986,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/ray-trace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+        <state relative-caret-position="15">
+          <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
           <folding />
         </state>
       </provider>
