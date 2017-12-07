@@ -93,6 +93,7 @@ public class View {
     renderer.initShaderProgram(program, shaderVarsToVertexAttribs);
     scenegraph.setRenderer(renderer);
     scenegraph.setTextures();
+    scenegraph.getRoot().setTextures(renderer);
     program.disable(gl);
   }
 

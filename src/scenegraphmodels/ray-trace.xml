@@ -30,8 +30,8 @@
                         <ambient>0.8 0.8 0.8</ambient>
                         <diffuse>0.9 0.9 0.9</diffuse>
                         <specular>1 1 1</specular>
-                        <absorption>0.5</absorption>
-                        <reflection>0.5</reflection>
+                        <absorption>1</absorption>
+                        <reflection>0</reflection>
                         <shininess>50</shininess>
                     </material>
                 </object>

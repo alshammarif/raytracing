@@ -21,6 +21,7 @@ public class Point {
         this.y = new Float(p1.y);
         this.z = new Float(p1.z);
         this.color = c;
+        reflective = false;
     }
 
     public Point(Vector4f p1,int c,Vector4f norm,boolean reflective, util.Material material)

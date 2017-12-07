@@ -6,6 +6,7 @@ import org.joml.Vector4f;
 import util.*;
 
 import java.util.*;
+import java.util.concurrent.TimeoutException;
 
 /**
  * This node represents a transformation in the scene graph. It has only one child. The transformation
@@ -326,8 +327,13 @@ public class TransformNode extends AbstractNode
 
     @Override
     public void setMeshes(Map<String,PolygonMesh> meshes)  {
-
     }
+
+    public void setTextures(IScenegraphRenderer context)
+    {
+        child.setTextures(context);
+    }
+
 
     public IScenegraph expload(IScenegraph sg, IScenegraph blank)
     {

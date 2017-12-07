@@ -172,6 +172,13 @@ public interface INode
      */
      Point rayCast(Ray r1, Stack<Matrix4f> modelview, ArrayList<Light> lights);
 
+    /**
+     * Passes the textures to the leaf node
+     * @param context
+     */
+    public void setTextures(IScenegraphRenderer context);
+
+
 //     Vector4f getNormal();
 //
 //     Vector4f getPostion();

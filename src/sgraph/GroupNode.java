@@ -292,6 +292,14 @@ public class GroupNode extends AbstractNode {
         return blank;
     }
 
+    public void setTextures(IScenegraphRenderer context)
+    {
+        for(int i=0;i<children.size();i++)
+        {
+            children.get(i).setTextures(context);
+        }
+    }
+
     public Point rayCast(Ray r1, Stack<Matrix4f> modelview, ArrayList<Light> ls)
     {
         float shortest = 999999.0f;
@@ -301,7 +309,7 @@ public class GroupNode extends AbstractNode {
         for(int i=0;i<children.size();i++)
         {
             p1 = children.get(i).rayCast(r1, modelview, ls);
-            if (p1.color > 0)
+            if (p1.color >= 0)
             {
                 hitRecord.add(p1);
                 float dist = (float)Math.sqrt(Math.pow(p1.x-r1.s.x,2)+Math.pow(p1.y-r1.s.y,2)+Math.pow(p1.z-r1.s.z,2));
